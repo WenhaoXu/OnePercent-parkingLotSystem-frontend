@@ -1,6 +1,6 @@
 import React from 'react';
 import './login.css';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button, Checkbox} from 'antd';
 
 const FormItem = Form.Item;
 
@@ -16,8 +16,10 @@ class Login extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    return (
-      <div className="centerDiv"><div className="LoginForm">
+    return (  
+      <div className="loginDiv">
+      <label className="LoginTitle" style={{fontSize:35, color:'#69c0ff'}}>宇宙超级无敌停车场系统</label>
+      <div className="LoginForm">
       <Form onSubmit={this.handleSubmit} className="login-form">
         <FormItem>
           {getFieldDecorator('userName', {
@@ -51,7 +53,8 @@ class Login extends React.Component {
           </Button>
         </FormItem>
       </Form>
-      </div></div>
+      </div>
+      </div>
     );
   }
 }
