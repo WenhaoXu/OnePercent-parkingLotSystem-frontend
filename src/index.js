@@ -6,12 +6,17 @@ import 'antd/dist/antd.css';
 import appReducer from "./pc/reduce/app";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
+import {BrowserRouter} from "react-router-dom";
 
 let el = document.getElementById('root');
 let store = createStore(appReducer);
 
-render(<Provider store={store}>
-    <App/>
-</Provider>, el);
+render(
+    <BrowserRouter>
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </BrowserRouter>,
+    el);
 
 registerServiceWorker();
