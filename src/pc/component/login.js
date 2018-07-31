@@ -3,6 +3,7 @@ import './login.css';
 import { Form, Icon, Input, Button, Checkbox,message} from 'antd';
 import axios from 'axios'
 import 'animate.css'
+import 'whatwg-fetch'
 
 const FormItem = Form.Item;
 
@@ -15,22 +16,48 @@ class Login extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        axios.get('http://www.baidu.com')
-        .then(function (response) {
-          // handle success
-          console.log(response);
-        })
-        .catch(function (error) {
-          // handle error
-          console.log(error);
-        })
-        .then(function () {
-          // always executed
-        });
 
 
-        history.push("/main")
-        // message.info('This is a normal message');
+        fetch('http://localhost:1234/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            username: 'admin',
+            password: 'admin',
+          })
+        }).then(function(response) {
+          history.push("/main")
+          response.text().then(v=>{
+            console.log(v)
+          })
+        })
+
+        // const instance = axios.create({
+        //   baseURL: 'http://localhost:1234/auth/login',
+        //   headers: {'Content-Type': 'application/json',  },
+        //   data: {
+        //     "username":"admin",
+        //     "password":"admin"
+        //     }
+        // });
+
+        // instance.post()
+
+        // axios.post({
+        //   method: 'post',
+        //   url: 'https://parkinglotsystem-backend.herokuapp.com/auth/login',
+         
+        // })
+        // .then(function (response) {
+        //   // handle success
+        //   console.log(response);
+        //   history.push("/main")
+        // })
+        // .catch(function (error) {
+        //   message.error('请求异常');
+        // })
       }
 
     });
