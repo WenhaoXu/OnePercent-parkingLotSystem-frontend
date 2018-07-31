@@ -37,14 +37,17 @@ class Main extends Component {
                             <span>停车场管理</span>
                         </Menu.Item>
                         <Menu.Item key="3">
+                            <Icon type="aliwangwang-o" />
+                            <span>停车员管理</span>
+                        </Menu.Item>
+                        <Menu.Item key="4">
                             <Icon type="dashboard"/>
                             <span>停车场Dashboard</span>
                         </Menu.Item>
-                        <Menu.Item key="4">
+                        <Menu.Item key="5">
                             <Icon type="credit-card"/>
                             <span>订单管理</span>
                         </Menu.Item>
-
                     </Menu>
                 </Sider>
                 <Layout>
