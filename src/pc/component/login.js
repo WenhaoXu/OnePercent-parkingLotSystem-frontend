@@ -1,5 +1,5 @@
 import React from 'react';
-import './Login.css';
+import './login.css';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
 const FormItem = Form.Item;
@@ -17,6 +17,7 @@ class Login extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
+      <div className="centerDiv"><div className="LoginForm">
       <Form onSubmit={this.handleSubmit} className="login-form">
         <FormItem>
           {getFieldDecorator('userName', {
@@ -50,6 +51,7 @@ class Login extends React.Component {
           </Button>
         </FormItem>
       </Form>
+      </div></div>
     );
   }
 }

@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
-import Login from './component/Login';
+import Main from "./pc/container/main";
+import {Route, Switch} from "react-router-dom";
+import Login from "./pc/component/login";
+
 
 class App extends Component {
 
   render() {
     return (
-        <div className="centerDiv"><div className="LoginForm"><Login /></div></div>
+        <Switch>
+            <Route exact path='/' component={Main}/>
+            <Route path='/main' component={Main}/>
+            <Route path='/login' component={Login}/>
+        </Switch>
     );
   }
 }

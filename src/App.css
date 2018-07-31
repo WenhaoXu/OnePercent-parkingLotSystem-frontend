@@ -23,20 +23,7 @@
   font-size: large;
 }
 
-.LoginForm{
-  width: 350px;
-  align-items:center;
-  justify-content:center;
-  display: flex;
-  background-color: #e6f7ff;
-}
 
-.centerDiv{
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  display: flex;
-}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
