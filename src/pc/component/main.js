@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Layout, Menu, Breadcrumb, Icon, Avatar} from 'antd';
 
 import './main.css'
+import {Link} from "react-router-dom";
 
 const {Header, Content, Footer, Sider} = Layout;
 const SubMenu = Menu.SubMenu;
@@ -29,15 +30,17 @@ class Main extends Component {
                     <div className="logo"/>
                     <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
                         <Menu.Item key="1">
-                            <Icon type="usergroup-add"/>
-                            <span>员工管理</span>
+                            <Link to={"/"}>
+                                <Icon type="usergroup-add"/>
+                                <span>员工管理</span>
+                            </Link>
                         </Menu.Item>
                         <Menu.Item key="2">
                             <Icon type="car"/>
                             <span>停车场管理</span>
                         </Menu.Item>
                         <Menu.Item key="3">
-                            <Icon type="aliwangwang-o" />
+                            <Icon type="aliwangwang-o"/>
                             <span>停车员管理</span>
                         </Menu.Item>
                         <Menu.Item key="4">
@@ -51,9 +54,11 @@ class Main extends Component {
                     </Menu>
                 </Sider>
                 <Layout>
-                    <Header id='header-line' >
-                        <span>小黑</span>
-                        <Avatar id='user-avatar' style={{color: '#f56a00', backgroundColor: '#fde3cf'}}>U</Avatar>
+                    <Header id='header-line'>
+                        <Link to={"/login"}>
+                            <span>小黑</span>
+                            <Avatar id='user-avatar' style={{color: '#f56a00', backgroundColor: '#fde3cf'}}>U</Avatar>
+                        </Link>
                     </Header>
                     <Content style={{margin: '0 16px'}}>
                         <Breadcrumb style={{margin: '16px 0'}}>
