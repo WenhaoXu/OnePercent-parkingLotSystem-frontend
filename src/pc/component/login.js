@@ -9,16 +9,12 @@ const FormItem = Form.Item;
 
 class Login extends React.Component {
 
-  
-
   handleSubmit = (e) => {
    let history= this.props.history;
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-
-
-        fetch('http://localhost:1234/auth/login', {
+        fetch('https://parkinglotsystem-backend.herokuapp.com/auth/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -65,7 +61,7 @@ class Login extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    return (  
+    return (
       <div className="loginDiv">
       <label className="LoginTitle  animated flipInY" style={{fontSize:45,fontWeight:'bold', margin:'0 0 20px 0 '}}>停车场管理系统</label>
       <div className="LoginForm animated flipInY">
