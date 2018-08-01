@@ -1,7 +1,9 @@
-export default (state, action) => {
+import addLot from "./addLot";
+import {combineReducers} from "redux";
 
-    switch (action.type) {
-        default:
-            return state;
-    }
-}
+
+const appReducer = combineReducers({
+    addLot,
+})
+
+export default appReducer
