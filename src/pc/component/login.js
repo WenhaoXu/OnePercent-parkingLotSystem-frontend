@@ -14,9 +14,7 @@ class Login extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-
-
-        fetch('http://localhost:1234/auth/login', {
+        fetch('https://parkinglotsystem-backend.herokuapp.com/auth/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -31,31 +29,6 @@ class Login extends React.Component {
             console.log(v)
           })
         })
-
-        // const instance = axios.create({
-        //   baseURL: 'http://localhost:1234/auth/login',
-        //   headers: {'Content-Type': 'application/json',  },
-        //   data: {
-        //     "username":"admin",
-        //     "password":"admin"
-        //     }
-        // });
-
-        // instance.post()
-
-        // axios.post({
-        //   method: 'post',
-        //   url: 'https://parkinglotsystem-backend.herokuapp.com/auth/login',
-         
-        // })
-        // .then(function (response) {
-        //   // handle success
-        //   console.log(response);
-        //   history.push("/main")
-        // })
-        // .catch(function (error) {
-        //   message.error('请求异常');
-        // })
       }
 
     });
@@ -63,7 +36,7 @@ class Login extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    return (  
+    return (
       <div className="loginDiv">
       <label className="LoginTitle  animated flipInY" style={{fontSize:45,fontWeight:'bold', margin:'0 0 20px 0 '}}>停车场管理系统</label>
       <div className="LoginForm animated flipInY">
