@@ -1,13 +1,10 @@
-export default (state={visible:false,loading:false,employeeList:[]}, action) => {
+import addLot from "./addLot";
+import {combineReducers} from "redux";
+import employee from "./employee";
 
-    switch (action.type) {
-        case 'changeStatus':{
-            const newState =JSON.parse(JSON.stringify(state));
-            newState.visible=action.visible;
-            newState.loading=action.loading;
-            return newState;
-        }
-        default:
-            return state;
-    }
-}
+const appReducer = combineReducers({
+    addLot,employee
+})
+
+export default appReducer
+

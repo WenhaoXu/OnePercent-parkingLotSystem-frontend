@@ -1,0 +1,28 @@
+.head{
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: left;
+}
+.head #addlot{
+    width: 100px;
+}
+.head>div{
+    width: 100%;
+    display: flex;
+    align-items: right;
+    justify-content: flex-end;
+}
+.head>div select{
+    margin: 0 5px;
+}
+
+.head>div Input{
+    width: 100px;
+    margin: 0 5px;
+}
+.head>div  Button{
+    margin: 0 5px;
+}
+#group-search{
+    margin: 5px 0 0 0 !important;
+}

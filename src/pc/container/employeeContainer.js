@@ -3,8 +3,9 @@ import Employee from "../component/employee";
 import {changeStatusMap} from '../action/index'
 
 const mapStateToProps = (state, ownProps) =>({
-    loading: state.loading,
-        visible: state.visible
+    
+    loading: state.employee.loading,
+        visible: state.employee.visible
   })
   
 

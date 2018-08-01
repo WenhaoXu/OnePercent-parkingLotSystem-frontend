@@ -2,10 +2,15 @@ import {connect} from 'react-redux';
 import Employee_header from "../component/employee_header";
 import {changeStatusMap} from '../action/index'
 
-const mapStateToProps = (state, ownProps) =>({
-    loading: state.loading,
-        visible: state.visible
-  })
+const mapStateToProps = (state, ownProps) =>{
+
+    console.log(state)
+    return {
+        loading: state.employee.loading,
+            visible:  state.employee.visible
+      };
+}
+  
   
 
 const mapDispatchToProps = (dispatch, ownProps) =>({
