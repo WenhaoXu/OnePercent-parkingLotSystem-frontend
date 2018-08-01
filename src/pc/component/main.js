@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import Lot from "../container/lot";
 import Dashboard from "./dashboard";
 
+import EmployeeContainer from "../container/employeeContainer"
 
 const {Header, Content, Footer, Sider} = Layout;
 const SubMenu = Menu.SubMenu;
@@ -26,6 +27,7 @@ class Main extends Component {
         let currentPage;
         let defaultSelectedKeys;
         let breadcrumb;
+        
         if (page === 'lot') {
             currentPage = <Lot/>;
             defaultSelectedKeys = 2;
@@ -47,9 +49,10 @@ class Main extends Component {
 
 
         } else {
-            currentPage = <h2>employee</h2>;
-            defaultSelectedKeys = 1;
-            breadcrumb = '员工管理';
+
+            currentPage = <EmployeeContainer/>;
+            defaultSelectedKeys=1;
+            breadcrumb='员工管理';
 
         }
         return (
@@ -109,6 +112,7 @@ class Main extends Component {
                                 currentPage
                             }
                         </div>
+                       
                     </Content>
                     <Footer style={{textAlign: 'center'}}>
                         ONE PERCENT @2018

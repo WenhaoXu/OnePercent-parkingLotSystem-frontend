@@ -29,31 +29,6 @@ class Login extends React.Component {
             console.log(v)
           })
         })
-
-        // const instance = axios.create({
-        //   baseURL: 'http://localhost:1234/auth/login',
-        //   headers: {'Content-Type': 'application/json',  },
-        //   data: {
-        //     "username":"admin",
-        //     "password":"admin"
-        //     }
-        // });
-
-        // instance.post()
-
-        // axios.post({
-        //   method: 'post',
-        //   url: 'https://parkinglotsystem-backend.herokuapp.com/auth/login',
-         
-        // })
-        // .then(function (response) {
-        //   // handle success
-        //   console.log(response);
-        //   history.push("/main")
-        // })
-        // .catch(function (error) {
-        //   message.error('请求异常');
-        // })
       }
 
     });
