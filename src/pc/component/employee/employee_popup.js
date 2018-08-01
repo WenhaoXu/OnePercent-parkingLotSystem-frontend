@@ -1,11 +1,11 @@
-import React from 'react';
-import { Button,Modal} from 'antd';
-import Employee_table from './employee_table';
-import Employee_headerContainer from '../container/employee_headerContainer';
-import Register from './register';
-  
-class Employee extends React.Component {
-  constructor(props) {
+import React, { Component } from 'react';
+import {Button,Modal} from 'antd'
+import './employee.css';
+import Register from '../register'
+
+class Employee_popup extends Component {
+
+  constructor(props){
     super(props);
   }
   
@@ -24,13 +24,10 @@ class Employee extends React.Component {
   }
 
   render() {
-    return (
-        <div>
-        <Employee_headerContainer/>
-        <Employee_table/>
+    return ( 
         <Modal
           visible={this.props.visible}
-          title="Title"
+          title="新建用户"
           onOk={this.handleOk}
           onCancel={this.handleCancel}
           footer={[
@@ -42,9 +39,8 @@ class Employee extends React.Component {
         >
           <Register />
         </Modal>
-  </div>
     );
   }
 }
 
-export default Employee;
+export default Employee_popup;

@@ -29,7 +29,7 @@ class Employee_header extends Component {
           
       </InputGroup>
       <div className="input">
-        <Select defaultValue="选项一">
+        <Select defaultValue="name">
           <Option value="name">name</Option>
           <Option value="phone">phone</Option>
         </Select>

@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import Employee_header from "../component/employee_header";
+import Employee_header from "../component/employee/employee_header";
 import {changeStatusMap} from '../action/index'
 
 const mapStateToProps = (state, ownProps) =>{
