@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
+import '../component/register.css';
 const FormItem = Form.Item;
 const Option = Select.Option;
 const AutoCompleteOption = AutoComplete.Option;
@@ -61,15 +62,12 @@ class register extends React.Component {
         </Select>
       );
   
-      const websiteOptions = autoCompleteResult.map(website => (
-        <AutoCompleteOption key={website}>{website}</AutoCompleteOption>
-      ));
   
       return (
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit} >
           <FormItem
             {...formItemLayout}
-            label="E-mail"
+            label="邮箱："
           >
             {getFieldDecorator('email', {
               rules: [{
@@ -85,10 +83,8 @@ class register extends React.Component {
             {...formItemLayout}
             label={(
               <span>
-                Nickname&nbsp;
-                <Tooltip title="What do you want others to call you?">
-                  <Icon type="question-circle-o" />
-                </Tooltip>
+                姓名
+                
               </span>
             )}
           >
@@ -100,7 +96,7 @@ class register extends React.Component {
           </FormItem>
           <FormItem
             {...formItemLayout}
-            label="Phone Number"
+            label="电话："
           >
             {getFieldDecorator('phone', {
               rules: [{ required: true, message: 'Please input your phone number!' }],

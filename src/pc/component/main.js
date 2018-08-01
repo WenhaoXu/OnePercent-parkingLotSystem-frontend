@@ -3,6 +3,7 @@ import {Layout, Menu, Breadcrumb, Icon, Avatar} from 'antd';
 
 import './main.css'
 import {Link} from "react-router-dom";
+import Employee from './employee';
 
 const {Header, Content, Footer, Sider} = Layout;
 const SubMenu = Menu.SubMenu;
@@ -65,8 +66,9 @@ class Main extends Component {
                             <Breadcrumb.Item>员工管理</Breadcrumb.Item>
                         </Breadcrumb>
                         <div style={{padding: 24, background: '#fff', minHeight: 360}}>
-                            Bill is a cat.
+                        <Employee/>
                         </div>
+                       
                     </Content>
                     <Footer style={{textAlign: 'center'}}>
                         ONE PERCENT @2018

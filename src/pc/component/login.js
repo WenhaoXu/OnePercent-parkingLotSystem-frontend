@@ -9,8 +9,6 @@ const FormItem = Form.Item;
 
 class Login extends React.Component {
 
-  
-
   handleSubmit = (e) => {
    let history= this.props.history;
     e.preventDefault();
