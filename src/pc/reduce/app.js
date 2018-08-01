@@ -1,9 +1,9 @@
-import addLot from "./addLot";
+import lot from "./lot";
 import {combineReducers} from "redux";
 
 
 const appReducer = combineReducers({
-    addLot,
-})
+    lot,
+});
 
 export default appReducer

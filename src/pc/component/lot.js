@@ -1,7 +1,10 @@
-import {Button, Checkbox, Divider, Input, Select, Table, Modal, Form} from 'antd';
+import {Button, Checkbox, Divider, Input, Popover, Select, Table} from 'antd';
 import React from 'react';
 import './lot.css'
 import AddLot from "./addLot";
+import UpdateLot from "./updateLot";
+
+import uuidv4 from 'uuid/v4'
 
 
 const data = [{
@@ -28,6 +31,37 @@ const data = [{
 
 class Lot extends React.Component {
 
+    state = {
+        groupSearchSwitch: false,
+        groupSearchPopSwitch: false,
+        conditions: []
+    };
+    onChange = () => {
+        this.setState({
+            groupSearchSwitch: !this.state.groupSearchSwitch,
+            groupSearchPopSwitch: false
+        })
+    };
+
+    handleSearchClick = () => {
+        if (this.state.groupSearchSwitch) {
+            this.setState({
+                groupSearchSwitch: true,
+                groupSearchPopSwitch: true
+            })
+        } else {
+
+        }
+    };
+
+    handleUpdate = () => {
+
+        console.log(123)
+    };
+
+    handleDisableUser = () => {
+        console.log(456)
+    };
 
     render() {
         const columns = [{
@@ -48,9 +82,11 @@ class Lot extends React.Component {
             key: 'action',
             render: (text, record) => (
                 <span>
-                  <a href="javascript:;">修改</a>
+                  {/*<a href="javascript:;" onClick={this.handleUpdate}>修改</a>*/}
+
+                    <span> <UpdateLot/></span>
                   <Divider type="vertical"/>
-                  <a href="javascript:;">注销</a>
+                  <a href="javascript:;" onClick={this.handleDisableUser}>注销</a>
                   <Divider type="vertical"/>
                 </span>
             ),
@@ -63,25 +99,31 @@ class Lot extends React.Component {
             console.log(`selected ${value}`);
         }
 
-        function onChange() {
+        const text = <span>组合条件</span>;
 
-        }
+        const content = (
+            <div>
+                {this.state.conditions.map((value, index) => <p key={index}>{value}</p>)}
+            </div>
+        );
+
         return (
-
             <div>
                 <div className="head">
                     <span id="addlot"><AddLot/></span>
                     <div>
                         <Select defaultValue="lucy" style={{width: 120}} onChange={handleChange}>
-                            <Option value="jack">Jack</Option>
-                            <Option value="lucy">Lucy</Option>
-                            <Option value="disabled" disabled>Disabled</Option>
-                            <Option value="Yiminghe">yiminghe</Option>
+                            <Option value="jack">电话号码</Option>
+                            <Option value="lucy">名字</Option>
+                            <Option value="disabled">容量</Option>
                         </Select>
-                        <Input placeholder="Basic usage"/>
-                        <Button type={'primary'}>搜索</Button>
+                        <Input placeholder=""/>
+                        <Popover placement="bottomRight" title={text} content={content} trigger="none"
+                                 visible={this.state.groupSearchPopSwitch} onClick={this.handleSearchClick}>
+                            <Button type={'primary'}>搜索</Button>
+                        </Popover>
                         <div id={'group-search'}>
-                            <Checkbox onChange={onChange}>组合搜索</Checkbox>
+                            <Checkbox onChange={this.onChange}>组合搜索</Checkbox>
                         </div>
                     </div>
                 </div>

@@ -3,9 +3,8 @@ import {Layout, Menu, Breadcrumb, Icon, Avatar} from 'antd';
 
 import './main.css'
 import {Link} from "react-router-dom";
-import Lot from "./lot";
+import Lot from "../container/lot";
 import Dashboard from "./dashboard";
-
 
 
 const {Header, Content, Footer, Sider} = Layout;
@@ -29,28 +28,28 @@ class Main extends Component {
         let breadcrumb;
         if (page === 'lot') {
             currentPage = <Lot/>;
-            defaultSelectedKeys=2;
-            breadcrumb='停车场管理';
+            defaultSelectedKeys = 2;
+            breadcrumb = '停车场管理';
         } else if (page === 'boy') {
             currentPage = <h2>body</h2>;
-            defaultSelectedKeys=3;
-            breadcrumb='停车员管理';
+            defaultSelectedKeys = 3;
+            breadcrumb = '停车员管理';
 
         } else if (page === 'dashboard') {
             currentPage = <Dashboard/>;
-            defaultSelectedKeys=4;
-            breadcrumb='停车场Dashboard';
+            defaultSelectedKeys = 4;
+            breadcrumb = '停车场Dashboard';
 
         } else if (page === 'order') {
             currentPage = <h2>order</h2>;
-            defaultSelectedKeys=5;
-            breadcrumb='订单管理';
+            defaultSelectedKeys = 5;
+            breadcrumb = '订单管理';
 
 
         } else {
             currentPage = <h2>employee</h2>;
-            defaultSelectedKeys=1;
-            breadcrumb='员工管理';
+            defaultSelectedKeys = 1;
+            breadcrumb = '员工管理';
 
         }
         return (

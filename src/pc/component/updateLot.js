@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Button, Form, Input, Modal} from "antd";
-import 'whatwg-fetch'
+import {Input, Modal} from "antd";
+import {Form} from "antd/lib/index";
+
+class UpdateLot extends Component {
 
 
-class AdddLot extends Component {
-    state = {visible: false}
+    state = { visible: false };
 
     showModal = () => {
         this.setState({
@@ -14,21 +15,7 @@ class AdddLot extends Component {
     };
 
     handleOk = (e) => {
-        let name = this.refs.name.input.value;
-        let size = this.refs.size.input.value;
-
-        fetch('/parkingLots', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: name,
-                totalSize: size,
-            })
-        }).then(value => {
-
-        })
+        console.log(e);
         this.setState({
             visible: false,
         });
@@ -39,16 +26,16 @@ class AdddLot extends Component {
         this.setState({
             visible: false,
         });
-    };
-
+    }
     render() {
+
         const FormItem = Form.Item;
-        let name;
+
         return (
-            <div>
-                <Button type={'primary'} onClick={this.showModal}>新建</Button>
+            <div style={{display:'inline-block'}}>
+                <a href="javascript:;" onClick={this.showModal}>修改</a>
                 <Modal
-                    title="新建停车场"
+                    title="修改停车场"
                     visible={this.state.visible}
                     onOk={this.handleOk}
                     onCancel={this.handleCancel}
@@ -60,24 +47,16 @@ class AdddLot extends Component {
                         <Input  ref={"size"}/>
                     </FormItem>
                 </Modal>
+
             </div>
         );
     }
 }
 
 function mapStateToProps(state) {
-    return {
-
-    };
-}
-function mapDispatchToProps() {
-
-    return {
-
-    }
+    return {};
 }
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps
-)(AdddLot);
+)(UpdateLot);
