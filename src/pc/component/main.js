@@ -3,6 +3,10 @@ import {Layout, Menu, Breadcrumb, Icon, Avatar} from 'antd';
 
 import './main.css'
 import {Link} from "react-router-dom";
+import Lot from "./lot";
+import Dashboard from "./dashboard";
+
+
 
 const {Header, Content, Footer, Sider} = Layout;
 const SubMenu = Menu.SubMenu;
@@ -15,31 +19,38 @@ class Main extends Component {
     };
 
     onCollapse = (collapsed) => {
-        // console.log(collapsed);
         this.setState({collapsed});
-    }
+    };
 
     render() {
         let page = this.props.match.params.page;
         let currentPage;
         let defaultSelectedKeys;
+        let breadcrumb;
         if (page === 'lot') {
-            currentPage = <h2>lot</h2>;
+            currentPage = <Lot/>;
             defaultSelectedKeys=2;
+            breadcrumb='停车场管理';
         } else if (page === 'boy') {
             currentPage = <h2>body</h2>;
             defaultSelectedKeys=3;
+            breadcrumb='停车员管理';
+
         } else if (page === 'dashboard') {
-            currentPage = <h2>dashboard</h2>;
+            currentPage = <Dashboard/>;
             defaultSelectedKeys=4;
+            breadcrumb='停车场Dashboard';
 
         } else if (page === 'order') {
             currentPage = <h2>order</h2>;
             defaultSelectedKeys=5;
+            breadcrumb='订单管理';
+
 
         } else {
             currentPage = <h2>employee</h2>;
             defaultSelectedKeys=1;
+            breadcrumb='员工管理';
 
         }
         return (
@@ -92,7 +103,7 @@ class Main extends Component {
                     </Header>
                     <Content style={{margin: '0 16px'}}>
                         <Breadcrumb style={{margin: '16px 0'}}>
-                            <Breadcrumb.Item>员工管理</Breadcrumb.Item>
+                            <Breadcrumb.Item>{breadcrumb}</Breadcrumb.Item>
                         </Breadcrumb>
                         <div style={{padding: 24, background: '#fff', minHeight: 360}}>
                             {
