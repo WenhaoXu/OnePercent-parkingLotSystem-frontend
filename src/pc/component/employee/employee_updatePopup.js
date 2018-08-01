@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {Button,Modal} from 'antd'
 import './employee.css';
-import Register from '../register'
+import Employee_addContainer from '../../container/employee_addContainer'
+import Employee from '../../model/Employee';
 
-class Employee_popup extends Component {
+class Employee_updatePopup extends Component {
 
   constructor(props){
     super(props);
@@ -27,20 +28,20 @@ class Employee_popup extends Component {
     return ( 
         <Modal
           visible={this.props.visible}
-          title="新建用户"
+          title="修改用户"
           onOk={this.handleOk}
           onCancel={this.handleCancel}
           footer={[
-            <Button key="back" onClick={this.handleCancel}>Return</Button>,
+            <Button id="return" key="back" onClick={this.handleCancel}>Return</Button>,
             <Button key="submit" type="primary" loading={this.props.loading} onClick={this.handleOk}>
               Submit
             </Button>,
           ]}
         >
-          <Register />
+          <Employee_addContainer />
         </Modal>
     );
   }
 }
 
-export default Employee_popup;
+export default Employee_updatePopup;

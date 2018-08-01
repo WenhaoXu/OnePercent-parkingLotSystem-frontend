@@ -16,6 +16,11 @@ export default (state={
             newState.employeeList=action.employeeList;
             return newState;
         }
+        case 'addEmployee':{
+            const newState =JSON.parse(JSON.stringify(state));
+            newState.employeeList=action.employeeList;
+            return newState;
+        }
         default:
             return state;
     }

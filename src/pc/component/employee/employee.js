@@ -1,7 +1,7 @@
 import React from 'react';
 import Employee_tableContainer from '../../container/employee_tableContainer';
 import Employee_headerContainer from '../../container/employee_headerContainer';
-import Employee_popupContainer from '../../container/employee_popupContainer';
+import Employee_addPopupContainer from '../../container/employee_addPopupContainer';
 import axios from 'axios';
 class Employee extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class Employee extends React.Component {
         <div>
         <Employee_headerContainer/>
         <Employee_tableContainer/>
-        <Employee_popupContainer/>
+        <Employee_addPopupContainer/>
   </div>
     );
   }

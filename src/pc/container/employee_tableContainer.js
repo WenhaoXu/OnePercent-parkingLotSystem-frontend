@@ -14,6 +14,10 @@ const mapDispatchToProps = (dispatch, ownProps) =>({
     changeStatusfromMap:(visible,loading) => dispatch(changeStatusMap (visible,loading)),
     showEmployeeListfromMap:()=>{
       employeeAPI.getEmployeeList(dispatch);
-    }
+    },
+    forzenEmployeefromMap:(id)=>{
+      employeeAPI.forzenEmployee(id,dispatch);
+    },
+   
   })
 export default connect(mapStateToProps, mapDispatchToProps)(Employee_table)

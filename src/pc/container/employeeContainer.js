@@ -1,7 +1,6 @@
 import {connect} from 'react-redux';
 import Employee from "../component/employee/employee";
 import {changeStatusMap,getEmployeeListMap} from '../action/index';
-import employeeAPI from '../api/employeeAPI';
 
 const mapStateToProps = (state, ownProps) =>({
         loading: state.employee.loading,

@@ -1,7 +1,8 @@
 import React from 'react';
 import  {Table,Divider,Popconfirm ,message} from 'antd';
 import './employee.css';
-import Employee_popupContainer from '../../container/employee_popupContainer'
+import Employee_addPopupContainer from '../../container/employee_addPopupContainer'
+import Employee_updatePopupContainer from '../../container/employee_updatePopupContainer'
 const { Column} = Table;
   function confirm(e) {
     console.log(e);
@@ -22,12 +23,16 @@ class Employee_table extends React.Component {
     const changeStatusfromMap = this.props.changeStatusfromMap;
     changeStatusfromMap(true,false);
   }
+  frozen=(id)=>{
+    const forzenEmployeefromMap = this.props.forzenEmployeefromMap;
+    forzenEmployeefromMap(id);
+  }
 
   render() {
     const data = this.props.employeeList;
     return (
       <div>
-        <Table dataSource={data} rowKey="uid">
+        <Table dataSource={data} rowKey="id">
           <Column
               title="id"
               dataIndex="id"
@@ -57,7 +62,7 @@ class Employee_table extends React.Component {
                 <Divider type="vertical" />
                 
                 <Popconfirm title="确定冻结此用户？" onConfirm={confirm} onCancel={cancel} okText="Yes" cancelText="No">
-                <a href="javascript:;" >冻结</a>
+                <a onClick={()=>this.frozen(record.id)}>冻结</a>
                 </Popconfirm>
                 
                 <Divider type="vertical" />
@@ -66,7 +71,8 @@ class Employee_table extends React.Component {
           />
         
         </Table>
-        <Employee_popupContainer/>
+        <Employee_addPopupContainer/>
+        <Employee_updatePopupContainer/>
         </div>
     );
   }

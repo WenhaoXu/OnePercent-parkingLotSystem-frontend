@@ -1,12 +1,14 @@
 import React from 'react';
-import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
-import '../component/register.css';
+import { Form, Input,Select,Button} from 'antd';
+import Employee from '../../model/Employee'
+import '../../component/employee/register.css';
 const FormItem = Form.Item;
 const Option = Select.Option;
-const AutoCompleteOption = AutoComplete.Option;
 
-
-class register extends React.Component {
+class employeeAdd extends React.Component {
+  constructor(props) {
+    super(props);
+  }
     state = {
       confirmDirty: false,
       autoCompleteResult: [],
@@ -14,9 +16,15 @@ class register extends React.Component {
   
     handleSubmit = (e) => {
       e.preventDefault();
+      const selfThis = this;
       this.props.form.validateFieldsAndScroll((err, values) => {
+        
         if (!err) {
           console.log('Received values of form: ', values);
+          const {addEmployeefromMap,changeStatusfromMap} = selfThis.props;
+          const employee = new Employee(values.name,values.email,values.phone);
+          addEmployeefromMap(employee);
+          changeStatusfromMap(true,false);
         }
       });
     }
@@ -28,8 +36,8 @@ class register extends React.Component {
   
   
     render() {
-      const { getFieldDecorator } = this.props.form;
-      const { autoCompleteResult } = this.state;
+      const {addEmployeefromMap} = this.props
+      const { getFieldDecorator } = this.props.form
   
       const formItemLayout = {
         labelCol: {
@@ -88,8 +96,8 @@ class register extends React.Component {
               </span>
             )}
           >
-            {getFieldDecorator('nickname', {
-              rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+            {getFieldDecorator('name', {
+              rules: [{ required: true, message: 'Please input your name!', whitespace: true }],
             })(
               <Input />
             )}
@@ -104,11 +112,14 @@ class register extends React.Component {
               <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
             )}
           </FormItem>
+          <FormItem {...tailFormItemLayout}>
+          <Button type="primary" htmlType="submit">Register</Button>
+        </FormItem>
         </Form>
       );
     }
   }
   
-  const WrappedRegistrationForm = Form.create()(register);
+  const WrappedRegistrationForm = Form.create()(employeeAdd);
   
   export default WrappedRegistrationForm 
