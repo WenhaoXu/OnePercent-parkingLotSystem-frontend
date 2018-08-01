@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Button, Form, Input, Modal} from "antd";
 import 'whatwg-fetch'
+import lotApi from '../api/lot'
 
 
 class AdddLot extends Component {
@@ -16,19 +17,7 @@ class AdddLot extends Component {
     handleOk = (e) => {
         let name = this.refs.name.input.value;
         let size = this.refs.size.input.value;
-
-        fetch('/parkingLots', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: name,
-                totalSize: size,
-            })
-        }).then(value => {
-
-        })
+        lotApi.add(this.props.dispatch,name,size);
         this.setState({
             visible: false,
         });
@@ -70,10 +59,10 @@ function mapStateToProps(state) {
 
     };
 }
-function mapDispatchToProps() {
+function mapDispatchToProps(dispatch) {
 
     return {
-
+        dispatch
     }
 }
 

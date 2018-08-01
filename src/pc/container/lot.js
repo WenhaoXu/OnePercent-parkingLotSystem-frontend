@@ -4,12 +4,14 @@ import {connect} from "react-redux";
 
 function mapStateToProps(state) {
     return {
-        data:[]
+        dataSource:state.lot.dataSource
     };
 }
 
 function mapDispatchToProps(dispatch) {
-    return {};
+    return {
+        dispatch
+    };
 }
 
 export default connect(

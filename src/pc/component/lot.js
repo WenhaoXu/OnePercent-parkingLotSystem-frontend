@@ -3,10 +3,10 @@ import React from 'react';
 import './lot.css'
 import AddLot from "./addLot";
 import UpdateLot from "./updateLot";
+import lotApi from "../api/lot";
+
 
 import uuidv4 from 'uuid/v4'
-
-
 const data = [{
     key: '1',
     id: 'John Brown',
@@ -31,11 +31,17 @@ const data = [{
 
 class Lot extends React.Component {
 
+
+    componentWillMount() {
+        lotApi.initState(this.props.dispatch)
+    }
+
     state = {
         groupSearchSwitch: false,
         groupSearchPopSwitch: false,
         conditions: []
     };
+
     onChange = () => {
         this.setState({
             groupSearchSwitch: !this.state.groupSearchSwitch,
@@ -54,13 +60,8 @@ class Lot extends React.Component {
         }
     };
 
-    handleUpdate = () => {
-
-        console.log(123)
-    };
-
-    handleDisableUser = () => {
-        console.log(456)
+    handleDisableUser = (dispatch,id) => {
+        lotApi.update(dispatch,id, null, null, null, false)
     };
 
     render() {
@@ -74,8 +75,8 @@ class Lot extends React.Component {
             key: 'name',
         }, {
             title: '大小',
-            dataIndex: 'size',
-            key: 'size',
+            dataIndex: 'totalSize',
+            key: 'totalSize',
         }, {
             title: '操作',
             dataIndex: 'action',
@@ -84,9 +85,9 @@ class Lot extends React.Component {
                 <span>
                   {/*<a href="javascript:;" onClick={this.handleUpdate}>修改</a>*/}
 
-                    <span> <UpdateLot/></span>
+                    <span> <UpdateLot record={record}/></span>
                   <Divider type="vertical"/>
-                  <a href="javascript:;" onClick={this.handleDisableUser}>注销</a>
+                  <a href="javascript:;" onClick={() => this.handleDisableUser(this.props.dispatch,record.id)}>注销</a>
                   <Divider type="vertical"/>
                 </span>
             ),
@@ -127,7 +128,7 @@ class Lot extends React.Component {
                         </div>
                     </div>
                 </div>
-                <Table columns={columns} dataSource={data}/>
+                <Table columns={columns} dataSource={this.props.dataSource}/>
             </div>
         );
     }
