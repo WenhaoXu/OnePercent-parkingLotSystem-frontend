@@ -1,31 +1,19 @@
 export default (state={
     visible:false,
     loading:false,
-    employeeList:[{
-        key: '1',
-        name: '张三',
-        email: 'xxxx@qq.com',
-        phone: 1377777777,
-      }, {
-        key: '2',
-        name: '张三',
-        email: 'xxxx@qq.com',
-        phone: 1377777777,
-      },{
-        key: '3',
-        name: '张三',
-        email: 'xxxx@qq.com',
-        phone: 1377777777,
-      }]
+    employeeList:[]
 }, action) => {
 
     switch (action.type) {
         case 'changeStatus':{
-
-            console.log(123)
             const newState =JSON.parse(JSON.stringify(state));
             newState.visible=action.visible;
             newState.loading=action.loading;
+            return newState;
+        }
+        case 'getEmployeeList':{
+            const newState =JSON.parse(JSON.stringify(state));
+            newState.employeeList=action.employeeList;
             return newState;
         }
         default:

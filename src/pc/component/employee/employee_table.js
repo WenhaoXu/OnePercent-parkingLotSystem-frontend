@@ -30,7 +30,7 @@ class Employee_table extends React.Component {
         <Table dataSource={data} rowKey="uid">
           <Column
               title="id"
-              dataIndex="key"
+              dataIndex="id"
               key="id"
           />
           <Column
