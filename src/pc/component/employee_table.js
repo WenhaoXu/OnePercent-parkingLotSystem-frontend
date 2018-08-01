@@ -69,6 +69,7 @@ class Employee_table extends React.Component {
         </span>
       )}
     />
+    
   </Table>
     );
   }
