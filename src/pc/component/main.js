@@ -3,7 +3,7 @@ import {Layout, Menu, Breadcrumb, Icon, Avatar} from 'antd';
 
 import './main.css'
 import {Link} from "react-router-dom";
-import Employee from './employee';
+import EmployeeContainer from '../container/employeeContainer';
 
 const {Header, Content, Footer, Sider} = Layout;
 const SubMenu = Menu.SubMenu;
@@ -25,7 +25,7 @@ class Main extends Component {
         let currentPage;
         let defaultSelectedKeys;
         if (page === 'employee') {
-            currentPage = <Employee/>;
+            currentPage = <EmployeeContainer/>;
             defaultSelectedKeys=2;
         } else if (page === 'boy') {
             currentPage = <h2>body</h2>;

@@ -1,0 +1,1 @@
+export const changeStatusMap=(visible,loading)=>({type:'changeStatus',visible,loading})

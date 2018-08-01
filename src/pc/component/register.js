@@ -104,10 +104,6 @@ class register extends React.Component {
               <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
             )}
           </FormItem>
-
-          <FormItem {...tailFormItemLayout}>
-            <Button type="primary" htmlType="submit">Register</Button>
-          </FormItem>
         </Form>
       );
     }
