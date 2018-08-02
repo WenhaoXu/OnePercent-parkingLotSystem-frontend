@@ -19,6 +19,7 @@ export default {
         })
             .then(response => response.json())
             .then(json => {
+                console.log(json)
                 dispatch({
                     type: "INIT",
                     payload: json
@@ -30,7 +31,6 @@ export default {
     },
 
     add: (dispatch,name, size) => {
-        let self=this;
         let token = localStorage.getItem("token");
         fetch(`${conf.domain}/parkinglots`, {
 
@@ -44,16 +44,14 @@ export default {
                 totalSize: size,
             })
         }).then(value => {
-            // self.initState(dispatch)
+            value.text().then(value1 => {
+                console.log(value1)
+            })
         })
     },
 
     update: (dispatch,id, name, totalSize, spareSize, available) => {
 
-
-        let self=this
-        let message1 = this.initState;
-        console.log(message1)
         let token = localStorage.getItem("token");
         fetch(`${conf.domain}/parkinglots/${id}`, {
             method: 'PATCH',

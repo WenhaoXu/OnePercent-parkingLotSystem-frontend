@@ -4,6 +4,7 @@ import '../../mobile/component/mobileMain'
 import Index from '../component/index'
 import ParkAndTake from "../component/parkAndTake";
 import PullRefresh from "../component/pullRefresh";
+import History from "../Container/historyContainer"
 
 class mobileMain extends React.Component {
 
@@ -15,9 +16,9 @@ class mobileMain extends React.Component {
         };
       }
       renderContent(pageText) {
-        let component=<Index/>
-          if(pageText=='ParkAndTake')
-            component =<PullRefresh/>;
+        let component=<Index/>;
+        if(pageText=='index')
+            component =<Index/>;
         return (
             <div style={{ marginTop: '40px' }}>
                 {component}
