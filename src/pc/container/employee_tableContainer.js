@@ -3,7 +3,8 @@ import Employee_table from "../component/employee/employee_table";
 import {changeAddStatusMap} from '../action/index'
 import employeeAPI from '../api/employeeAPI'
 
-const mapStateToProps = (state, ownProps) =>({
+const mapStateToProps = (state, ownProps) =>(
+    {
         addPopupVisible: state.employee.addPopupVisible,
         employeeList:state.employee.employeeList
   })

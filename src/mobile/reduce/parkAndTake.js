@@ -1,5 +1,6 @@
 export default (state={
-    indicator:0
+    indicator:0,
+    indexData:[]
 } ,action)=>{
 
 
@@ -15,8 +16,15 @@ export default (state={
     switch (type) {
         case "INDICATOR":
             console.log("aaaa"+payload);
+
             return {
-                indicator:payload
+                indicator:payload,
+                indexData:state.indexData
+            };
+        case "INIT":
+            return {
+                indicator:state.indicator,
+                indexData:payload
             }
     }
 

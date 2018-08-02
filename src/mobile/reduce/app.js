@@ -1,4 +1,5 @@
-import order from './order'
+import order from './order';
+
 import {combineReducers} from "redux";
 import login from "./login";
 import parkAndTake from "./parkAndTake";
