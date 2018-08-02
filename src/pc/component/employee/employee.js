@@ -3,7 +3,6 @@ import Employee_tableContainer from '../../container/employee_tableContainer';
 import Employee_headerContainer from '../../container/employee_headerContainer';
 import Employee_addPopupContainer from '../../container/employee_addPopupContainer';
 import Employee_upPopupContainer from '../../container/employee_updatePopupContainer'
-import axios from 'axios';
 class Employee extends React.Component {
   constructor(props) {
     super(props);

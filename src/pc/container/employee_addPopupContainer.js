@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Employee_addPopup from "../component/employee/employee_addPopup";
-import {changeStatusMap} from '../action/index';
+import {changeAddStatusMap} from '../action/index';
 import employeeAPI from '../api/employeeAPI'
 
 const mapStateToProps = (state, ownProps) =>({ 
@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) =>({
   })
 
 const mapDispatchToProps = (dispatch, ownProps) =>({
-    changeStatusfromMap:(addPopupVisible) => dispatch(changeStatusMap (addPopupVisible)),
+    changeAddStatusfromMap:(addPopupVisible) => dispatch(changeAddStatusMap (addPopupVisible)),
     addEmployeefromMap:(employee)=>{
       employeeAPI.addEmployee(employee,dispatch)
     }

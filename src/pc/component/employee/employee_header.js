@@ -11,8 +11,8 @@ class Employee_header extends Component {
     super(props);
   }
   showModal=()=>{
-    const changeStatusfromMap = this.props.changeStatusfromMap;
-    changeStatusfromMap(true);
+    const changeAddStatusfromMap = this.props.changeAddStatusfromMap;
+    changeAddStatusfromMap(true);
   }
   start(){
       console.log("1111");

@@ -1,6 +1,5 @@
 export default (state={
     addPopupVisible:false,
-    updatePopupVisible:false,
     employeeList:[]
 }, action) => {
 

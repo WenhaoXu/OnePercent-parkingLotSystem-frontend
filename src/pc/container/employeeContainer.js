@@ -10,7 +10,6 @@ const mapStateToProps = (state, ownProps) =>({
   
 
 const mapDispatchToProps = (dispatch, ownProps) =>({
-    changeStatusfromMap:(visible,loading) => dispatch(changeStatusMap (visible,loading)),
     showEmployeeListfromMap:(employeeList)=> dispatch(getEmployeeListMap (employeeList))
   })
 export default connect(mapStateToProps, mapDispatchToProps)(Employee)

@@ -10,13 +10,13 @@ class Employee_addPopup extends Component {
   }
   
   handleOk=()=>{
-    const changeStatusfromMap = this.props.changeStatusfromMap;
-    changeStatusfromMap(false);
+    const changeAddStatusfromMap = this.props.changeAddStatusfromMap;
+    changeAddStatusfromMap(false);
   }
 
   handleCancel=()=>{
-    const changeStatusfromMap = this.props.changeStatusfromMap;
-    changeStatusfromMap(false);
+    const changeAddStatusfromMap = this.props.changeAddStatusfromMap;
+    changeAddStatusfromMap(false);
   }
 
   render() {
