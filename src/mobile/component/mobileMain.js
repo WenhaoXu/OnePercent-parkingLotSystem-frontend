@@ -1,11 +1,9 @@
 import React from 'react';
-import {TabBar, NavBar, Icon} from 'antd-mobile';
+import {TabBar} from 'antd-mobile';
 import '../../mobile/component/mobileMain'
-import Index from '../component/index'
 import ParkAndTake from "../component/parkAndTake";
 
 class mobileMain extends React.Component {
-
 
     componentWillMount() {
         let item = localStorage.getItem("token");
@@ -15,7 +13,6 @@ class mobileMain extends React.Component {
         }
     }
 
-
     constructor(props) {
         super(props);
         this.state = {
@@ -24,23 +21,9 @@ class mobileMain extends React.Component {
         };
     }
 
-    static renderContent(pageText) {
-        let component = <Index/>
-        if (pageText === 'ParkAndTake')
-            component = <ParkAndTake/>;
-        return (
-            <div style={{marginTop: '40px'}}>
-                {component}
-            </div>
-        );
-    }
-
     render() {
         return (
             <div>
-                <NavBar
-                    mode="black"
-                >{this.state.selectedTab}</NavBar>
                 <div style={{position: 'fixed', height: '100%', width: '100%', top: 0}}>
                     <TabBar
                         unselectedTintColor="#949494"
@@ -75,7 +58,6 @@ class mobileMain extends React.Component {
                             }}
                             data-seed="logId"
                         >
-                            {mobileMain.renderContent('history')}
 
                         </TabBar.Item>
                         <TabBar.Item
@@ -106,7 +88,7 @@ class mobileMain extends React.Component {
                             }}
                             data-seed="logId1"
                         >
-                            {mobileMain.renderContent('ParkAndTake')}
+                            <ParkAndTake/>
                         </TabBar.Item>
                         <TabBar.Item
                             icon={
@@ -135,7 +117,6 @@ class mobileMain extends React.Component {
                                 });
                             }}
                         >
-                            {mobileMain.renderContent('history')}
                         </TabBar.Item>
                         <TabBar.Item
                             icon={{uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg'}}
@@ -149,7 +130,6 @@ class mobileMain extends React.Component {
                                 });
                             }}
                         >
-                            {mobileMain.renderContent('my')}
                         </TabBar.Item>
                     </TabBar>
                 </div>
