@@ -6,25 +6,25 @@ import conf from '../api/conf'
 const employeeAPI = {
     visible:true,loading:false,
     employeeList:[],
-    getEmployeeList(dispatch) {
+    getEmployeeList(dispatch) { 
       fetch(`http://localhost:1234/users`, {
-        method: 'GET',
-        headers:{
-          'Authorization':localStorage.getItem("token")
-        }
-       })
-        .then(res => {
-          const employeeList = res.data;
-          console.log(employeeList);
-          dispatch(getEmployeeListMap(employeeList));
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
+          method: 'GET',
+          headers: 
+            {'Authorization':localStorage.getItem("token")}
+      })
+      .then(response => response.json())
+      .then(json => {
+        const employeeList = json;
+            console.log(employeeList);
+            dispatch(getEmployeeListMap(employeeList));
+      })
+      .catch(function (ex) {
+          console.log('parsing failed', ex)
+      });
     },
 
     addEmployee(employee,dispatch){
-      fetch('${conf.domain}users', {
+      fetch('http://localhost:1234/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,15 +36,17 @@ const employeeAPI = {
           email: employee.email
         })
       })
-      .then(res => {
-        fetch(`${conf.domain}users`, {
+      .then(response => response.json())
+      .then(json => {
+        fetch(`http://localhost:1234/users`, {
           method: 'GET',
           headers:{
             'Authorization':localStorage.getItem("token")
           }
          })
+        .then(response => response.json())
         .then(res => {
-          const employeeList = res.data;
+          const employeeList = res;
           console.log(employeeList);
           dispatch(getEmployeeListMap(employeeList));
 
@@ -58,20 +60,27 @@ const employeeAPI = {
       });
     },
     forzenEmployee(id,dispatch) {
-      axios
-      .patch('http://localhost:1234/users/'+id)
+      fetch('http://localhost:1234/users/'+id, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization':localStorage.getItem("token")
+        }
+      })
+      .then(response => response.json())
       .then(res => {
-        axios
-        .get('http://localhost:1234/users')
+        fetch(`http://localhost:1234/users`, {
+          method: 'GET',
+          headers: 
+            {'Authorization':localStorage.getItem("token")}
+        })
+        .then(response => response.json())
         .then(res => {
-          const employeeList = res.data;
+          const employeeList = res;
           console.log(employeeList);
           dispatch(getEmployeeListMap(employeeList));
 
         })
-        .catch(function(error) {
-          console.log(error);
-        });
       })
       .catch(function(error) {
         console.log(error);
@@ -80,7 +89,7 @@ const employeeAPI = {
 
     updateEmployee(employee,dispatch){
       fetch('http://localhost:1234/users', {
-        method: 'POST',
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -91,10 +100,13 @@ const employeeAPI = {
         })
       })
       .then(res => {
-        axios
-        .get('http://localhost:1234/users')
+        fetch(`http://localhost:1234/users`, {
+          method: 'GET',
+          headers: 
+            {'Authorization':localStorage.getItem("token")}
+      })
         .then(res => {
-          const employeeList = res.data;
+          const employeeList = res;
           console.log(employeeList);
           dispatch(getEmployeeListMap(employeeList));
 

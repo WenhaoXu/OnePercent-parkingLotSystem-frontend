@@ -8,7 +8,6 @@ export default (state={
         case 'changeStatus':{
             const newState =JSON.parse(JSON.stringify(state));
             newState.visible=action.visible;
-            newState.loading=action.loading;
             return newState;
         }
         case 'getEmployeeList':{

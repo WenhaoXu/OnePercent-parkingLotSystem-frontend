@@ -4,13 +4,11 @@ import {changeStatusMap} from '../action/index';
 import employeeAPI from '../api/employeeAPI'
 
 const mapStateToProps = (state, ownProps) =>({ 
-    loading: state.employee.loading,
         visible: state.employee.visible
   })
-  
 
 const mapDispatchToProps = (dispatch, ownProps) =>({
-    changeStatusfromMap:(visible,loading) => dispatch(changeStatusMap (visible,loading)),
+    changeStatusfromMap:(visible) => dispatch(changeStatusMap (visible)),
     addEmployeefromMap:(employee)=>{
       employeeAPI.addEmployee(employee,dispatch)
     }

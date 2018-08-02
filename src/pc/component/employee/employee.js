@@ -2,6 +2,7 @@ import React from 'react';
 import Employee_tableContainer from '../../container/employee_tableContainer';
 import Employee_headerContainer from '../../container/employee_headerContainer';
 import Employee_addPopupContainer from '../../container/employee_addPopupContainer';
+import Employee_upPopupContainer from '../../container/employee_updatePopupContainer'
 import axios from 'axios';
 class Employee extends React.Component {
   constructor(props) {
@@ -9,16 +10,21 @@ class Employee extends React.Component {
   }
   componentDidMount() {
     const showEmployeeListfromMap = this.props.showEmployeeListfromMap;
-    axios
-      .get('http://localhost:1234/users')
-      .then(res => {
-        const employeeList = res.data;
-        console.log(employeeList);
-        showEmployeeListfromMap(employeeList);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+   
+    fetch(`http://localhost:1234/users`, {
+        method: 'GET',
+        headers: 
+          {'Authorization':localStorage.getItem("token")}
+    })
+    .then(response => response.json())
+    .then(json => {
+      const employeeList = json;
+      console.log(employeeList);
+      showEmployeeListfromMap(employeeList);
+    })
+    .catch(function (ex) {
+        console.log('parsing failed', ex)
+    });
   }
 
   render() {
@@ -27,6 +33,7 @@ class Employee extends React.Component {
         <Employee_headerContainer/>
         <Employee_tableContainer/>
         <Employee_addPopupContainer/>
+        {/* <Employee_upPopupContainer/> */}
   </div>
     );
   }

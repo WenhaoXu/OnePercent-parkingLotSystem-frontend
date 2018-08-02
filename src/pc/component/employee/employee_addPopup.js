@@ -12,19 +12,12 @@ class Employee_addPopup extends Component {
   
   handleOk=()=>{
     const changeStatusfromMap = this.props.changeStatusfromMap;
-    
-
-    
-    changeStatusfromMap(false,true);
-    setTimeout(() => {
-      changeStatusfromMap(false,false);
-    }, 3000);
-    
+    changeStatusfromMap(false);
   }
 
   handleCancel=()=>{
     const changeStatusfromMap = this.props.changeStatusfromMap;
-    changeStatusfromMap(false,false);
+    changeStatusfromMap(false);
   }
 
   render() {
@@ -36,7 +29,7 @@ class Employee_addPopup extends Component {
           onCancel={this.handleCancel}
           footer={[
             <Button id="return" key="back" onClick={this.handleCancel}>Return</Button>,
-            <Button key="submit" type="primary" loading={this.props.loading} onClick={this.handleOk}>
+            <Button key="submit" type="primary" onClick={this.handleOk}>
               Submit
             </Button>,
           ]}
