@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c81a3f17-7f19-4ced-baec-6234376a4760" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/api/orderAPi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/api/orderAPi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/mobileMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/mobileMain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/orderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/orderList.js" afterDir="false" />
-    </list>
+    <list default="true" id="c81a3f17-7f19-4ced-baec-6234376a4760" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -449,7 +443,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83445000" />
+    <option name="totallyTimeSpent" value="83698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
