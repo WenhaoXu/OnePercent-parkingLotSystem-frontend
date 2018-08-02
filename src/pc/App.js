@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Main from "./container/main";
 import {Route, Switch} from "react-router-dom";
 import Login from "./component/login";
-import register from './component/register';
-import Employee_table from './component/employee_table';
+import employee_add from './component/employee/employee_add';
+import EmployeeContainer from './container/employeeContainer';
 
 class App extends Component {
 
@@ -15,8 +15,8 @@ class App extends Component {
             <Route path='/main/:page' component={Main}/>
             <Route path='/main' component={Main}/>
             <Route path='/login' component={Login}/>
-            <Route path='/register' component={register}/>
-            <Route path='/employee' component={Employee_table}/>
+            <Route path='/employee_add' component={employee_add}/>
+            <Route path='/employee' component={EmployeeContainer}/>
         </Switch>
     );
   }
