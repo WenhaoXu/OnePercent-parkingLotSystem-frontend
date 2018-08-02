@@ -8,9 +8,11 @@ export const scrambleOrder1=(orderId,dispatch)=>{
             headers:
                 {'Authorization':localStorage.getItem("token")}
         })
-            .then(response => response.json())
-            .then(json => {
-                const order = json;
+            .then(response=> {
+                if (response.status==403){
+                    alert("抢单失败");
+                }
+                const order = response.json();
                 console.log(order);
                 fetch(`http://localhost:1234/orders/pending`, {
                     method: 'GET',
@@ -23,6 +25,8 @@ export const scrambleOrder1=(orderId,dispatch)=>{
                         console.log("调用API获取Order列表");
                         console.log(orderList);
                         dispatch(scrambleOrderTurnToAccess(orderList));
+                        // history.push("/parkAndTake")
+                        // // window.location.href="/parkAndTake";
                     })
                     .catch(function (ex) {
                         console.log('parsing failed', ex)

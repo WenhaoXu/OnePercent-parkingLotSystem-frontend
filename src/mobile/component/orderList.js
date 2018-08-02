@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 import OrderItem from '../component/orderItem';
+import {NavBar} from "antd-mobile";
 
 export default class  OrderList extends Component {
     constructor(props) {
         super(props);
     }
 
-    scrambleOrder(OrderId) {
+    scrambleOrder=(OrderId) =>{
+        // let history= this.props;
+        // console.log(history)
         this.props.onScrambleOrder(OrderId);
     }
 
@@ -17,6 +20,7 @@ export default class  OrderList extends Component {
     render() {
         return (
             <div>
+                <NavBar mode="dark">订单列表</NavBar>
                 {(() => {
                     //console.log(this.props.orderList);
                     return this.props.orderList.map(order => (

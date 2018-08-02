@@ -20,7 +20,7 @@ class App extends Component {
 
                 <Route exact path='/mobile/main' component={mobileMain}/>
                 <Route exact path='/mobile/login' component={Login}/>
-                <Route  path='/parkAndTake' component={ParkAndTake}/>
+                {/*<Route  path='/parkAndTake' component={ParkAndTake}/>*/}
                 <Route  path='/takeout' component={TakeOut}/>
 
             </Switch>
