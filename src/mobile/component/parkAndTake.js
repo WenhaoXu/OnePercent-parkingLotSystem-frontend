@@ -13,7 +13,7 @@ class ParkAndTake extends Component {
             <div>
 
 
-                <NavBar mode="dark">停取工作列表</NavBar>
+                {/*<NavBar mode="dark"></NavBar>*/}
                 <List className="my-list">
                     <Item
 
