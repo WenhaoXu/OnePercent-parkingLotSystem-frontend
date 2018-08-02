@@ -87,7 +87,7 @@ class Lot extends React.Component {
 
                     <span> <UpdateLot record={record}/></span>
                   <Divider type="vertical"/>
-                  <a href="javascript:;" onClick={() => this.handleDisableUser(this.props.dispatch,record.id)}>注销</a>
+                  <a href="javascript:;" onClick={() => this.handleDisableUser(this.props.dispatch,record.id)}>{record.available?'开启':'注销'}</a>
                   <Divider type="vertical"/>
                 </span>
             ),

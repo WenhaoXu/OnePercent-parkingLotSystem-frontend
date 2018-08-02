@@ -51,6 +51,9 @@ export default {
     update: (dispatch,id, name, totalSize, spareSize, available) => {
 
 
+        let self=this
+        let message1 = this.initState;
+        console.log(message1)
         let token = localStorage.getItem("token");
         fetch(`${conf.domain}/parkinglots/${id}`, {
             method: 'PATCH',
@@ -71,10 +74,9 @@ export default {
                     if (value1.indexOf('停车场不是') > 0) {
                         message.error(value1);
                     }
-                }))
+                }));
             })
             .catch(reason => {
-                reason.body
                 console.log(reason)
             })
     }
