@@ -1,23 +1,23 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Button, Form, Input, Modal} from "antd";
-import 'whatwg-fetch'
+import {Input, Modal} from "antd";
+import {Form} from "antd/lib/index";
 import lotApi from '../api/lot'
 
+class UpdateLot extends Component {
 
-class AdddLot extends Component {
-    state = {visible: false}
-
+    state = {visible: false};
     showModal = () => {
         this.setState({
             visible: true,
         });
     };
 
-    handleOk = (e) => {
+    handleOk = (id) => {
+
         let name = this.refs.name.input.value;
-        let size = this.refs.size.input.value;
-        lotApi.add(this.props.dispatch,name,size);
+        let size = this.refs.totalSize.input.value;
+        lotApi.update(this.props.dispatch,id, name, size);
         this.setState({
             visible: false,
         });
@@ -32,41 +32,37 @@ class AdddLot extends Component {
 
     render() {
         const FormItem = Form.Item;
-        let name;
         return (
-            <div>
-                <Button type={'primary'} onClick={this.showModal}>新建</Button>
+            <div style={{display: 'inline-block'}}>
+                <a href="javascript:;" onClick={this.showModal}>修改</a>
                 <Modal
-                    title="新建停车场"
+                    title="修改停车场"
                     visible={this.state.visible}
-                    onOk={this.handleOk}
+                    onOk={() => this.handleOk(this.props.record.id)}
                     onCancel={this.handleCancel}
                 >
                     <FormItem label="名字">
-                        <Input ref={"name"} />
+                        <Input ref={"name"} defaultValue={this.props.record.name}/>
                     </FormItem>
                     <FormItem label="大小">
-                        <Input  ref={"size"}/>
+                        <Input ref={"totalSize"} defaultValue={this.props.record.totalSize}/>
                     </FormItem>
                 </Modal>
+
             </div>
         );
     }
 }
 
 function mapStateToProps(state) {
-    return {
-
-    };
+    return {};
 }
 function mapDispatchToProps(dispatch) {
-
     return {
         dispatch
-    }
+    };
 }
-
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(AdddLot);
+)(UpdateLot);

@@ -1,10 +1,10 @@
-import addLot from "./addLot";
+import lot from "./lot";
 import {combineReducers} from "redux";
 import employee from "./employee";
 
 const appReducer = combineReducers({
-    addLot,employee
-})
+    lot,employee
+});
 
 export default appReducer
 

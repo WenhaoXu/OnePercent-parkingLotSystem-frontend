@@ -1,12 +1,18 @@
 import {getEmployeeListMap} from '../action/index'
 import axios from 'axios';
 import 'whatwg-fetch'
+import conf from '../api/conf'
+
 const employeeAPI = {
     visible:true,loading:false,
     employeeList:[],
     getEmployeeList(dispatch) {
-        axios
-        .get('http://localhost:1234/users')
+      fetch(`http://localhost:1234/users`, {
+        method: 'GET',
+        headers:{
+          'Authorization':localStorage.getItem("token")
+        }
+       })
         .then(res => {
           const employeeList = res.data;
           console.log(employeeList);
@@ -18,10 +24,11 @@ const employeeAPI = {
     },
 
     addEmployee(employee,dispatch){
-      fetch('http://localhost:1234/users', {
+      fetch('${conf.domain}users', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization':localStorage.getItem("token")
         },
         body: JSON.stringify({
           phone: employee.phone,
@@ -30,8 +37,12 @@ const employeeAPI = {
         })
       })
       .then(res => {
-        axios
-        .get('http://localhost:1234/users')
+        fetch(`${conf.domain}users`, {
+          method: 'GET',
+          headers:{
+            'Authorization':localStorage.getItem("token")
+          }
+         })
         .then(res => {
           const employeeList = res.data;
           console.log(employeeList);

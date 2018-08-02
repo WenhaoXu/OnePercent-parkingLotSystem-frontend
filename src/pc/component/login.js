@@ -14,7 +14,7 @@ class Login extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        fetch('https://parkinglotsystem-backend.herokuapp.com/auth/login', {
+        fetch('http://localhost:1234/auth/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -24,9 +24,11 @@ class Login extends React.Component {
             password: 'admin',
           })
         }).then(function(response) {
-          history.push("/main")
+          history.push("/main");
           response.text().then(v=>{
-            console.log(v)
+            let parse = JSON.parse(v);
+              let token = parse.token;
+            localStorage.setItem("token",token);
           })
         })
       }
