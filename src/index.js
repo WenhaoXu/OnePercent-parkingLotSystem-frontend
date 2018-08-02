@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import App from './App';
+import App from './pc/App';
 import registerServiceWorker from './registerServiceWorker';
 import 'antd/dist/antd.css';
 import appReducer from "./pc/reduce/app";

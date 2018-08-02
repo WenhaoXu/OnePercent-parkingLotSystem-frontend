@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Main from "./pc/container/main";
+import Main from "./container/main";
 import {Route, Switch} from "react-router-dom";
-import Login from "./pc/component/login";
-import register from './pc/component/register';
-import Employee_table from './pc/component/employee_table';
+import Login from "./component/login";
+import register from './component/register';
+import Employee_table from './component/employee_table';
 
 class App extends Component {
 

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c81a3f17-7f19-4ced-baec-6234376a4760" name="Default" comment="lot component connect to server ,complete all CUD">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/api/conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/api/conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/api/lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/api/lot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/lot.js" afterDir="false" />
+    <list default="true" id="c81a3f17-7f19-4ced-baec-6234376a4760" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,7 +22,16 @@
         <entry file="file://$PROJECT_DIR$/src/pc/api/conf.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="48">
-              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+              <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pc/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -48,18 +55,6 @@
               <caret line="6" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="n#!!block;n#handleChange#0;n#!!block;n#render#0;n#Lot#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="updateLot.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pc/component/updateLot.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,7 +98,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Procfile" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Procfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Procfile">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -174,10 +169,10 @@
         <option value="$PROJECT_DIR$/src/pc/reduce/employee.js" />
         <option value="$PROJECT_DIR$/src/pc/component/addLot.js" />
         <option value="$PROJECT_DIR$/src/pc/component/updateLot.js" />
-        <option value="$PROJECT_DIR$/src/pc/api/conf.js" />
         <option value="$PROJECT_DIR$/src/pc/component/lot.js" />
         <option value="$PROJECT_DIR$/src/pc/api/lot.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/pc/api/conf.js" />
       </list>
     </option>
   </component>
@@ -222,6 +217,16 @@
               <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -239,6 +244,9 @@
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HONGJE3\Desktop\OnePercent-parkingLotSystem-frontend\src\pc" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\HONGJE3\Desktop\OnePercent-parkingLotSystem-frontend\src\pc\component" />
       <recent name="C:\Users\HONGJE3\Desktop\OnePercent-parkingLotSystem-frontend\src" />
@@ -256,7 +264,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="npm.start">
     <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/OnePercent-parkingLotSystem-frontend/build/index.html" />
     <configuration name="build" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -283,9 +291,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="npm.build" />
-        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -336,11 +344,18 @@
       <option name="project" value="LOCAL" />
       <updated>1533134027815</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update domain conf for deploy">
+      <created>1533181331280</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1533181331280</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53171000" />
+    <option name="totallyTimeSpent" value="53925000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -352,9 +367,9 @@
       <window_info anchor="bottom" id="Version Control" weight="0.32890365" />
       <window_info id="npm" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.25470653" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32890365" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32890365" />
       <window_info anchor="bottom" id="TypeScript" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22866175" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22866175" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -419,7 +434,8 @@
     <MESSAGE value="reducer 基础分类框架" />
     <MESSAGE value="停车场 静态页面&amp;&amp;部分交互逻辑" />
     <MESSAGE value="lot component connect to server ,complete all CUD" />
-    <option name="LAST_COMMIT_MESSAGE" value="lot component connect to server ,complete all CUD" />
+    <MESSAGE value="update domain conf for deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="update domain conf for deploy" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/pc/component/main.js">
@@ -637,15 +653,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
+    <entry file="file://$PROJECT_DIR$/src/pc/App.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pc/component/register.css">
       <provider selected="true" editor-type-id="text-editor" />
@@ -694,13 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pc/api/conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -771,6 +773,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pc/api/conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pc/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
         </state>
       </provider>
     </entry>

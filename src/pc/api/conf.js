@@ -1,3 +1,3 @@
 export default {
-    domain:'https://parkinglotsystem-backend.herokuapp.com'
+    domain:'http://localhost:1234'
 }
