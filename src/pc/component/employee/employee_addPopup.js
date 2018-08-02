@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Button,Modal} from 'antd'
 import './employee.css';
 import Employee_addContainer from '../../container/employee_addContainer'
-import Employee from '../../model/Employee';
 
 class Employee_addPopup extends Component {
 
@@ -23,7 +22,7 @@ class Employee_addPopup extends Component {
   render() {
     return ( 
         <Modal
-          visible={this.props.visible}
+          visible={this.props.addPopupVisible}
           title="新建用户"
           onOk={this.handleOk}
           onCancel={this.handleCancel}

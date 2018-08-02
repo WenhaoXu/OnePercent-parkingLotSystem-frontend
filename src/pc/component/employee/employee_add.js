@@ -24,7 +24,7 @@ class employeeAdd extends React.Component {
           const {addEmployeefromMap,changeStatusfromMap} = selfThis.props;
           const employee = new Employee(values.name,values.email,values.phone);
           addEmployeefromMap(employee);
-          changeStatusfromMap(true,false);
+          changeStatusfromMap(true);
         }
       });
     }
@@ -36,7 +36,6 @@ class employeeAdd extends React.Component {
   
   
     render() {
-      const {addEmployeefromMap} = this.props
       const { getFieldDecorator } = this.props.form
   
       const formItemLayout = {

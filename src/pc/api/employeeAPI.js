@@ -1,7 +1,6 @@
 import {getEmployeeListMap} from '../action/index'
 import axios from 'axios';
 import 'whatwg-fetch'
-import conf from '../api/conf'
 
 const employeeAPI = {
     visible:true,loading:false,

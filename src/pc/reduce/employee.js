@@ -1,13 +1,13 @@
 export default (state={
-    visible:false,
-    loading:false,
+    addPopupVisible:false,
+    updatePopupVisible:false,
     employeeList:[]
 }, action) => {
 
     switch (action.type) {
-        case 'changeStatus':{
+        case 'changeAddStatus':{
             const newState =JSON.parse(JSON.stringify(state));
-            newState.visible=action.visible;
+            newState.addPopupVisible=action.addPopupVisible;
             return newState;
         }
         case 'getEmployeeList':{
