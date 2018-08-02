@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
-import history from "../../mobile/component/history";
-import historyAPI from '../api/historyAPI';
+import history from "../component/history";
+import {getHistoryListMap} from "../../mobile/action";
 
 const mapStateToProps = (state, ownProps) =>({
     historyList: state.history.historyList
@@ -8,8 +8,6 @@ const mapStateToProps = (state, ownProps) =>({
 
 
 const mapDispatchToProps = (dispatch, ownProps) =>({
-    showHistoryListfromMap:()=>{
-        historyAPI.getHistoryList(dispatch);
-    }
+    showHistoryListfromMap:(historyList)=>dispatch(getHistoryListMap (historyList))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(history)

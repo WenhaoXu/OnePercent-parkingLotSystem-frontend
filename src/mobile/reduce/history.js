@@ -6,6 +6,7 @@ export default (state={
         case 'getHistoryList':{
             const newState =JSON.parse(JSON.stringify(state));
             newState.historyList=action.historyList;
+
             return newState;
         }
         default:

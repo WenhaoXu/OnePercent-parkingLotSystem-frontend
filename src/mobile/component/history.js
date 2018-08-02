@@ -5,14 +5,14 @@ const Item = List.Item;
 const Brief = Item.Brief;
 
 
-class History extends Component {
+class history extends Component {
     constructor(props) {
         super(props);
     }
-    componentDidMount() {
+    componentWillMount() {
         const showHistoryListfromMap = this.props.showHistoryListfromMap;
 
-        fetch(`http://localhost:1234/users`, {
+        fetch(`https://parkinglotappofsystem.herokuapp.com/orders/finished`, {
             method: 'GET',
             headers:
                 {'Authorization':localStorage.getItem("token")}
@@ -31,9 +31,9 @@ class History extends Component {
         return (
             <div>
                 <List className="my-list">
-                    {this.state.history.historyList.map(i => (
+                    {this.props.historyList.map(i => (
                         <Item arrow="horizontal" multipleLine onClick={() => {}}>
-                        {this.state.history.historyList.get(i).name}<Brief>subtitle</Brief>
+                        {i.carNo}<Brief>{i.createDate}</Brief>
                         </Item>
                     ))}
 
@@ -44,4 +44,4 @@ class History extends Component {
     }
 }
 
-export default History;
+export default history;

@@ -4,7 +4,7 @@ import 'whatwg-fetch'
 const historyAPI = {
     employeeList:[],
     getHistoryList(dispatch) {
-        fetch(`http://localhost:1234/users`, {
+        fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
             method: 'GET',
             headers:
                 {'Authorization':localStorage.getItem("token")}
