@@ -2,6 +2,7 @@ import React from 'react';
 import { TabBar,NavBar, Icon } from 'antd-mobile';
 import '../../mobile/component/mobileMain'
 import Index from '../component/index'
+import ParkAndTake from "../component/parkAndTake";
 
 class mobileMain extends React.Component {
 
@@ -14,8 +15,8 @@ class mobileMain extends React.Component {
       }
       renderContent(pageText) {
         let component=<Index/>
-          if(pageText=='index')
-            component =<Index/>;
+          if(pageText=='ParkAndTake')
+            component =<ParkAndTake/>;
         return (
             <div style={{ marginTop: '40px' }}>
                 {component}
@@ -81,7 +82,7 @@ class mobileMain extends React.Component {
                     />
                   }
                   title="停取"
-                  key="park"
+                  key="ParkAndTake"
                   badge={'new'}
                   selected={this.state.selectedTab === '停取'}
                   onPress={() => {
@@ -91,7 +92,7 @@ class mobileMain extends React.Component {
                   }}
                   data-seed="logId1"
                 >
-                  {this.renderContent('park')}
+                  {this.renderContent('ParkAndTake')}
                 </TabBar.Item>
                 <TabBar.Item
                   icon={
