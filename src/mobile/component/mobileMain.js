@@ -3,6 +3,7 @@ import { TabBar,NavBar, Icon } from 'antd-mobile';
 import '../../mobile/component/mobileMain'
 import Index from '../component/index'
 import ParkAndTake from "../component/parkAndTake";
+import PullRefresh from "../component/pullRefresh";
 
 class mobileMain extends React.Component {
 
@@ -16,7 +17,7 @@ class mobileMain extends React.Component {
       renderContent(pageText) {
         let component=<Index/>
           if(pageText=='ParkAndTake')
-            component =<ParkAndTake/>;
+            component =<PullRefresh/>;
         return (
             <div style={{ marginTop: '40px' }}>
                 {component}
@@ -46,17 +47,17 @@ class mobileMain extends React.Component {
                   icon={<div style={{
                     width: '22px',
                     height: '22px',
-                    background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
+                    background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
                   />
                   }
                   selectedIcon={<div style={{
                     width: '22px',
                     height: '22px',
-                    background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
+                    background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
                   />
                   }
                   selected={this.state.selectedTab === '抢单'}
-                  badge={1}
+                  badge={0}
                   onPress={() => {
                     this.setState({
                       selectedTab: '抢单',
@@ -83,7 +84,6 @@ class mobileMain extends React.Component {
                   }
                   title="停取"
                   key="ParkAndTake"
-                  badge={'new'}
                   selected={this.state.selectedTab === '停取'}
                   onPress={() => {
                     this.setState({
