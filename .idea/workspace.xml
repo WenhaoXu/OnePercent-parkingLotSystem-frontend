@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c81a3f17-7f19-4ced-baec-6234376a4760" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/mobile/action/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/api/orderAPi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/component/parkAndTake.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/component/parkAndTake.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/container/orderListContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/imgs/park.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/imgs/take.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/orderItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/orderItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/orderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/orderList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/reduce/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/reduce/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/reduce/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/reduce/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/container/employee_tableContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/container/employee_tableContainer.js" afterDir="false" />
-    </list>
+    <list default="true" id="c81a3f17-7f19-4ced-baec-6234376a4760" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -30,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mobile/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
+            <state relative-caret-position="330">
+              <caret line="15" column="69" lean-forward="true" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -42,7 +26,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
@@ -96,8 +80,8 @@
       <file leaf-file-name="parkAndTake.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mobile/component/parkAndTake.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="946">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="1474">
+              <caret line="84" selection-start-line="84" selection-end-line="84" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -254,6 +238,65 @@
               <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mobile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="action" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="container" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="imgs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="reduce" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pc" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -384,7 +427,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78538000" />
+    <option name="totallyTimeSpent" value="78685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -394,9 +437,9 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32890365" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.39467594" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.39467594" />
       <window_info anchor="bottom" id="TypeScript" order="7" weight="0.32890365" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34408033" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34408033" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298611" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -671,8 +714,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mobile/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
+        <state relative-caret-position="330">
+          <caret line="15" column="69" lean-forward="true" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -724,8 +767,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mobile/component/parkAndTake.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="1474">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

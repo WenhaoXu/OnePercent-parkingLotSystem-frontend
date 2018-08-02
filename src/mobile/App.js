@@ -2,7 +2,10 @@ import React, {Component} from "react";
 import {Route, Switch} from "react-router-dom";
 import Index from "./component/index";
 import OrderList from "./container/orderListContainer";
+import mobileMain from "./component/mobileMain";
+import Login from "./component/login";
 import ParkAndTake from "./component/parkAndTake";
+import TakeOut from "./component/takeout";
 
 class App extends Component {
 
@@ -14,6 +17,11 @@ class App extends Component {
                 <Route exact path='/orderList' component={OrderList}/>
 
                 <Route  path='/parkAndTake' component={ParkAndTake}/>
+
+                <Route exact path='/mobile/main' component={mobileMain}/>
+                <Route exact path='/mobile/login' component={Login}/>
+                <Route  path='/parkAndTake' component={ParkAndTake}/>
+                <Route  path='/takeout' component={TakeOut}/>
 
             </Switch>
         );
