@@ -1,4 +1,5 @@
-import order from './order'
+import order from './order';
+
 import {combineReducers} from "redux";
 
 const appReducer = combineReducers({

@@ -1,21 +1,24 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import OrderItem from './orderItem'
+import OrderItem from '../component/orderItem';
 
-class OrderList extends Component {
+export default class  OrderList extends Component {
     constructor(props) {
         super(props);
     }
 
     scrambleOrder(OrderId) {
-        this.props.onScrambleOrder(OrderId)
+        this.props.onScrambleOrder(OrderId);
+    }
+
+    componentDidMount() {
+        this.props.onComponentDidMount()
     }
 
     render() {
         return (
             <div>
                 {(() => {
-                    console.log(this.props.orderList);
+                    //console.log(this.props.orderList);
                     return this.props.orderList.map(order => (
                         <OrderItem
                             order={order}
@@ -28,11 +31,3 @@ class OrderList extends Component {
         );
     }
 }
-
-function mapStateToProps(state) {
-    return {};
-}
-
-export default connect(
-    mapStateToProps,
-)(OrderList);
