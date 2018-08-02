@@ -4,7 +4,7 @@ import {changeUpdateStatusMap} from '../action/index';
 import employeeAPI from '../api/employeeAPI'
 
 const mapStateToProps = (state, ownProps) =>({ 
-        loading: state.employee.loading,
+
         visible: state.employee.visible
   })
   

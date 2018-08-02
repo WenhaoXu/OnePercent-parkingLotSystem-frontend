@@ -21,18 +21,18 @@ class employeeAdd extends React.Component {
         
         if (!err) {
           console.log('Received values of form: ', values);
-          const {addEmployeefromMap,changeStatusfromMap} = selfThis.props;
+          const {addEmployeefromMap,changeAddStatusfromMap} = selfThis.props;
           const employee = new Employee(values.name,values.email,values.phone);
           addEmployeefromMap(employee);
-          changeStatusfromMap(true);
+          changeAddStatusfromMap(true);
         }
       });
     }
   
-    handleConfirmBlur = (e) => {
-      const value = e.target.value;
-      this.setState({ confirmDirty: this.state.confirmDirty || !!value });
-    }
+    // handleConfirmBlur = (e) => {
+    //   const value = e.target.value;
+    //   this.setState({ confirmDirty: this.state.confirmDirty || !!value });
+    // }
   
   
     render() {

@@ -6,13 +6,13 @@ const mapStateToProps = (state, ownProps) =>{
 
     console.log(state)
     return {
-            visible:  state.employee.visible
+      addPopupVisible:  state.employee.addPopupVisible
       };
 }
   
   
 
 const mapDispatchToProps = (dispatch, ownProps) =>({
-    changeAddStatusfromMap:(addVisible) => dispatch(changeAddStatusMap (addVisible)),
+    changeAddStatusfromMap:(addPopupVisible) => dispatch(changeAddStatusMap (addPopupVisible)),
   })
 export default connect(mapStateToProps, mapDispatchToProps)(Employee_header)
