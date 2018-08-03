@@ -3,6 +3,7 @@ import {TabBar} from 'antd-mobile';
 import '../../mobile/component/mobileMain'
 import ParkAndTake from "../component/parkAndTake";
 import HistoryContainer from "../container/historyContainer"
+import {connect} from 'react-redux';
 import OrderList from "../container/order/orderListContainer";
 
 class mobileMain extends React.Component {
@@ -84,6 +85,12 @@ class mobileMain extends React.Component {
                                 this.setState({
                                     selectedTab: '停取工作列表',
                                 });
+
+                                this.props.dispatch({
+                                    type:"NEED_UPDATE",
+                                    payload:true
+                                })
+                                console.log(123);
                             }}
                             data-seed="logId1"
                         >
@@ -139,4 +146,19 @@ class mobileMain extends React.Component {
     }
 }
 
-export default mobileMain;
+
+
+
+
+function mapStateToProps(state) {
+    return {};
+}
+function mapDispatchToProps(dispatch) {
+    return {
+        dispatch
+    }
+}
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(mobileMain);
