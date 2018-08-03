@@ -26,13 +26,5 @@ export default {
             })
         })
 
-            // .then(function (response) {
-            //     history.push("/main");
-            //     response.text().then(v => {
-            //         let parse = JSON.parse(v);
-            //         let token = parse.token;
-            //         localStorage.setItem("token", token);
-            //     })
-            // }
     }
 }

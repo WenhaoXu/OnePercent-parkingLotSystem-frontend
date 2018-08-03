@@ -2,13 +2,15 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Button, Icon, NavBar} from "antd-mobile";
 import './takeout.css'
+
+import takeoutApi from '../api/takeout'
+
 class TakeOut extends Component {
 
     componentWillMount() {
         let orderId = this.props.state.orderId;
         let parkingLotId= this.props.state.lotId;
-        console.log(orderId)
-        console.log(parkingLotId)
+        takeoutApi.retrieveLot(this.props.dispatch,parkingLotId)
 
     }
 
