@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import {Icon, List, NavBar} from 'antd-mobile';
+import lotApi from "../../pc/api/lot";
 
 const Item = List.Item;
 
@@ -9,6 +10,14 @@ class ParkingLotList extends Component {
     constructor(props) {
         super(props);
     }
+    componentWillMount() {
+        lotApi.initState(this.props.dispatch)
+    }
+
+    state = {
+        conditions: []
+    };
+
 
     render() {
 

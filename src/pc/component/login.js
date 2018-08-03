@@ -14,7 +14,7 @@ class Login extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        fetch('http://localhost:1234/auth/login', {
+        fetch('https://parkinglotappofsystem.herokuapp.com/auth/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

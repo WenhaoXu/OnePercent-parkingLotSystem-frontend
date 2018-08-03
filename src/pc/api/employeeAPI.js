@@ -6,7 +6,7 @@ const employeeAPI = {
     visible:true,loading:false,
     employeeList:[],
     getEmployeeList(dispatch) { 
-      fetch(`http://localhost:1234/users`, {
+      fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
           method: 'GET',
           headers: 
             {'Authorization':localStorage.getItem("token")}
@@ -23,7 +23,7 @@ const employeeAPI = {
     },
 
     addEmployee(employee,dispatch){
-      fetch('http://localhost:1234/users', {
+      fetch('https://parkinglotappofsystem.herokuapp.com/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const employeeAPI = {
       })
       .then(response => response.json())
       .then(json => {
-        fetch(`http://localhost:1234/users`, {
+        fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
           method: 'GET',
           headers:{
             'Authorization':localStorage.getItem("token")
@@ -59,7 +59,7 @@ const employeeAPI = {
       });
     },
     forzenEmployee(id,dispatch) {
-      fetch('http://localhost:1234/users/'+id, {
+      fetch('https://parkinglotappofsystem.herokuapp.com/users/'+id, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ const employeeAPI = {
       })
       .then(response => response.json())
       .then(res => {
-        fetch(`http://localhost:1234/users`, {
+        fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
           method: 'GET',
           headers: 
             {'Authorization':localStorage.getItem("token")}
@@ -87,10 +87,11 @@ const employeeAPI = {
     },
 
     updateEmployee(employee,dispatch){
-      fetch('http://localhost:1234/users', {
+      fetch('https://parkinglotappofsystem.herokuapp.com/users', {
         method: 'PUT',
         headers: {
-          'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization':localStorage.getItem("token")
         },
         body: JSON.stringify({
           phone: employee.phone,
@@ -99,7 +100,7 @@ const employeeAPI = {
         })
       })
       .then(res => {
-        fetch(`http://localhost:1234/users`, {
+        fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
           method: 'GET',
           headers: 
             {'Authorization':localStorage.getItem("token")}

@@ -15,6 +15,8 @@ export default (state={
 
     switch (type) {
         case "INDICATOR":
+            console.log("aaaa"+payload);
+
             return {
                 indicator:payload,
                 indexData:state.indexData

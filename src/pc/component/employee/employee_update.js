@@ -5,7 +5,7 @@ import '../../component/employee/register.css';
 const FormItem = Form.Item;
 const Option = Select.Option;
 
-class employeeAdd extends React.Component {
+class employeeUpdate extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -21,10 +21,10 @@ class employeeAdd extends React.Component {
         
         if (!err) {
           console.log('Received values of form: ', values);
-          const {addEmployeefromMap,changeAddStatusfromMap} = selfThis.props;
+          const {updateEmployeefromMap,changeUpdateStatusfromMap} = selfThis.props;
           const employee = new Employee(values.name,values.email,values.phone);
-          addEmployeefromMap(employee);
-          changeAddStatusfromMap(false);
+            updateEmployeefromMap(employee);
+            changeUpdateStatusfromMap(false);
         }
       });
     }
@@ -90,7 +90,7 @@ class employeeAdd extends React.Component {
             {...formItemLayout}
             label={(
               <span>
-                姓名
+                姓名q
                 
               </span>
             )}
@@ -119,6 +119,6 @@ class employeeAdd extends React.Component {
     }
   }
   
-  const WrappedRegistrationForm = Form.create()(employeeAdd);
+  const WrappedRegistrationForm = Form.create()(employeeUpdate);
   
   export default WrappedRegistrationForm 

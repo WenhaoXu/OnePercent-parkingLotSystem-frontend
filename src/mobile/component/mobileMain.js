@@ -2,6 +2,7 @@ import React from 'react';
 import {TabBar} from 'antd-mobile';
 import '../../mobile/component/mobileMain'
 import ParkAndTake from "../component/parkAndTake";
+import HistoryContainer from "../container/historyContainer"
 import OrderList from "../container/orderListContainer";
 
 class mobileMain extends React.Component {
@@ -120,6 +121,7 @@ class mobileMain extends React.Component {
                                 });
                             }}
                         >
+                            <HistoryContainer/>
                         </TabBar.Item>
                         <TabBar.Item
                             icon={{uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg'}}
