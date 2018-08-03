@@ -34,6 +34,7 @@ class ParkAndTake extends Component {
                 }
             })
         }else if (index === 1) {
+            localStorage.setItem("needParkingOrderId",orderId);
             //停车
         }
     };

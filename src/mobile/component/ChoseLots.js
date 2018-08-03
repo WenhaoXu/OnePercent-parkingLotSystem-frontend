@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Button, Icon, List, NavBar} from 'antd-mobile';
 import {connect} from 'react-redux';
+import conf from "../../pc/api/conf";
 
 
 const Item = List.Item;
@@ -17,8 +18,42 @@ class ChoseLots extends Component {
             payload: 0
         })
     }
+    postParking=()=>{
+        if(localStorage.getItem("choseParkingLotId")===null||localStorage.getItem("choseParkingLotId")===""){
+                alert("请选择停车地点哦！");
+        }
+        else{
+            let dispatch = this.props.dispatch;
+            let token = localStorage.getItem("token");
+            let parse = JSON.parse(token);
+            let orderId= localStorage.getItem("needParkingOrderId");
+            fetch(`${conf.domain}/orders/${orderId}`, {
+                method: 'PATCH',
+                headers: {
+                    Authorization:parse.token,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    operation: "setParkingLotId",
+                    coordinatorId: parse.userId,
+                    parkingLotId:localStorage.getItem("choseParkingLotId"),
+                })
+            }).then(value => {
+                value.json().then(value1 => {
+                    localStorage.setItem("choseParkingLotId","");
+                    localStorage.setItem("needParkingOrderId","");
+                    dispatch({
+                        type: "INDICATOR",
+                        payload: 0
+                    })
+                })
+            })
+        }
 
+    }
     render() {
+
+
         const choseLot = this.props.choseLot;
         return (
             <div>
@@ -37,7 +72,8 @@ class ChoseLots extends Component {
                     height: '240px'
                 }}/>
                 {/*<Button type="primary">完成订单</Button><WhiteSpace />*/}
-                <Button type="primary" disabled>完成订单</Button>
+
+                <Button id="completeButton"type="primary"    onClick={()=>this.postParking()}>完成订单</Button>
             </div>
         )
     };
