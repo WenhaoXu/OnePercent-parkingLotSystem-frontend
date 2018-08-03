@@ -15,17 +15,18 @@ export default (state={
 
     switch (type) {
         case "INDICATOR":
-            console.log("aaaa"+payload);
-
             return {
                 indicator:payload,
                 indexData:state.indexData
             };
         case "INIT":
+
             return {
                 indicator:state.indicator,
                 indexData:payload
             }
+        case "UNPARK":
+            console.log(payload)
     }
 
 
