@@ -47,7 +47,6 @@ const employeeAPI = {
           const employeeList = res;
           console.log(employeeList);
           dispatch(getEmployeeListMap(employeeList));
-
         })
         .catch(function(error) {
           console.log(error);
@@ -94,9 +93,10 @@ const employeeAPI = {
         },
         body: JSON.stringify({
             id: employee.id,
-          phone: employee.phone,
-          name: employee.name,
-          email: employee.email
+            phone: employee.phone,
+            name: employee.name,
+            email: employee.email,
+            roles:employee.roles
         })
       })
       .then(res => {

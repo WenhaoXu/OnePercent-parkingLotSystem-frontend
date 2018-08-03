@@ -26,12 +26,7 @@ class Employee_addPopup extends Component {
           title="新建用户"
           onOk={this.handleOk}
           onCancel={this.handleCancel}
-          footer={[
-            <Button id="return" key="back" onClick={this.handleCancel}>Return</Button>,
-            <Button key="submit" type="primary" onClick={this.handleOk}>
-              Submit
-            </Button>,
-          ]}
+          footer={null}
         >
           <Employee_addContainer />
         </Modal>

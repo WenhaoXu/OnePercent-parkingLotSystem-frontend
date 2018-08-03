@@ -1,19 +1,24 @@
 import React from 'react';
-import { Form, Input,Select,Button} from 'antd';
+import { Form, Input,Select,Button,Checkbox } from 'antd';
 import Employee from '../../model/Employee'
 import '../../component/employee/register.css';
 const FormItem = Form.Item;
 const Option = Select.Option;
-
+const CheckboxGroup = Checkbox.Group;
+var checkValue = [];
+var roles = ['Admin','Manager','ParkingBoy'];
 class employeeUpdate extends React.Component {
   constructor(props) {
     super(props);
   }
+
     state = {
       confirmDirty: false,
       autoCompleteResult: [],
     };
-  
+
+
+
     handleSubmit = (e) => {
       e.preventDefault();
       const selfThis = this;
@@ -22,23 +27,29 @@ class employeeUpdate extends React.Component {
         if (!err) {
           console.log('update values of form: ', values);
           const {updateEmployeefromMap,changeUpdateStatusfromMap} = selfThis.props;
-          const employee = new Employee(selfThis.props.chooseValue.id,values.name,values.email,values.phone);
+          const employee = new Employee(selfThis.props.chooseValue.id,values.name,values.email,values.phone,checkValue);
             updateEmployeefromMap(employee);
             changeUpdateStatusfromMap(false);
             this.props.form.resetFields();
         }
       });
     }
-  
-    // handleConfirmBlur = (e) => {
-    //   const value = e.target.value;
-    //   this.setState({ confirmDirty: this.state.confirmDirty || !!value });
-    // }
-  
+
+
+    onChange=(checkedValues)=>{
+        console.log('checked = ', checkedValues);
+        checkValue=[];
+        for(let i=0;i<checkedValues.length;i++){
+            checkValue[i]=({id:checkedValues[i]});
+        }
+
+    }
   
     render() {
-      const { getFieldDecorator } = this.props.form
-  
+      const { getFieldDecorator } = this.props.form;
+      console.log(this.props);
+      const  checkedRole = this.props.chooseValue.roles.map(x=>x.name);
+
       const formItemLayout = {
         labelCol: {
           xs: { span: 24 },
@@ -114,6 +125,18 @@ class employeeUpdate extends React.Component {
               <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
             )}
           </FormItem>
+            <FormItem>
+                <CheckboxGroup options={roles} defaultValue={checkedRole} onChange={this.onChange} />
+
+                {/*<Checkbox.Group style={{ width: '100%' }} onChange={this.onChange}>*/}
+                    {/*<Row>*/}
+                        {/*<Col span={8}><Checkbox value="1" >Admin</Checkbox></Col>*/}
+                        {/*<Col span={8}><Checkbox value="2">Manager</Checkbox></Col>*/}
+                        {/*<Col span={8}><Checkbox value="3">ParkingBoy</Checkbox></Col>*/}
+
+                    {/*</Row>*/}
+                {/*</Checkbox.Group>*/}
+            </FormItem>
           <FormItem {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">Register</Button>
         </FormItem>
