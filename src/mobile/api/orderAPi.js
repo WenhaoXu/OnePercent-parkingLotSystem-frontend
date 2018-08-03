@@ -1,9 +1,11 @@
 import React from 'react';
 import {scrambleOrderTurnToAccess,getOrderList1} from "../action";
-let item = localStorage.getItem("token");
-let parse = JSON.parse(item);
+
 
 export const scrambleOrder1=(orderId,dispatch)=>{
+
+    let item = localStorage.getItem("token");
+    let parse = JSON.parse(item);
     console.log("调用API处理抢单");
 
     fetch(`http://localhost:1234/orders/${orderId}?operation=robOrder&coordinatorId=1`, {
@@ -41,7 +43,8 @@ export const scrambleOrder1=(orderId,dispatch)=>{
 }
 
 export const getOrderList=(dispatch)=>{
-
+    let item = localStorage.getItem("token");
+    let parse = JSON.parse(item);
     fetch(`http://localhost:1234/orders/pending`, {
         method: 'GET',
         headers:

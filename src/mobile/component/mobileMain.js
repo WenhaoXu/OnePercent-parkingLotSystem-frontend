@@ -9,10 +9,6 @@ class mobileMain extends React.Component {
 
     componentWillMount() {
         let item = localStorage.getItem("token");
-        console.log(item)
-        if (item == null) {
-            this.props.history.push("/main/login")
-        }
     }
 
     constructor(props) {

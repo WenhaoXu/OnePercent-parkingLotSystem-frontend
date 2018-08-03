@@ -18,8 +18,9 @@ export default {
             value.json().then(value1 => {
 
                 if (value1.token != null){
-                    history.push("/mobile/main")
+                    console.log(value1)
                     localStorage.setItem("token",JSON.stringify(value1))
+                    history.push("/mobile/main")
                 } else {
                     Toast.fail("登录失败")
                 }

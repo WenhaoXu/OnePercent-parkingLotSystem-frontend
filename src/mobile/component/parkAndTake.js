@@ -14,11 +14,9 @@ import TakeOut from './takeout'
 class ParkAndTake extends Component {
 
 
-
     componentWillMount() {
         parkAndTakeApi.initData(this.props.dispatch)
     }
-
 
     handleChangeIndicator = (index, parkingLotId, orderId) => {
         let dispatch = this.props.dispatch;
@@ -34,7 +32,7 @@ class ParkAndTake extends Component {
                     parkingLotId, orderId
                 }
             })
-        }else if (index === 1) {
+        } else if (index === 1) {
             //停车
         }
     };
