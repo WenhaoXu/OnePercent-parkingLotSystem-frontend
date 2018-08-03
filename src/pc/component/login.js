@@ -30,11 +30,17 @@ class Login extends React.Component {
             password: 'admin',
           })
         }).then(function(response) {
-          history.push("/main");
           response.text().then(v=>{
             let parse = JSON.parse(v);
               let token = parse.token;
+              let role=parse.role;
+              let name=parse.name;
+              let id=parse.id;
             localStorage.setItem("token",token);
+            localStorage.setItem("role",role);
+            localStorage.setItem("name",name);
+            localStorage.setItem("id",id)
+              history.push("/main");
           })
         })
       }
