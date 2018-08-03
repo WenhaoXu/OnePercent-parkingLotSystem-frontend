@@ -20,11 +20,12 @@ class employeeUpdate extends React.Component {
       this.props.form.validateFieldsAndScroll((err, values) => {
         
         if (!err) {
-          console.log('Received values of form: ', values);
+          console.log('update values of form: ', values);
           const {updateEmployeefromMap,changeUpdateStatusfromMap} = selfThis.props;
-          const employee = new Employee(values.name,values.email,values.phone);
+          const employee = new Employee(selfThis.props.chooseValue.id,values.name,values.email,values.phone);
             updateEmployeefromMap(employee);
             changeUpdateStatusfromMap(false);
+            this.props.form.resetFields();
         }
       });
     }
@@ -82,6 +83,7 @@ class employeeUpdate extends React.Component {
               }, {
                 required: true, message: 'Please input your E-mail!',
               }],
+                initialValue: this.props.chooseValue.email
             })(
               <Input />
             )}
@@ -91,12 +93,12 @@ class employeeUpdate extends React.Component {
             label={(
               <span>
                 姓名q
-                
               </span>
             )}
           >
             {getFieldDecorator('name', {
               rules: [{ required: true, message: 'Please input your name!', whitespace: true }],
+                initialValue: this.props.chooseValue.name
             })(
               <Input />
             )}
@@ -107,6 +109,7 @@ class employeeUpdate extends React.Component {
           >
             {getFieldDecorator('phone', {
               rules: [{ required: true, message: 'Please input your phone number!' }],
+                initialValue: this.props.chooseValue.phone
             })(
               <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
             )}

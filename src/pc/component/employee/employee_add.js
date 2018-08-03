@@ -22,9 +22,10 @@ class employeeAdd extends React.Component {
         if (!err) {
           console.log('Received values of form: ', values);
           const {addEmployeefromMap,changeAddStatusfromMap} = selfThis.props;
-          const employee = new Employee(values.name,values.email,values.phone);
+          const employee = new Employee("",values.name,values.email,values.phone);
           addEmployeefromMap(employee);
           changeAddStatusfromMap(false);
+            this.props.form.resetFields();
         }
       });
     }

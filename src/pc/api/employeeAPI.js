@@ -1,5 +1,4 @@
 import {getEmployeeListMap} from '../action/index'
-import axios from 'axios';
 import 'whatwg-fetch'
 
 const employeeAPI = {
@@ -87,24 +86,25 @@ const employeeAPI = {
     },
 
     updateEmployee(employee,dispatch){
-      fetch('https://parkinglotappofsystem.herokuapp.com/users', {
+      fetch(`http://localhost:1234/users/${employee.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
             'Authorization':localStorage.getItem("token")
         },
         body: JSON.stringify({
+            id: employee.id,
           phone: employee.phone,
           name: employee.name,
           email: employee.email
         })
       })
       .then(res => {
-        fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
+        fetch(`http://localhost:1234/users`, {
           method: 'GET',
           headers: 
             {'Authorization':localStorage.getItem("token")}
-      })
+      }).then(response => response.json())
         .then(res => {
           const employeeList = res;
           console.log(employeeList);

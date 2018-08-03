@@ -12,7 +12,6 @@ class Employee_updatePopup extends Component {
   handleOk=()=>{
     const changeUpdateStatusfromMap = this.props.changeUpdateStatusfromMap;
       changeUpdateStatusfromMap(false);
-
   }
 
   handleCancel=()=>{
