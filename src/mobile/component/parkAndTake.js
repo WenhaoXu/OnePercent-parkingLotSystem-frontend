@@ -37,7 +37,10 @@ class ParkAndTake extends Component {
                     parkingLotId, orderId
                 }
             })
-        } else if (index === 1) {
+
+        }else if (index === 1) {
+            localStorage.setItem("needParkingOrderId",orderId);
+
             //停车
         }
     };
