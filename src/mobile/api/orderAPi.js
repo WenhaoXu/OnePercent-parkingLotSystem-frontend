@@ -53,8 +53,8 @@ export const getOrderList=(dispatch)=>{
         .then(response => response.json())
         .then(json => {
             const orderList = json;
-            console.log("调用API获取Order列表");
-            console.log(orderList);
+            // console.log("调用API获取Order列表");
+            // console.log(orderList);
             dispatch(getOrderList1(orderList));
         })
         .catch(function (ex) {

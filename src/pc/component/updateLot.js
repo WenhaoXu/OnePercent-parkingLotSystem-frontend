@@ -24,7 +24,7 @@ class UpdateLot extends Component {
     };
 
     handleCancel = (e) => {
-        console.log(e);
+        // console.log(e);
         this.setState({
             visible: false,
         });

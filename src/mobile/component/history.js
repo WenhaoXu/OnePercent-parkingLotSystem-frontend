@@ -22,7 +22,7 @@ class history extends Component {
             .then(response => response.json())
             .then(json => {
                 const historyList = json;
-                console.log(historyList);
+                // console.log(historyList);
                 showHistoryListfromMap(historyList);
             })
             .catch(function (ex) {
@@ -35,8 +35,8 @@ class history extends Component {
                 <NavBar mode="dark"
                 >历史订单查询</NavBar>
                 <List className="my-list">
-                    {this.props.historyList.map(i => (
-                        <Item arrow="horizontal" multipleLine onClick={() => {}}>
+                    {this.props.historyList.map((i,index) => (
+                        <Item key={index} arrow="horizontal" multipleLine onClick={() => {}}>
                         {i.carNo}<Brief>{i.createDate}</Brief>
                         </Item>
                     ))}
