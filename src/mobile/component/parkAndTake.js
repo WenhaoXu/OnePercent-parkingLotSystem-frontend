@@ -9,7 +9,7 @@ import LotList from "./ParkingLotList";
 import 'whatwg-fetch'
 import parkAndTakeApi from "../api/parkAndTake";
 import index from "./index";
-
+import TakeOut from './takeout'
 
 class ParkAndTake extends Component {
 
@@ -74,7 +74,7 @@ class ParkAndTake extends Component {
         </div>;
         let choseLot = <ChoseLots/>
 
-        console.log(this.props.indicator)
+        // console.log(this.props.indicator)
         switch (this.props.indicator) {
             case 0:
                 return index;
@@ -82,6 +82,8 @@ class ParkAndTake extends Component {
                 return choseLot;
             case 2:
                 return <LotList/>
+            case 3:
+                return <TakeOut/>
 
         }
     }
