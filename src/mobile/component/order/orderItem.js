@@ -17,6 +17,7 @@ export default class OrderItem extends Component {
 
     render() {
         const {order}=this.props;
+        let createDate=new Date(order.createDate).toLocaleString('chinese',{hour12:false});
         return (
             <div>
                 <List className="my-list">
@@ -27,7 +28,7 @@ export default class OrderItem extends Component {
                         multipleLine
                         onClick={() => {}}
                     >
-                        {order.carNo} <Brief>停车时间：{order.createDate}</Brief>
+                        {order.carNo} <Brief>停车时间：{createDate}</Brief>
                     </Item>
                 </List>
             </div>

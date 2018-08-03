@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import OrderItem from '../component/orderItem';
+import OrderItem from './orderItem';
 import {NavBar} from "antd-mobile";
 
 export default class  OrderList extends Component {

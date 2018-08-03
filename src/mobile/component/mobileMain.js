@@ -3,7 +3,7 @@ import {TabBar} from 'antd-mobile';
 import '../../mobile/component/mobileMain'
 import ParkAndTake from "../component/parkAndTake";
 import HistoryContainer from "../container/historyContainer"
-import OrderList from "../container/orderListContainer";
+import OrderList from "../container/order/orderListContainer";
 
 class mobileMain extends React.Component {
 

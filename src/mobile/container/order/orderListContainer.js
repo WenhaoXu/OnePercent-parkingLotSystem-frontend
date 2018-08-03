@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import OrderList from "../component/orderList";
-import {scrambleOrder1,getOrderList} from "../api/orderAPi"
+import OrderList from "../../component/order/orderList";
+import {scrambleOrder1,getOrderList} from "../../api/orderAPi"
 
 const mapStateToProps = (state) => {
     return {
