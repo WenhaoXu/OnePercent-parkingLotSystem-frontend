@@ -90,7 +90,8 @@ const employeeAPI = {
       fetch('https://parkinglotappofsystem.herokuapp.com/users', {
         method: 'PUT',
         headers: {
-          'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization':localStorage.getItem("token")
         },
         body: JSON.stringify({
           phone: employee.phone,

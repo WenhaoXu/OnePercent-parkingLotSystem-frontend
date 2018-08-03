@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { List } from 'antd-mobile';
+import { List,NavBar,Icon } from 'antd-mobile';
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -11,11 +11,13 @@ class history extends Component {
     }
     componentWillMount() {
         const showHistoryListfromMap = this.props.showHistoryListfromMap;
-
-        fetch(`https://parkinglotappofsystem.herokuapp.com/orders/finished`, {
+        let token = localStorage.getItem("token");
+        let parse = JSON.parse(token);
+        fetch(`http://localhost:1234/orders/finished`, {
             method: 'GET',
-            headers:
-                {'Authorization':localStorage.getItem("token")}
+            headers: {
+                "Authorization":parse.token,
+            },
         })
             .then(response => response.json())
             .then(json => {
@@ -30,6 +32,8 @@ class history extends Component {
     render() {
         return (
             <div>
+                <NavBar mode="dark"
+                >历史订单查询</NavBar>
                 <List className="my-list">
                     {this.props.historyList.map(i => (
                         <Item arrow="horizontal" multipleLine onClick={() => {}}>

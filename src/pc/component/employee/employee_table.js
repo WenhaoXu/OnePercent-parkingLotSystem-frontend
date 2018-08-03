@@ -19,9 +19,9 @@ class Employee_table extends React.Component {
     super(props);
   }
 
-  showModal=()=>{
-    const changeStatusfromMap = this.props.changeStatusfromMap;
-    changeStatusfromMap(true,false);
+  showUpdateModal=()=>{
+    const changeUpdateStatusfromMap = this.props.changeUpdateStatusfromMap;
+      changeUpdateStatusfromMap(true);
   }
   frozen=(id)=>{
     const forzenEmployeefromMap = this.props.forzenEmployeefromMap;
@@ -58,7 +58,7 @@ class Employee_table extends React.Component {
             key="action"
             render={(text, record) => (
               <span>
-                <a onClick={this.showModal}>修改</a>
+                <a onClick={this.showUpdateModal}>修改</a>
                 <Divider type="vertical" />
                 
                 <Popconfirm title="确定冻结此用户？" onConfirm={confirm} onCancel={cancel} okText="Yes" cancelText="No">

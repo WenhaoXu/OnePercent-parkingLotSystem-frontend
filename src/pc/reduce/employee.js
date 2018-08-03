@@ -1,5 +1,6 @@
 export default (state={
     addPopupVisible:false,
+    updatePopupVisible:false,
     employeeList:[]
 }, action) => {
 
@@ -9,12 +10,12 @@ export default (state={
             newState.addPopupVisible=action.addPopupVisible;
             return newState;
         }
-        case 'getEmployeeList':{
+        case 'changeUpdateStatus':{
             const newState =JSON.parse(JSON.stringify(state));
-            newState.employeeList=action.employeeList;
+            newState.updatePopupVisible=action.updatePopupVisible;
             return newState;
         }
-        case 'addEmployee':{
+        case 'getEmployeeList':{
             const newState =JSON.parse(JSON.stringify(state));
             newState.employeeList=action.employeeList;
             return newState;
