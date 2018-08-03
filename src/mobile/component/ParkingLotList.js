@@ -11,7 +11,7 @@ class ParkingLotList extends Component {
         super(props);
     }
     componentWillMount() {
-        lotApi.initState(this.props.dispatch)
+        // lotApi.initState(this.props.dispatch)
     }
 
     state = {

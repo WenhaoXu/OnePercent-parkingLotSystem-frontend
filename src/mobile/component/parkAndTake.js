@@ -18,7 +18,6 @@ class ParkAndTake extends Component {
         parkAndTakeApi.initData(this.props.dispatch)
     }
 
-
     handleChangeIndicator = (index, parkingLotId, orderId) => {
         let dispatch = this.props.dispatch;
         dispatch({
@@ -33,7 +32,7 @@ class ParkAndTake extends Component {
                     parkingLotId, orderId
                 }
             })
-        }else if (index === 1) {
+        } else if (index === 1) {
             //停车
         }
     };
