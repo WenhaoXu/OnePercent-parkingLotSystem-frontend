@@ -10,14 +10,18 @@ import 'whatwg-fetch'
 import parkAndTakeApi from "../api/parkAndTake";
 import index from "./index";
 import TakeOut from './takeout'
+import parkAndTakeRefresh from "../reduce/parkAndTakeRefresh";
 
 class ParkAndTake extends Component {
 
 
+
+
+
     componentWillMount() {
         parkAndTakeApi.initData(this.props.dispatch)
-    }
 
+    }
 
     handleChangeIndicator = (index, parkingLotId, orderId) => {
         let dispatch = this.props.dispatch;
@@ -33,13 +37,24 @@ class ParkAndTake extends Component {
                     parkingLotId, orderId
                 }
             })
+
         }else if (index === 1) {
             localStorage.setItem("needParkingOrderId",orderId);
+
             //停车
         }
     };
 
     render() {
+        let needUpdate = this.props.needUpdate;
+        if (needUpdate) {
+            parkAndTakeApi.initData(this.props.dispatch)
+            this.props.dispatch({
+                type:"NEED_UPDATE",
+                payload:false
+            })
+        }
+
         const Item = List.Item;
         const Brief = Item.Brief;
         let index = <div>
@@ -83,7 +98,8 @@ class ParkAndTake extends Component {
 function mapStateToProps(state) {
     return {
         indicator: state.parkAndTake.indicator,
-        indexData: state.parkAndTake.indexData
+        indexData: state.parkAndTake.indexData,
+        needUpdate:state.parkAndTakeRefresh.needUpdate
     };
 }
 

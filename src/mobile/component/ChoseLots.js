@@ -27,17 +27,17 @@ class ChoseLots extends Component {
             let token = localStorage.getItem("token");
             let parse = JSON.parse(token);
             let orderId= localStorage.getItem("needParkingOrderId");
-            fetch(`${conf.domain}/orders/${orderId}`, {
+            fetch(`${conf.domain}/orders/${orderId}?operation=setParkingLotId&coordinatorId=${parse.userId}&parkingLotId=${localStorage.getItem("choseParkingLotId")}`, {
                 method: 'PATCH',
                 headers: {
                     Authorization:parse.token,
                     'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    operation: "setParkingLotId",
-                    coordinatorId: parse.userId,
-                    parkingLotId:localStorage.getItem("choseParkingLotId"),
-                })
+                }
+                // body: JSON.stringify({
+                //     operation: "setParkingLotId",
+                //     coordinatorId: parse.userId,
+                //     parkingLotId:localStorage.getItem("choseParkingLotId"),
+                // })
             }).then(value => {
                 value.json().then(value1 => {
                     localStorage.setItem("choseParkingLotId","");
