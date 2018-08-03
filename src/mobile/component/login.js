@@ -10,6 +10,11 @@ class Login extends React.Component {
         super(props);
     }
 
+
+    componentWillMount() {
+        localStorage.removeItem("token")
+    }
+
     render() {
 
         let dispatch = this.props.dispatch;

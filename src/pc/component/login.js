@@ -9,7 +9,13 @@ const FormItem = Form.Item;
 
 class Login extends React.Component {
 
-  handleSubmit = (e) => {
+
+    componentWillMount() {
+        localStorage.removeItem("token")
+    }
+
+
+    handleSubmit = (e) => {
    let history= this.props.history;
     e.preventDefault();
     this.props.form.validateFields((err, values) => {

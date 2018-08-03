@@ -1,3 +1,5 @@
+import globalConf from '../../conf'
+
 export default {
-    domain:'http://localhost:1234'
+    domain:globalConf.domain
 }
