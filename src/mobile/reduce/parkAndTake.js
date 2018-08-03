@@ -1,7 +1,11 @@
-export default (state={
-    indicator:0,
-    indexData:[]
-} ,action)=>{
+export default (state = {
+    indicator: 0,
+    indexData: [],
+    unpark: {
+        lotId: null,
+        orderId: null,
+    }
+}, action) => {
 
 
     /**
@@ -15,16 +19,28 @@ export default (state={
 
     switch (type) {
         case "INDICATOR":
-            console.log("aaaa"+payload);
-
             return {
-                indicator:payload,
-                indexData:state.indexData
+                indicator: payload,
+                indexData: state.indexData,
+                unpark: state.unpark
             };
         case "INIT":
             return {
-                indicator:state.indicator,
-                indexData:payload
+                indicator: state.indicator,
+                indexData: payload,
+                unpark: state.unpark
+
+            };
+        case "UNPARK":
+            let lotId = payload.parkingLotId;
+            let orderId = payload.orderId;
+            return {
+                indicator: state.indicator,
+                indexData: state.indexData,
+                unpark: {
+                    lotId,
+                    orderId
+                }
             }
     }
 

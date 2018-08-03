@@ -2,7 +2,18 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Button, Icon, NavBar} from "antd-mobile";
 import './takeout.css'
+
+import takeoutApi from '../api/takeout'
+
 class TakeOut extends Component {
+
+    componentWillMount() {
+        let orderId = this.props.state.orderId;
+        let parkingLotId= this.props.state.lotId;
+        takeoutApi.retrieveLot(this.props.dispatch,parkingLotId)
+
+    }
+
     render() {
         return (
             <div>
@@ -24,7 +35,10 @@ class TakeOut extends Component {
 }
 
 function mapStateToProps(state) {
-    return {};
+    console.log(state)
+    return {
+        state:state.parkAndTake.unpark
+    };
 }
 function mapDispatchToProps(dispatch) {
     return {

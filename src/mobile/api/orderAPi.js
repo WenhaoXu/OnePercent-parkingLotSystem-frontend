@@ -1,12 +1,15 @@
 import React from 'react';
 import {scrambleOrderTurnToAccess,getOrderList1} from "../action";
+let item = localStorage.getItem("token");
+let parse = JSON.parse(item);
 
 export const scrambleOrder1=(orderId,dispatch)=>{
     console.log("调用API处理抢单");
-        fetch(`http://localhost:1234/orders/${orderId}?operation=robOrder&coordinatorId=1`, {
+
+    fetch(`http://localhost:1234/orders/${orderId}?operation=robOrder&coordinatorId=1`, {
             method: 'PATCH',
             headers:
-                {'Authorization':localStorage.getItem("token")}
+                {'Authorization': parse.token}
         })
             .then(response=> {
                 if (response.status==403){
@@ -17,7 +20,7 @@ export const scrambleOrder1=(orderId,dispatch)=>{
                 fetch(`http://localhost:1234/orders/pending`, {
                     method: 'GET',
                     headers:
-                        {'Authorization':localStorage.getItem("token")}
+                        {'Authorization':parse.token}
                 })
                     .then(response => response.json())
                     .then(json => {
@@ -42,7 +45,7 @@ export const getOrderList=(dispatch)=>{
     fetch(`http://localhost:1234/orders/pending`, {
         method: 'GET',
         headers:
-            {'Authorization':localStorage.getItem("token")}
+            {'Authorization':parse.token}
     })
         .then(response => response.json())
         .then(json => {
