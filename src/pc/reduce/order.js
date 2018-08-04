@@ -11,9 +11,9 @@ export default (
             newState.orderList=action.orderList;
             return newState;
         }
-        case 'changePopupValue':{
+        case 'changePopupVisibleValue':{
             const newState =JSON.parse(JSON.stringify(state));
-            newState.assignPopupVisible=true;
+            newState.assignPopupVisible=action.visibleValue;
             return newState;
         }
         default:

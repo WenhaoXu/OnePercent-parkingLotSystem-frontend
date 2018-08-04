@@ -6,4 +6,4 @@ export const getChooseValueMap=(chooseValue)=>({type:'getChooseValue',chooseValu
 export const setCheckValueMap=(checkValue)=>({type:'setCheckValue',checkValue})
 export const getAllOrder=(orderList)=>({type:'getAllOrder',orderList})
 export const getAllUseableParkingBoy=(parkingBoyList)=>({type:'getAllUseableParkingBoy',parkingBoyList})
-export const changePopupValue=(record)=>({type:'changePopupValue',record})
+export const changePopupVisibleValue=(visibleValue)=>({type:'changePopupVisibleValue',visibleValue})

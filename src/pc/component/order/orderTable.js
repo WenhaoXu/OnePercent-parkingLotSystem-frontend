@@ -1,7 +1,9 @@
 import React from 'react';
 import  {Table} from 'antd';
+import {Modal} from 'antd'
 import OrderHeader from "../../container/order/orderHeaderContainer";
-import ParkingBoyTablePopupContainer from "../../container/order/parkingBoyTablePopupContainer"
+import ParkingBoyTableContainer from "../../container/order/parkingBoyTableContainer"
+import ParkingBoyTable from "./parkingBoyTable";
 
 const { Column} = Table;
 export default  class OrderTable extends React.Component{
@@ -13,12 +15,18 @@ export default  class OrderTable extends React.Component{
         this.props.onComponentDidMount()
     }
 
-    assignOrder=(record)=>{
-
+    assignOrderAndShowPopup=(record)=>{
         //修改弹出框的显示属性
-        this.props.changePopup(record);
-        console.log(this.props.assignPopupVisible);
+        this.props.OnchangePopupVisibleValue(true);
 
+    }
+
+    handleOk=()=>{
+        this.props.OnchangePopupVisibleValue(false);
+    }
+
+    handleCancel=()=>{
+        this.props.OnchangePopupVisibleValue(false);
     }
 
     render(){
@@ -54,14 +62,24 @@ export default  class OrderTable extends React.Component{
                         render={(text, record) => {
                             return(
                             <span>
-                                <a onClick={()=>this.assignOrder(record)}>{record.action!=""?"指派":""} </a>
+                                <a onClick={()=>this.assignOrderAndShowPopup(record)}>{record.action!=""?"指派":""} </a>
                             </span>
 
                         )
                         }}
                     />
                 </Table>
-                <ParkingBoyTablePopupContainer/>
+
+                <Modal
+                    visible={this.props.assignPopupVisible}
+                    title="空闲停车员"
+                    onOk={this.handleOk}
+                    onCancel={this.handleCancel}
+                    footer={null}
+                >
+                    <ParkingBoyTableContainer />
+                </Modal>
+
             </div>
         );
     }

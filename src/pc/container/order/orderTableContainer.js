@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import OrderTable from "../../component/order/orderTable";
 import {getOrderList} from "../../api/orderAPI"
-import {changePopupValue} from "../../action";
+import {changePopupVisibleValue} from "../../action";
 const mapStateToProps = (state) => {
     return {
         orderList: state.order.orderList,
@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => {
             getOrderList(dispatch);
         },
 
-        changePopup:(record)=>dispatch(changePopupValue(record))
+        OnchangePopupVisibleValue:(visible)=>dispatch(changePopupVisibleValue(visible))
 
 
     }
