@@ -4,6 +4,7 @@ import { Form, Icon, Input, Button, Checkbox,message} from 'antd';
 import axios from 'axios'
 import 'animate.css'
 import 'whatwg-fetch'
+import conf from "../api/conf";
 
 const FormItem = Form.Item;
 
@@ -20,7 +21,7 @@ class Login extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        fetch('https://parkinglotappofsystem.herokuapp.com/auth/login', {
+        fetch(`${conf.domain}/auth/login`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

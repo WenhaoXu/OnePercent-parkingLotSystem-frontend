@@ -5,6 +5,7 @@ import './main.css'
 import {Link} from "react-router-dom";
 import Lot from "../container/lot";
 import Dashboard from "./dashboard";
+import  ParkingBoy from "./parkingBoy";
 
 import EmployeeContainer from "../container/employeeContainer"
 import conf from "../api/conf";
@@ -69,7 +70,7 @@ class Main extends Component {
             defaultSelectedKeys = 2;
             breadcrumb = '停车场管理';
         } else if (page === 'boy') {
-            currentPage = <h2>body</h2>;
+            currentPage = <ParkingBoy/>;
             defaultSelectedKeys = 3;
             breadcrumb = '停车员管理';
 
