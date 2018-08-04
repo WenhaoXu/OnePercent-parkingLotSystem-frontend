@@ -31,6 +31,7 @@ class Employee_table extends React.Component {
 
   render() {
     const data = this.props.employeeList;
+
     return (
       <div>
         <Table dataSource={data} rowKey="id">
