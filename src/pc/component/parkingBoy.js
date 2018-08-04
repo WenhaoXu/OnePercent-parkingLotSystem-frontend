@@ -5,6 +5,8 @@ import {connect} from "react-redux";
 import ParkingBoyHead from "./parkingBoyItem/parkingBoyHead";
 import ShuttleBox from "./parkingBoyItem/shuttleBox";
 import parkingBoyApi from "../api/parkingBoyApi";
+import employeeApi from "../api/employeeAPI";
+
 
 class parkingBoy extends Component {
     constructor(props) {
@@ -15,6 +17,12 @@ class parkingBoy extends Component {
         parkingBoyApi.initBoyList(this.props.dispatch);
     }
 
+    handleFrozen=(id)=>{
+        // console.log("handleFrozen")
+        // console.log(id)
+        let updateParkingBoyCallBack= ()=>parkingBoyApi.initBoyList(this.props.dispatch);
+        employeeApi.forzenEmployee(id,this.props.dispatch,updateParkingBoyCallBack)
+    }
     render() {
         const data = this.props.data;
         console.log(data)
@@ -27,9 +35,10 @@ class parkingBoy extends Component {
             {title: '状态', dataIndex: 'status', key: 'status'},
             {
                 title: '操作', dataIndex: '', key: 'x', render: (text, record) => (
+
                     <span>
                         <a href="javascript:;">修改</a>|
-                  <a href="javascript:;" onClick={()=>console.log(123)}>冻结</a>
+                  <a href="javascript:;" onClick={()=>this.handleFrozen(record.id)}>{record.loginFlag===0?"激活":"冻结"}</a>
 
                 </span>
                 ),

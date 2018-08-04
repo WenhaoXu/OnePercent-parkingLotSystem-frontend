@@ -2,8 +2,10 @@ import {getEmployeeListMap,setPopPassWordfromMap} from '../action/index'
 import 'whatwg-fetch'
 import {setPopPassWordMap} from "../action";
 import axios from 'axios'
+import {message} from "antd";
 
 const employeeAPI = {
+
     visible:true,loading:false,
     employeeList:[],
     getEmployeeList(dispatch) { 
@@ -62,7 +64,7 @@ const employeeAPI = {
         console.log(error);
       });
     },
-    forzenEmployee(id,dispatch) {
+    forzenEmployee(id,dispatch,updateParkingBoyCallBack) {
       fetch('https://parkinglotappofsystem.herokuapp.com/users/'+id, {
         method: 'PATCH',
         headers: {
@@ -82,6 +84,11 @@ const employeeAPI = {
                   const employeeList = res;
                   console.log(employeeList);
                   dispatch(getEmployeeListMap(employeeList));
+
+                  if (updateParkingBoyCallBack !== null || updateParkingBoyCallBack !== undefined) {
+                      updateParkingBoyCallBack()
+                      message.success("冻结成功")
+                  }
               })
               .catch(function(error) {
                   console.log(error);

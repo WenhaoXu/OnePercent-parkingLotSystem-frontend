@@ -24,6 +24,7 @@ export default {
                     newItem.userName = item.userName;
                     newItem.phone = item.phone;
                     newItem.email = item.email;
+                    newItem.loginFlag= item.loginFlag;
                     newItem.status = "上班"
                     return newItem;
                 })
