@@ -33,6 +33,12 @@ class PersonalPage extends Component {
       window.location.href="http://localhost:9000/mobile/login"
     }
 
+    handleStartWork=()=>{
+
+        console.log("handleStartWork")
+        userApi.startWork()
+    }
+
     render() {
         console.log(JSON.stringify(this.props))
         let component;
@@ -54,7 +60,8 @@ class PersonalPage extends Component {
                 onLeftClick={this.props.switchToMainPage}>{title}
                 </NavBar>
                 {component}
-                <Button type="primary" onClick={()=>this.quit()}   style={{marginTop:" 170px" }}>退出</Button><WhiteSpace />
+                <Button type="primary"  style={{margin:"120px 20px 0 20px" }} onClick={this.handleStartWork}>打卡</Button>
+                <Button type="warning" onClick={()=>this.quit()}   style={{margin:"15px 20px 0 20px" }}>退出</Button><WhiteSpace />
             </div>
         );
     }
