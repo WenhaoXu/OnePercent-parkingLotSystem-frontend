@@ -15,9 +15,6 @@ import parkAndTakeRefresh from "../reduce/parkAndTakeRefresh";
 class ParkAndTake extends Component {
 
 
-
-
-
     componentWillMount() {
         parkAndTakeApi.initData(this.props.dispatch)
 
@@ -38,8 +35,8 @@ class ParkAndTake extends Component {
                 }
             })
 
-        }else if (index === 1) {
-            localStorage.setItem("needParkingOrderId",orderId);
+        } else if (index === 1) {
+            localStorage.setItem("needParkingOrderId", orderId);
 
             //停车
         }
@@ -50,8 +47,8 @@ class ParkAndTake extends Component {
         if (needUpdate) {
             parkAndTakeApi.initData(this.props.dispatch)
             this.props.dispatch({
-                type:"NEED_UPDATE",
-                payload:false
+                type: "NEED_UPDATE",
+                payload: false
             })
         }
 
@@ -90,7 +87,6 @@ class ParkAndTake extends Component {
                 return <LotList/>
             case 3:
                 return <TakeOut/>
-
         }
     }
 }
@@ -99,7 +95,7 @@ function mapStateToProps(state) {
     return {
         indicator: state.parkAndTake.indicator,
         indexData: state.parkAndTake.indexData,
-        needUpdate:state.parkAndTakeRefresh.needUpdate
+        needUpdate: state.parkAndTakeRefresh.needUpdate
     };
 }
 

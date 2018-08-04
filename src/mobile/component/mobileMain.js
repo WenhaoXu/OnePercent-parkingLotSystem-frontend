@@ -5,6 +5,8 @@ import ParkAndTake from "../component/parkAndTake";
 import HistoryContainer from "../container/historyContainer"
 import {connect} from 'react-redux';
 import OrderList from "../container/order/orderListContainer";
+import PersonalInfo from "./PersonalInfo";
+import PersonalPage from "./PersonalPage";
 
 class mobileMain extends React.Component {
 
@@ -138,6 +140,9 @@ class mobileMain extends React.Component {
                                 });
                             }}
                         >
+
+                            <PersonalPage/>
+
                         </TabBar.Item>
                     </TabBar>
                 </div>

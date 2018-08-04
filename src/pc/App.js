@@ -17,6 +17,7 @@ class App extends Component {
             <Route path='/login' component={Login}/>
             <Route path='/employee_add' component={employee_add}/>
             <Route path='/employee' component={EmployeeContainer}/>
+
             {/*<Route path='/orderList' component={OrderList}/>*/}
         </Switch>
     );
