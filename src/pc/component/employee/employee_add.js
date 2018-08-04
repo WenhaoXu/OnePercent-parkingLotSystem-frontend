@@ -13,6 +13,7 @@ class employeeAdd extends React.Component {
       confirmDirty: false,
       autoCompleteResult: [],
     };
+
   
     handleSubmit = (e) => {
       e.preventDefault();
@@ -22,9 +23,10 @@ class employeeAdd extends React.Component {
         if (!err) {
           console.log('Received values of form: ', values);
           const {addEmployeefromMap,changeAddStatusfromMap} = selfThis.props;
-          const employee = new Employee(values.name,values.email,values.phone);
+          const employee = new Employee("",values.userName,values.name,values.email,values.phone);
           addEmployeefromMap(employee);
           changeAddStatusfromMap(false);
+          this.props.form.resetFields();
         }
       });
     }
@@ -72,6 +74,18 @@ class employeeAdd extends React.Component {
   
       return (
         <Form onSubmit={this.handleSubmit} >
+            <FormItem
+                {...formItemLayout}
+                label="用户名："
+            >
+                {getFieldDecorator('userName', {
+                    rules: [ {
+                        required: true, message: 'Please input your userName!',
+                    }],
+                })(
+                    <Input />
+                )}
+            </FormItem>
           <FormItem
             {...formItemLayout}
             label="邮箱："
@@ -111,6 +125,7 @@ class employeeAdd extends React.Component {
               <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
             )}
           </FormItem>
+
           <FormItem {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">Register</Button>
         </FormItem>

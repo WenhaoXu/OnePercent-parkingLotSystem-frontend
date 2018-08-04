@@ -1,5 +1,4 @@
 import {getEmployeeListMap} from '../action/index'
-import axios from 'axios';
 import 'whatwg-fetch'
 
 const employeeAPI = {
@@ -30,9 +29,10 @@ const employeeAPI = {
           'Authorization':localStorage.getItem("token")
         },
         body: JSON.stringify({
-          phone: employee.phone,
-          name: employee.name,
-          email: employee.email
+            phone: employee.phone,
+            name: employee.name,
+            email: employee.email,
+            userName: employee.userName,
         })
       })
       .then(response => response.json())
@@ -48,7 +48,6 @@ const employeeAPI = {
           const employeeList = res;
           console.log(employeeList);
           dispatch(getEmployeeListMap(employeeList));
-
         })
         .catch(function(error) {
           console.log(error);
@@ -87,24 +86,27 @@ const employeeAPI = {
     },
 
     updateEmployee(employee,dispatch){
-      fetch('https://parkinglotappofsystem.herokuapp.com/users', {
+      fetch(`http://localhost:1234/users/${employee.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
             'Authorization':localStorage.getItem("token")
         },
         body: JSON.stringify({
-          phone: employee.phone,
-          name: employee.name,
-          email: employee.email
+            id: employee.id,
+            phone: employee.phone,
+            userName: employee.userName,
+            name: employee.name,
+            email: employee.email,
+            roles:employee.roles
         })
       })
       .then(res => {
-        fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
+        fetch(`http://localhost:1234/users`, {
           method: 'GET',
           headers: 
             {'Authorization':localStorage.getItem("token")}
-      })
+      }).then(response => response.json())
         .then(res => {
           const employeeList = res;
           console.log(employeeList);

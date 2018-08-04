@@ -7,7 +7,7 @@ class parkingBoyHead extends Component{
     render(){
         return(
             <div>
-            <div className="input">
+            <div className="searchBar">
                 <Select defaultValue="name">
                     <Option value="id">id</Option>
                     <Option value="name">姓名</Option>
@@ -20,9 +20,9 @@ class parkingBoyHead extends Component{
                     搜索
                 </Button>
             </div>
+                <div style={{clear: 'both'}}></div>
             </div>
         )
-
     }
 }
 
