@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Layout, Menu, Breadcrumb, Icon, Avatar} from 'antd';
+import {Avatar, Breadcrumb, Icon, Layout, Menu} from 'antd';
 
 import './main.css'
 import {Link} from "react-router-dom";
@@ -23,14 +23,14 @@ class Main extends Component {
         this.setState({collapsed});
     };
 
-    logout=()=>{
+    logout = () => {
         localStorage.clear();
     }
 
-    componentWillMount=()=>{
-        console.log(localStorage.getItem("token"))
-        if(localStorage.getItem("token")===null){
-            window.location.href=`http://localhost:9000/login`
+    componentWillMount = () => {
+        // console.log(localStorage.getItem("token"))
+        if (localStorage.getItem("token") === null) {
+            window.location.href = `http://localhost:9000/login`
         }
         else {
             fetch(`${conf.domain}/userInfo`, {
@@ -40,13 +40,15 @@ class Main extends Component {
                 },
             })
                 .then(response => {
-                    console.log(response)
-                    if(response==="istrue"){
-                        console.log("已登录");
-                    }
-                    else{
-                        window.location.href=`http://localhost:9000/login`
-                    }
+                    response.text().then(value => {
+                        if (value === "istrue") {
+                            console.log("已登录");
+                        } else {
+                            window.location.href = `http://localhost:9000/login`
+                        }
+                    })
+
+
                 })
                 .catch(function (ex) {
                     console.log('parsing failed', ex)
@@ -61,7 +63,7 @@ class Main extends Component {
         let currentPage;
         let defaultSelectedKeys;
         let breadcrumb;
-        
+
         if (page === 'lot') {
             currentPage = <Lot/>;
             defaultSelectedKeys = 2;
@@ -85,8 +87,8 @@ class Main extends Component {
         } else {
 
             currentPage = <EmployeeContainer/>;
-            defaultSelectedKeys=1;
-            breadcrumb='员工管理';
+            defaultSelectedKeys = 1;
+            breadcrumb = '员工管理';
 
         }
         return (
@@ -132,7 +134,9 @@ class Main extends Component {
                 </Sider>
                 <Layout>
                     <Header id='header-line'>
-                        <Link to={"/login"} onClick={()=>{this.logout()}}>
+                        <Link to={"/login"} onClick={() => {
+                            this.logout()
+                        }}>
                             <span>{localStorage.getItem("name")}</span>
                             <Avatar id='user-avatar' style={{color: '#f56a00', backgroundColor: '#fde3cf'}}>A</Avatar>
                         </Link>
@@ -146,7 +150,7 @@ class Main extends Component {
                                 currentPage
                             }
                         </div>
-                       
+
                     </Content>
                     <Footer style={{textAlign: 'center'}}>
                         ONE PERCENT @2018
