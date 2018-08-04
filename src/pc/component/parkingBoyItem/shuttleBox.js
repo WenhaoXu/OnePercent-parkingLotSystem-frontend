@@ -6,55 +6,36 @@ import parkingBoyApi from "../../api/parkingBoyApi";
 
 class shuttleBox extends Component {
 
+    constructor(props) {
+        super(props);
+    }
+
     componentWillMount(){
         parkingBoyApi.initLotList(this.props.dispatch,this.props.id);
 
     }
-
-    // getMock() {
-    //     let targetKeys = [];
-    //     let mockData = [];
-    //     for (let i = 0; i < 20; i++) {
-    //         const data = {
-    //             key: i,
-    //             title: `内容${i + 1}`,
-    //             description: `内容${i + 1}的描述`,
-    //             chosen: Math.random() * 2 > 1
-    //         };
-    //         if (data.chosen) {
-    //             targetKeys.push(data.key);
-    //         }
-    //         mockData.push(data);
-    //     }
-    //     this.setState({ mockData, targetKeys });
-    // }
-    handleChange(targetKeys, direction, moveKeys) {
+    handleChange=(targetKeys, direction, moveKeys)=> {
         console.log(targetKeys, direction, moveKeys);
-        this.setState({ targetKeys });
+        parkingBoyApi.change(this.props.dispatch,targetKeys,this.props.mockData,direction,moveKeys);
     }
-    // renderFooter() {
-    //     return (
-    //         <Button type="primary" size="small" style={{ float: 'right', margin: '5' }}
-    //                 onClick={this.getMock}>
-    //             刷新
-    //         </Button>
-    //     );
-    // }
+
     render() {
+        let keys=this.props.keys
+        console.log(this.props.keys)
         return (
             <Transfer
-                dataSource={this.state.mockData}
-                targetKeys={this.state.targetKeys}
+                dataSource={this.props.mockData}
+                targetKeys={keys}
                 onChange={this.handleChange}
                 render={item => item.title} />
         );
     }
 }
 function mapStateToProps(state) {
-
+    console.log(state.shuttleBox)
     return {
         mockData:state.shuttleBox.mockData,
-        targetKeys:state.shuttleBox.targetKeys,
+        keys:state.shuttleBox.keys,
     };
 }
 function  mapDispatchToProps(dispatch) {

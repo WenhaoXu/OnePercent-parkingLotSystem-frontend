@@ -13,14 +13,28 @@ export default {
         }).then(response => response.json())
             .then(json => {
                 json = json.filter(item => item.roles[0].name === "ParkingBoy");
-
+                var today=new Date(),
                 json = json.map(item => {
                     let newItem = {};
+                    // 获取从今天0点开始到现在的时间
+                     let todayTime=today.getTime()%(1000*60*60*24);
+                     let dateTime,offset;
+                        //获取要判断的日期和现在时间的偏差
+                         newItem.status="未打卡"
+                        if(item.workTime!=null){
+                             offset=item.workTime-today.getTime(),
+                            //获取要判断日期距离今天0点有多久
+                           dateTime=offset+todayTime;
+                            if(dateTime>0||dateTime<1000*60*60*9){
+                                newItem.status="上班"
+                            }else if(dateTime>1000*60*60*9&&dateTime<1000*60*60*17){
+                               newItem.status="迟到"
+                            }
+                    }
                     newItem.id = item.id;
                     newItem.userName = item.userName;
                     newItem.phone = item.phone;
                     newItem.email = item.email;
-                    newItem.status = "上班"
                     return newItem;
                 })
                 console.log(json)
@@ -34,6 +48,7 @@ export default {
 
 
     initLotList: (dispatch, id) => {
+        localStorage.setItem("coordinator_id",id);
         let token = localStorage.getItem("token");
         fetch(`${conf.domain}/parkinglots?findAll=true`, {
 
@@ -44,34 +59,91 @@ export default {
         }).then(response => response.json())
             .then(json => {
                 let boyLots=[...json];
+                let tempkey=1;
                 json = json.filter(item => item.coordinator === null && item.available === true);
                  console.log(boyLots)
                 let unparkList = json.map(item => {
                     let newItem = {};
-                    newItem.id = item.id;
-                    newItem.name = item.name;
-                    newItem.totalSize = item.totalSize;
+                    newItem.key =tempkey;
+                    tempkey++;
+                    newItem.id= item.id;
+                    newItem.title = item.name+"/"+item.totalSize;
                     return newItem;
                 })
                 console.log(unparkList)
                 let boyParkingLots = boyLots.filter(item =>item.coordinator!=null&& item.coordinator.id ===id).map(item => {
                             let newItem = {};
-                            newItem.id = item.id;
-                            newItem.name = item.name;
-                            newItem.totalSize = item.totalSize;
+                            newItem.key = tempkey;
+                            tempkey++;
+                            newItem.id=item.id;
+                            newItem.title = item.name+"/"+item.totalSize;
                             return newItem;
                         })
-                        console.log(boyParkingLots)
+
+               let mockdata= [...boyParkingLots,...unparkList]
+                console.log(mockdata);
+                boyParkingLots=boyParkingLots.map(item=>{
+                 return item.key;
+                })
+                console.log("affagag"+boyParkingLots)
                         dispatch({
                             type: "INITUnManageLotDATA",
                             payload: {
-                                mockData: unparkList,
-                                targetKeys: boyParkingLots
+                                mockData: mockdata,
+                                keys: boyParkingLots,
                             },
                         })
             })
 
-    }
+    },
+   change:(dispatch,targetKeys,mockData,direction,moveKeys)=>{
+        let tempdata=[...mockData];
+        let token = localStorage.getItem("token");
+                if(direction==="right") {
 
+                    let newitem = tempdata.filter(item => item.key == moveKeys);
+
+                    fetch(`${conf.domain}/parkinglots/${newitem[0].id}`, {
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': token
+                        },
+                        body: JSON.stringify({
+                            coordinator_id: localStorage.getItem("coordinator_id"),
+                        })
+                    }).then(
+                        dispatch({
+                            type: "updateUnManageLotDATA",
+                            payload: {
+                                mockData: mockData,
+                                keys: targetKeys,
+                            },
+                        })
+                    ).catch(
+
+                    )
+                }
+                else{
+                    let newitem= tempdata.filter(item=>item.key==moveKeys);
+                        fetch(`${conf.domain}/parkinglots/${newitem[0].id}?setNull=true`, {
+                            method: 'put',
+                            headers: {
+                                'Authorization': token
+                            },
+                        }).then(
+                            dispatch({
+                                type: "updateUnManageLotDATA",
+                                payload: {
+                                    mockData: mockData,
+                                    keys: targetKeys,
+                                },
+                            })
+                        ).catch(
+
+                        )
+
+                }
+}
 
 }
