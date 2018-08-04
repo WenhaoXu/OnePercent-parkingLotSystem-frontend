@@ -25,7 +25,16 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.8.0",
+    "css-loader": "^1.0.0",
+    "less": "^3.8.0",
+    "less-loader": "^4.1.0",
     "react-app-rewired": "^1.5.2",
-    "redux-devtools": "^3.4.1"
+    "redux-devtools": "^3.4.1",
+    "style-loader": "^0.21.0"
+  },
+
+  "theme": {
+    "brand-primary": "red",
+    "color-text-base":  "#333"
   }
 }
