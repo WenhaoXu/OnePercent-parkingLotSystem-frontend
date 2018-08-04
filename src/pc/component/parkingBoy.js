@@ -26,9 +26,8 @@ import parkingBoyApi from "../api/parkingBoyApi";
              {title: '状态', dataIndex: 'status', key: 'status' },
              { title: '操作', dataIndex: '', key: 'x', render: (text, record) => (
                      <span>
-                        <a href="javascript:;"  className={record.id}>修改</a>|
-                  <a href="javascript:;"  className={record.id}>冻结</a>
-                </span>
+                         <a href="javascript:;"  className={record.id}>冻结</a>
+                      </span>
                  ), },
         ];
 

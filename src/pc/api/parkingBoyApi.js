@@ -2,7 +2,7 @@ import conf from "./conf";
 
 
 export default {
-    initBoyList :(dispatch)=>{
+    initBoyList: (dispatch) => {
         let token = localStorage.getItem("token");
         fetch(`${conf.domain}/users`, {
 
@@ -10,19 +10,19 @@ export default {
             headers: {
                 'Authorization': token
             },
-        }). then(response => response.json())
+        }).then(response => response.json())
             .then(json => {
-               json= json.filter(item=>item.roles[0].name==="ParkingBoy");
+                json = json.filter(item => item.roles[0].name === "ParkingBoy");
 
-               json=   json.map(item=>{
-                   let newItem={};
-                   newItem.id=item.id;
-                   newItem.userName=item.userName;
-                   newItem.phone=item.phone;
-                   newItem.email=item.email;
-                   newItem.status="上班"
-                   return newItem;
-               })
+                json = json.map(item => {
+                    let newItem = {};
+                    newItem.id = item.id;
+                    newItem.userName = item.userName;
+                    newItem.phone = item.phone;
+                    newItem.email = item.email;
+                    newItem.status = "上班"
+                    return newItem;
+                })
                 console.log(json)
                 dispatch({
                     type: "INITParkingBoyDATA",
@@ -33,8 +33,7 @@ export default {
     },
 
 
-
-    initLotList:(dispatch,id)=>{
+    initLotList: (dispatch, id) => {
         let token = localStorage.getItem("token");
         fetch(`${conf.domain}/parkinglots?findAll=true`, {
 
@@ -42,28 +41,37 @@ export default {
             headers: {
                 'Authorization': token
             },
-        }). then(response => response.json())
+        }).then(response => response.json())
             .then(json => {
-                json= json.filter(item=>item.roles[0].name==="ParkingBoy");
-
-                json=   json.map(item=>{
-                    let newItem={};
-                    newItem.id=item.id;
-                    newItem.userName=item.userName;
-                    newItem.phone=item.phone;
-                    newItem.email=item.email;
-                    newItem.status="上班"
+                let boyLots=[...json];
+                json = json.filter(item => item.coordinator === null && item.available === true);
+                 console.log(boyLots)
+                let unparkList = json.map(item => {
+                    let newItem = {};
+                    newItem.id = item.id;
+                    newItem.name = item.name;
+                    newItem.totalSize = item.totalSize;
                     return newItem;
                 })
-                console.log(json)
-                dispatch({
-                    type: "INITParkingBoyDATA",
-                    payload: json
-                })
+                console.log(unparkList)
+                let boyParkingLots = boyLots.filter(item =>item.coordinator!=null&& item.coordinator.id ===id).map(item => {
+                            let newItem = {};
+                            newItem.id = item.id;
+                            newItem.name = item.name;
+                            newItem.totalSize = item.totalSize;
+                            return newItem;
+                        })
+                        console.log(boyParkingLots)
+                        dispatch({
+                            type: "INITUnManageLotDATA",
+                            payload: {
+                                mockData: unparkList,
+                                targetKeys: boyParkingLots
+                            },
+                        })
             })
 
     }
-
 
 
 }
