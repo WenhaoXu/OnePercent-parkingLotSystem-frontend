@@ -1,5 +1,14 @@
-.searchBar {
+.input {
   display: inline-block;
   float: right;
   margin-bottom: 10px;
+}
+InputGroup{
+  display: inline-block;
+
+}
+.ant-input-group.ant-input-group-compact{
+  width: auto !important;
+  display: inline-block !important;
+
 }

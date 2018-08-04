@@ -3,6 +3,8 @@ export default (state={
     updatePopupVisible:false,
     employeeList:[],
     checkValue:"",
+    AddPopStatus:false,
+    popPassWordValue:[]
 }, action) => {
 
     switch (action.type) {
@@ -21,16 +23,11 @@ export default (state={
             newState.employeeList=action.employeeList;
             return newState;
         }
-        case 'getEmployeeList':{
-            const newState =JSON.parse(JSON.stringify(state));
-            newState.employeeList=action.employeeList;
-            return newState;
-        }
         case 'getChooseValue':{
             const newState =JSON.parse(JSON.stringify(state));
             newState.chooseValue=action.chooseValue;
-            if(action.chooseValue.roles.size>0)
-                newState.checkValue=action.chooseValue.roles[0].name;
+            if(action.chooseValue.roles.length>0)
+                newState.checkValue=action.chooseValue.roles[0].id;
             else
                 newState.checkValue="";
             newState.updatePopupVisible=true;
@@ -39,6 +36,17 @@ export default (state={
         case 'setCheckValue':{
             const newState =JSON.parse(JSON.stringify(state));
             newState.checkValue=action.checkValue;
+            return newState;
+        }
+        case 'popNameAndPassWord':{
+            const newState =JSON.parse(JSON.stringify(state));
+            newState.AddPopStatus=true;
+            newState.popPassWordValue=action.popPassWordValue;
+            return newState;
+        }
+        case 'changeAddPopStatus':{
+            const newState =JSON.parse(JSON.stringify(state));
+            newState.AddPopStatus=action.AddPopStatus;
             return newState;
         }
         default:
