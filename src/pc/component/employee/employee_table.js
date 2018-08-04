@@ -29,6 +29,7 @@ class Employee_table extends React.Component {
         forzenEmployeefromMap(id);
     }
 
+<<<<<<< HEAD
     render() {
         const data = this.props.employeeList;
         return (
@@ -64,6 +65,44 @@ class Employee_table extends React.Component {
                         key="action"
                         render={(text, record) => (
                             <span>
+=======
+  render() {
+    const data = this.props.employeeList;
+
+    return (
+      <div>
+        <Table dataSource={data} rowKey="id">
+          <Column
+              title="id"
+              dataIndex="id"
+              key="id"
+          />
+            <Column
+                title="用户名"
+                dataIndex="userName"
+                key="userName"
+            />
+          <Column
+              title="姓名"
+              dataIndex="name"
+              key="name"
+          />
+          <Column
+            title="email"
+            dataIndex="email"
+            key="email"
+          />
+          <Column
+            title="电话号码"
+            dataIndex="phone"
+            key="phone"
+          />
+          <Column
+            title="操作"
+            key="action"
+            render={(text, record) => (
+              <span>
+>>>>>>> fef1d93b2b89ddccfcc55b63f76da296d02180bc
                 <a onClick={()=>this.showUpdateModal(record)}>修改</a>
                 <Divider type="vertical" />
 

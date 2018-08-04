@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>lucy</find>
+      <find>title</find>
+      <find>修改</find>
+      <find>lot</find>
+      <find>table</find>
+      <find>page</find>
+      <find>update</find>
+      <find>addl</find>
+      <find>this.refs</find>
+      <find>refs</find>
+      <find>注销</find>
+      <find>INIT</find>
+      <find>park</find>
+      <find>this.refs.</find>
+      <find>value</find>
+      <find>history.pus</find>
+      <find>new</find>
+      <find>badge</find>
+      <find>历史</find>
+      <find>停取</find>
+      <find>history</find>
+      <find>get</find>
+      <find>patch</find>
+      <find>完成取车</find>
+      <find>map</find>
+      <find>console.log</find>
+      <find>dispatch</find>
+      <find>localstor</find>
+      <find>名字</find>
+      <find>popNameAndPassWord</find>
+    </findStrings>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="665" />
+    <option name="y" value="-13" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/OnePercent-parkingLotSystem-frontend/build/index.html" />
+    <configuration name="build" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <list>
+      <item itemvalue="npm.start" />
+      <item itemvalue="npm.build" />
+      <item itemvalue="JavaScript Debug.index.html" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+</project>
