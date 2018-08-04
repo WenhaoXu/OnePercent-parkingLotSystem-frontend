@@ -1,6 +1,7 @@
 import { Transfer } from 'antd';
 import {connect} from "react-redux";
 import React, {Component} from 'react';
+import parkingBoyApi from "../../api/parkingBoyApi";
 
 const mockData = [];
 for (let i = 0; i < 20; i++) {
@@ -16,7 +17,18 @@ const targetKeys = mockData
     .filter(item => +item.key % 3 > 1)
     .map(item => item.key);
 
+
+
+
+
+
+
 class shuttleBox extends Component {
+
+    componentWillMount(){
+        parkingBoyApi.initLotList(this.props.dispatch,this.props.id);
+
+    }
     state = {
         targetKeys,
         selectedKeys: [],
