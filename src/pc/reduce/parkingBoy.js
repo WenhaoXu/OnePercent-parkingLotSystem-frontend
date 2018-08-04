@@ -1,4 +1,4 @@
-export default (state={}, action) => {
+export default (state={parkingBoyList:[]}, action) => {
     let payload = action.payload;
     let type = action.type;
     switch (type) {
@@ -7,6 +7,11 @@ export default (state={}, action) => {
             return {
                 dataSource: payload
             };
+        case "getAllUseableParkingBoy":{
+            const newState =JSON.parse(JSON.stringify(state));
+            newState.parkingBoyList=action.parkingBoyList;
+            return newState;
+        }
         default:
             return state;
     }

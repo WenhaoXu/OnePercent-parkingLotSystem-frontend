@@ -1,4 +1,5 @@
 import conf from "./conf";
+import {getAllUseableParkingBoy} from "../action";
 
 
 export default {
@@ -31,8 +32,25 @@ export default {
             })
 
     }
+}
 
 
-
-
+export const getUseableParkingBoy=(dispatch)=>{
+    let token = localStorage.getItem("token");
+    fetch(`http://localhost:1234/users`, {
+        method: 'GET',
+        headers:
+            {'Authorization':token}
+    })
+        .then(response => response.json())
+        .then(json => {
+            //获取parkingBoy
+            console.log(json);
+            // json= json.filter(item=>item.roles[0].name==="ParkingBoy");
+            let parkingBoyList = json;
+            dispatch(getAllUseableParkingBoy(parkingBoyList));
+        })
+        .catch(function (ex) {
+            console.log('parsing failed', ex)
+        });
 }
