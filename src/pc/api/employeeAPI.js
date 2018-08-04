@@ -1,5 +1,6 @@
-import {getEmployeeListMap} from '../action/index'
+import {getEmployeeListMap,setPopPassWordfromMap} from '../action/index'
 import 'whatwg-fetch'
+import {setPopPassWordMap} from "../action";
 
 const employeeAPI = {
     visible:true,loading:false,
@@ -47,7 +48,9 @@ const employeeAPI = {
         .then(res => {
           const employeeList = res;
           console.log(employeeList);
+          dispatch(setPopPassWordMap(json));
           dispatch(getEmployeeListMap(employeeList));
+
         })
         .catch(function(error) {
           console.log(error);
@@ -65,20 +68,22 @@ const employeeAPI = {
           'Authorization':localStorage.getItem("token")
         }
       })
-      .then(response => response.json())
       .then(res => {
-        fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
-          method: 'GET',
-          headers: 
-            {'Authorization':localStorage.getItem("token")}
-        })
-        .then(response => response.json())
-        .then(res => {
-          const employeeList = res;
-          console.log(employeeList);
-          dispatch(getEmployeeListMap(employeeList));
-
-        })
+          fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
+              method: 'GET',
+              headers:{
+                  'Authorization':localStorage.getItem("token")
+              }
+          })
+              .then(response => response.json())
+              .then(res => {
+                  const employeeList = res;
+                  console.log(employeeList);
+                  dispatch(getEmployeeListMap(employeeList));
+              })
+              .catch(function(error) {
+                  console.log(error);
+              });
       })
       .catch(function(error) {
         console.log(error);
@@ -86,7 +91,7 @@ const employeeAPI = {
     },
 
     updateEmployee(employee,dispatch){
-      fetch(`http://localhost:1234/users/${employee.id}`, {
+      fetch(`https://parkinglotappofsystem.herokuapp.com/users/${employee.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -102,7 +107,7 @@ const employeeAPI = {
         })
       })
       .then(res => {
-        fetch(`http://localhost:1234/users`, {
+        fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
           method: 'GET',
           headers: 
             {'Authorization':localStorage.getItem("token")}
