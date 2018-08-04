@@ -5,32 +5,7 @@ import AddLot from "./addLot";
 import UpdateLot from "./updateLot";
 import lotApi from "../api/lot";
 
-
-import uuidv4 from 'uuid/v4'
-const data = [{
-    key: '1',
-    id: 'John Brown',
-    name: 32,
-    size: 'New York No. 1 Lake Park',
-}, {
-    key: '2',
-    id: 'Joe Black',
-    name: 42,
-    size: 'London No. 1 Lake Park',
-}, {
-    key: '3',
-    id: 'Jim Green',
-    name: 32,
-    size: 'Sidney No. 1 Lake Park',
-}, {
-    key: '4',
-    id: 'Jim Red',
-    name: 32,
-    size: 'London No. 2 Lake Park',
-}];
-
 class Lot extends React.Component {
-
 
     componentWillMount() {
         lotApi.initState(this.props.dispatch)
@@ -60,8 +35,8 @@ class Lot extends React.Component {
         }
     };
 
-    handleDisableUser = (dispatch,id) => {
-        lotApi.update(dispatch,id, null, null, null, false)
+    handleDisableUser = (dispatch, id,available) => {
+        lotApi.update(dispatch, id, null, null, null, available)
     };
 
     render() {
@@ -87,7 +62,8 @@ class Lot extends React.Component {
 
                     <span> <UpdateLot record={record}/></span>
                   <Divider type="vertical"/>
-                  <a href="javascript:;" onClick={() => this.handleDisableUser(this.props.dispatch,record.id)}>{record.available?'开启':'注销'}</a>
+                  <a href="javascript:;"
+                     onClick={() => this.handleDisableUser(this.props.dispatch, record.id,!record.available)}>{record.available ? '开启' : '注销'}</a>
                   <Divider type="vertical"/>
                 </span>
             ),

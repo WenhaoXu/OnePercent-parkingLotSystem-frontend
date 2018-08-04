@@ -59,7 +59,6 @@ class ChoseLots extends Component {
 
     render() {
 
-
         const choseLot = this.props.choseLot;
         return (
             <div>

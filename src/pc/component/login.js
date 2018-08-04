@@ -12,7 +12,7 @@ class Login extends React.Component {
 
 
     componentWillMount() {
-        localStorage.removeItem("token")
+        // localStorage.removeItem("token")
     }
 
 
