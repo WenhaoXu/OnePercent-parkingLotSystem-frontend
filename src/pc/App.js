@@ -5,7 +5,7 @@ import {Route, Switch} from "react-router-dom";
 import Login from "./component/login";
 import employee_add from './component/employee/employee_add';
 import EmployeeContainer from './container/employeeContainer';
-// import OrderList from "./container/order/orderListContainer";
+import OrderTable from "./container/order/orderTableContainer";
 class App extends Component {
 
   render() {
@@ -17,7 +17,8 @@ class App extends Component {
             <Route path='/login' component={Login}/>
             <Route path='/employee_add' component={employee_add}/>
             <Route path='/employee' component={EmployeeContainer}/>
-            {/*<Route path='/orderList' component={OrderList}/>*/}
+            <Route path='/orderTable' component={OrderTable}/>
+
         </Switch>
     );
   }

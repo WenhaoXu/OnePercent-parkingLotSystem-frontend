@@ -6,7 +6,6 @@ export const scrambleOrder1=(orderId,dispatch)=>{
 
     let item = localStorage.getItem("token");
     let parse = JSON.parse(item);
-    console.log("调用API处理抢单");
 
     fetch(`http://localhost:1234/orders/${orderId}?operation=robOrder&coordinatorId=1`, {
             method: 'PATCH',
@@ -53,8 +52,6 @@ export const getOrderList=(dispatch)=>{
         .then(response => response.json())
         .then(json => {
             const orderList = json;
-            console.log("调用API获取Order列表");
-            console.log(orderList);
             dispatch(getOrderList1(orderList));
         })
         .catch(function (ex) {
