@@ -22,13 +22,7 @@ class Employee_table extends React.Component {
   showUpdateModal=(values)=>{
       console.log("update++++"+values.phone);
       const getChooseValuefromMap = this.props.getChooseValuefromMap;
-      const changeUpdateStatusfromMap = this.props.changeUpdateStatusfromMap;
       getChooseValuefromMap(values);
-      setTimeout(() => {
-          changeUpdateStatusfromMap(true);
-      }, 1000);
-
-
   }
   frozen=(id)=>{
     const forzenEmployeefromMap = this.props.forzenEmployeefromMap;
@@ -45,6 +39,11 @@ class Employee_table extends React.Component {
               dataIndex="id"
               key="id"
           />
+            <Column
+                title="用户名"
+                dataIndex="userName"
+                key="userName"
+            />
           <Column
               title="姓名"
               dataIndex="name"
@@ -76,6 +75,7 @@ class Employee_table extends React.Component {
               </span>
             )}
           />
+
         
         </Table>
         <Employee_addPopupContainer/>

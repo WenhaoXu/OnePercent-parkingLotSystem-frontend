@@ -27,12 +27,12 @@ class employeeUpdate extends React.Component {
         if (!err) {
           console.log('update values of form: ', values);
           const {updateEmployeefromMap,changeUpdateStatusfromMap} = selfThis.props;
-          const employee = new Employee(selfThis.props.chooseValue.id,values.name,values.email,values.phone,checkValue);
+          const employee = new Employee(selfThis.props.chooseValue.id,values.userName,values.name,values.email,values.phone,checkValue);
             updateEmployeefromMap(employee);
             changeUpdateStatusfromMap(false);
-            this.props.form.resetFields();
         }
       });
+        this.props.form.resetFields();
     }
 
 
@@ -42,14 +42,13 @@ class employeeUpdate extends React.Component {
         for(let i=0;i<checkedValues.length;i++){
             checkValue[i]=({id:checkedValues[i]});
         }
-
     }
   
     render() {
       const { getFieldDecorator } = this.props.form;
-      console.log(this.props);
-      const  checkedRole = this.props.chooseValue.roles.map(x=>x.name);
 
+      let  checkedRole = this.props.chooseValue.roles.map(x=>x.name);
+      console.log(checkedRole);
       const formItemLayout = {
         labelCol: {
           xs: { span: 24 },
@@ -84,6 +83,21 @@ class employeeUpdate extends React.Component {
   
       return (
         <Form onSubmit={this.handleSubmit} >
+            <FormItem
+                {...formItemLayout}
+                label={(
+                    <span>
+                用户名
+              </span>
+                )}
+            >
+                {getFieldDecorator('userName', {
+                    rules: [{ required: true, message: 'Please input your userName!', whitespace: true }],
+                    initialValue: this.props.chooseValue.userName
+                })(
+                    <Input />
+                )}
+            </FormItem>
           <FormItem
             {...formItemLayout}
             label="邮箱："
@@ -99,11 +113,12 @@ class employeeUpdate extends React.Component {
               <Input />
             )}
           </FormItem>
+
           <FormItem
             {...formItemLayout}
             label={(
               <span>
-                姓名q
+                姓名
               </span>
             )}
           >
@@ -126,16 +141,7 @@ class employeeUpdate extends React.Component {
             )}
           </FormItem>
             <FormItem>
-                <CheckboxGroup options={roles} defaultValue={checkedRole} onChange={this.onChange} />
-
-                {/*<Checkbox.Group style={{ width: '100%' }} onChange={this.onChange}>*/}
-                    {/*<Row>*/}
-                        {/*<Col span={8}><Checkbox value="1" >Admin</Checkbox></Col>*/}
-                        {/*<Col span={8}><Checkbox value="2">Manager</Checkbox></Col>*/}
-                        {/*<Col span={8}><Checkbox value="3">ParkingBoy</Checkbox></Col>*/}
-
-                    {/*</Row>*/}
-                {/*</Checkbox.Group>*/}
+                <CheckboxGroup options={roles} defalutValue={checkedRole} onChange={this.onChange} />
             </FormItem>
           <FormItem {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">Register</Button>

@@ -29,9 +29,10 @@ const employeeAPI = {
           'Authorization':localStorage.getItem("token")
         },
         body: JSON.stringify({
-          phone: employee.phone,
-          name: employee.name,
-          email: employee.email
+            phone: employee.phone,
+            name: employee.name,
+            email: employee.email,
+            userName: employee.userName,
         })
       })
       .then(response => response.json())
@@ -94,6 +95,7 @@ const employeeAPI = {
         body: JSON.stringify({
             id: employee.id,
             phone: employee.phone,
+            userName: employee.userName,
             name: employee.name,
             email: employee.email,
             roles:employee.roles

@@ -2,3 +2,4 @@ export const changeAddStatusMap=(addPopupVisible)=>({type:'changeAddStatus',addP
 export const getEmployeeListMap=(employeeList)=>({type:'getEmployeeList',employeeList})
 export const changeUpdateStatusMap=(updatePopupVisible)=>({type:'changeUpdateStatus',updatePopupVisible})
 export const getChooseValueMap=(chooseValue)=>({type:'getChooseValue',chooseValue})
+export const setCheckValueMap=(checkValue)=>({type:'setCheckValue',checkValue})
