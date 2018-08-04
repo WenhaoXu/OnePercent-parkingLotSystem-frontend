@@ -47,6 +47,7 @@ class shuttleBox extends Component {
 
     render() {
         const state = this.state;
+        console.log(this.props.id)
         return (
             <Transfer
                 dataSource={mockData}

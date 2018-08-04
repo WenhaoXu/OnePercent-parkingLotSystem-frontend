@@ -22,7 +22,6 @@ export default class  OrderList extends Component {
             <div>
                 <NavBar mode="dark">订单列表</NavBar>
                 {(() => {
-                    //console.log(this.props.orderList);
                     return this.props.orderList.map(order => (
                         <OrderItem
                             order={order}

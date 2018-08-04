@@ -12,7 +12,6 @@ class Employee_updatePopup extends Component {
   handleOk=()=>{
     const changeUpdateStatusfromMap = this.props.changeUpdateStatusfromMap;
       changeUpdateStatusfromMap(false);
-
   }
 
   handleCancel=()=>{
@@ -27,12 +26,7 @@ class Employee_updatePopup extends Component {
           title="修改用户"
           onOk={this.handleOk}
           onCancel={this.handleCancel}
-          footer={[
-            <Button id="return" key="back" onClick={this.handleCancel}>Return</Button>,
-            <Button key="submit" type="primary" onClick={this.handleOk}>
-              Submit
-            </Button>,
-          ]}
+          footer={null}
         >
           <Employee_updateContainer />
         </Modal>
