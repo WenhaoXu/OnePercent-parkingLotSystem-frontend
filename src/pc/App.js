@@ -6,6 +6,7 @@ import Login from "./component/login";
 import employee_add from './component/employee/employee_add';
 import EmployeeContainer from './container/employeeContainer';
 import OrderTable from "./container/order/orderTableContainer";
+// import OrderList from "./container/order/orderListContainer";
 class App extends Component {
 
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
             <Route path='/employee' component={EmployeeContainer}/>
             <Route path='/orderTable' component={OrderTable}/>
 
+            {/*<Route path='/orderList' component={OrderList}/>*/}
         </Switch>
     );
   }

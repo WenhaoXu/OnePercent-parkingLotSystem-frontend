@@ -1,6 +1,7 @@
 import 'whatwg-fetch'
 import conf from './conf'
-import { message } from 'antd';
+import {message} from 'antd';
+
 export default {
 
     initState: (dispatch) => {
@@ -30,14 +31,14 @@ export default {
             })
     },
 
-    add: (dispatch,name, size) => {
+    add: (dispatch, name, size) => {
         let token = localStorage.getItem("token");
         fetch(`${conf.domain}/parkinglots`, {
 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization':token
+                'Authorization': token
             },
             body: JSON.stringify({
                 name: name,
@@ -50,14 +51,14 @@ export default {
         })
     },
 
-    update: (dispatch,id, name, totalSize, spareSize, available) => {
+    update: (dispatch, id, name, totalSize, spareSize, available, updateCallBack) => {
 
         let token = localStorage.getItem("token");
         fetch(`${conf.domain}/parkinglots/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization':token
+                'Authorization': token
             },
             body: JSON.stringify({
                 id,
@@ -68,14 +69,57 @@ export default {
             })
         })
             .then(value => {
-                console.log(value.text().then(value1 => {
+                value.text().then(value1 => {
                     if (value1.indexOf('停车场不是') > 0) {
                         message.error(value1);
                     }
-                }));
+                })
+                if (updateCallBack != null || updateCallBack !== undefined) {
+                    console.log("callback")
+                    updateCallBack()
+                    console.log(12)
+                }
             })
             .catch(reason => {
-                console.log(reason)
+                // console.log(reason)
+            })
+    },
+
+    searchBy: (field, condition,dispatch) => {
+
+        let token = localStorage.getItem("token");
+        let page = 1;
+        let size = 10;
+
+        let param;
+        if (field === "1"){
+            param=`&name=${condition}`
+        }else if (field === "2") {
+            param=`&greaterThanEqual=${condition}`
+        }else if (field ==="3") {
+            param=`&lessThanEqual=${condition}`
+        }else {
+            param=`&phoneNumber=${condition}`
+        }
+
+
+        const myHeaders = new Headers();
+        myHeaders.append('Authorization', token);
+
+        fetch(`${conf.domain}/parkinglots?page=${page}&size=${size}${param}`, {
+            method: 'GET',
+            headers: myHeaders,
+        })
+            .then(response => response.json())
+            .then(json => {
+                console.log(json)
+                dispatch({
+                    type: "INIT",
+                    payload: json
+                })
+            })
+            .catch(function (ex) {
+                console.log('parsing failed', ex)
             })
     }
 

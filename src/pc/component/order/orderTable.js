@@ -1,5 +1,5 @@
 import React from 'react';
-import  {Table,Divider,Popconfirm ,message} from 'antd';
+import  {Table} from 'antd';
 const { Column} = Table;
 export default  class OrderTable extends React.Component{
     constructor(props){

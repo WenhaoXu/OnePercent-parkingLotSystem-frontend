@@ -6,7 +6,6 @@ export const scrambleOrder1=(orderId,dispatch)=>{
 
     let item = localStorage.getItem("token");
     let parse = JSON.parse(item);
-
     fetch(`http://localhost:1234/orders/${orderId}?operation=robOrder&coordinatorId=1`, {
             method: 'PATCH',
             headers:

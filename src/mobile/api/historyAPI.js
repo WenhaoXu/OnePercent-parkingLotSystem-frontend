@@ -12,7 +12,7 @@ const historyAPI = {
             .then(response => response.json())
             .then(json => {
                 const employeeList = json;
-                console.log(employeeList);
+                // console.log(employeeList);
                 dispatch(getHistoryListMap(employeeList));
             })
             .catch(function (ex) {

@@ -2,18 +2,16 @@ import {getAllOrder} from "../action/index";
 import Order from "../model/Order";
 
 export const getOrderList=(dispatch)=>{
-    let item = localStorage.getItem("token");
-    console.log(item);
-    let parse = JSON.parse(item);
+    let token = localStorage.getItem("token");
     fetch(`http://localhost:1234/orders`, {
         method: 'GET',
         headers:
-            {'Authorization':parse.token}
+            {'Authorization':token}
     })
         .then(response => response.json())
         .then(json => {
-            const orderList = json;
-            const formatOrderList=[];
+            let orderList = json;
+            let formatOrderList=[];
             for(let order of  orderList)
             {   let status="存取中";
                 let type="取车";
