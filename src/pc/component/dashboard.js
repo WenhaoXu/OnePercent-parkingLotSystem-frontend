@@ -1,38 +1,71 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Card, Col, Progress, Row} from "antd";
+import {Card, Col, Progress, Row, Carousel} from "antd";
 import './dashboard.css'
+import dashboardAPI from '../api/dashboardAPI';
 
 class DashBoard extends Component {
+
+    componentDidMount() {
+        dashboardAPI.loadParkingLots(this.props.refreshParkingLots);
+    }
+
+
     render() {
-        return (
-            <div style={{background: '#fff', padding: '30px'}}>
-                <Row gutter={16}>
-                    <Col span={8}>
-                        <Card title="Card title" bordered={true}>
+        const parkingLots = this.props.parkingLots;
+        const pageSize = 12;
+        const carouselDivs = [];
+        for (let i = 0; i < parkingLots.length; i += pageSize) {
+            let cols = [];
+            for (let j = i; j < i + pageSize && j < parkingLots.length; j++) {
+                let parkingLot = parkingLots[j];
+                let content = (
+                    <Col span={6}>
+                        <Card title={parkingLot.name}
+                              bordered={true}
+                              hoverable
+                              style={{marginBottom: '20px'}}
+                              bodyStyle={{padding: '13px'}}
+                        >
                             <div className={'card-wrap'}>
                                 <div>
-                                    <Progress type="circle" percent={4 / 11 * 100} format={percent => `4 /11`}/>
-                                    <p className={'detail'}>停车情况</p>
+                                    <Progress type="circle" percent={parkingLot.spareSize / parkingLot.totalSize * 100}
+                                              format={percent => percent.toFixed(2) + '%'}/>
+                                    <p className={'detail'}>总车位：{parkingLot.totalSize}<br/>剩余车位：{parkingLot.spareSize}</p>
                                 </div>
                                 <div className={'boy'}>
-                                    <p>停车员：小美</p>
+                                    <p>停车员：{parkingLot.coordinator.userName}</p>
                                 </div>
                             </div>
                         </Card>
                     </Col>
-
-
-                </Row>
+                );
+                cols.push(content);
+            }
+            console.log('cols size: ' + cols.length)
+            let div = <div><Row gutter={16}>{cols}</Row></div>;
+            carouselDivs.push(div);
+        }
+        return (
+            <div style={{background: '#fff', padding: '30px'}}>
+                <Carousel autoplay>
+                    {carouselDivs}
+                </Carousel>
             </div>
         );
     }
 }
 
-function mapStateToProps(state) {
-    return {};
+const mapStateToProps = (state) => {
+    return state.DashBoardReducer;
 }
 
-export default connect(
-    mapStateToProps,
-)(DashBoard);
+const mapDispatchToProps = (dispath) => {
+    return {
+        refreshParkingLots: (parkingLots) => {
+            dispath({value: parkingLots, type: 'REFRESH_PARKINGlOTS'});
+        }
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DashBoard);
