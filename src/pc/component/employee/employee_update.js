@@ -137,8 +137,8 @@ class employeeUpdate extends React.Component {
           </FormItem>
             <FormItem>
                 <RadioGroup onChange={this.onChange} value={this.props.checkValue}>
-                    <Radio value={"Manager"}>Manager</Radio>
-                    <Radio value={"ParkingBoy"}>ParkingBoy</Radio>
+                    <Radio value={2}>Manager</Radio>
+                    <Radio value={3}>ParkingBoy</Radio>
                 </RadioGroup>
             </FormItem>
           <FormItem {...tailFormItemLayout}>

@@ -7,6 +7,10 @@ export default (state={}, action) => {
             return {
                 dataSource: payload
             };
+        case 'RELOAD_TABLE_DATA':
+            let newState = {};
+            newState.dataSource = action.value;
+            return newState;
         default:
             return state;
     }
