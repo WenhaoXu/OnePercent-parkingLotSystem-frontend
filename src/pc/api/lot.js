@@ -83,6 +83,44 @@ export default {
             .catch(reason => {
                 // console.log(reason)
             })
+    },
+
+    searchBy: (field, condition,dispatch) => {
+
+        let token = localStorage.getItem("token");
+        let page = 1;
+        let size = 10;
+
+        let param;
+        if (field === "1"){
+            param=`&name=${condition}`
+        }else if (field === "2") {
+            param=`&greaterThanEqual=${condition}`
+        }else if (field ==="3") {
+            param=`&lessThanEqual=${condition}`
+        }else {
+            param=`&phoneNumber=${condition}`
+        }
+
+
+        const myHeaders = new Headers();
+        myHeaders.append('Authorization', token);
+
+        fetch(`${conf.domain}/parkinglots?page=${page}&size=${size}${param}`, {
+            method: 'GET',
+            headers: myHeaders,
+        })
+            .then(response => response.json())
+            .then(json => {
+                console.log(json)
+                dispatch({
+                    type: "INIT",
+                    payload: json
+                })
+            })
+            .catch(function (ex) {
+                console.log('parsing failed', ex)
+            })
     }
 
 }
