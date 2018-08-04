@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c81a3f17-7f19-4ced-baec-6234376a4760" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pc/api/lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/api/lot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/lot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/reduce/lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/reduce/lot.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,40 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="parkAndTake.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mobile/api/parkAndTake.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#1#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pc/component/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3360">
-              <caret line="155" column="35" selection-start-line="155" selection-start-column="28" selection-end-line="155" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pc/component/main.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="lot.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="lot.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pc/component/lot.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+            <state relative-caret-position="169">
+              <caret line="118" column="74" selection-start-line="118" selection-start-column="64" selection-end-line="118" selection-end-column="74" />
               <folding>
                 <element signature="e#0#78#0" expanded="true" />
               </folding>
@@ -58,24 +30,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="updateLot.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pc/component/updateLot.js">
+      <file leaf-file-name="login.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pc/component/login.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="lib.dom.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state relative-caret-position="415">
+              <caret line="3016" column="40" selection-start-line="3016" selection-start-column="26" selection-end-line="3016" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lot.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lot.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pc/api/lot.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="101" column="17" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
+            <state relative-caret-position="504">
+              <caret line="26" column="17" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="17" />
               <folding>
                 <element signature="e#390#460#0" />
-                <element signature="e#535#698#0" />
-                <element signature="e#596#683#0" />
                 <element signature="e#733#798#0" />
                 <element signature="e#842#1345#0" />
                 <element signature="e#939#1218#0" />
@@ -97,41 +72,62 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pc/component/dashboard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mobileMain.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mobile/component/mobileMain.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="19" column="23" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pc/component/dashboard.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pc/reduce/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lot.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pc/reduce/lot.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pc/component/login.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1272">
-              <caret line="58" column="42" lean-forward="true" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SECOND">
-              <first_editor relative-caret-position="24">
-                <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="conf.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pc/api/conf.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="conf.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conf.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="33" />
+              <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -191,8 +187,6 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/pc/component/main.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/pc/component/dashboard.css" />
-        <option value="$PROJECT_DIR$/src/pc/component/dashboard.js" />
         <option value="$PROJECT_DIR$/src/pc/component/lot.css" />
         <option value="$PROJECT_DIR$/src/pc/reduce/addLot.css" />
         <option value="$PROJECT_DIR$/src/pc/reduce/addLot.js" />
@@ -213,7 +207,6 @@
         <option value="$PROJECT_DIR$/src/mobile/component/takeout.js" />
         <option value="$PROJECT_DIR$/src/mobile/api/login.js" />
         <option value="$PROJECT_DIR$/src/mobile/api/orderAPi.js" />
-        <option value="$PROJECT_DIR$/src/pc/reduce/lot.js" />
         <option value="$PROJECT_DIR$/src/pc/container/lot.js" />
         <option value="$PROJECT_DIR$/src/mobile/reduce/order.js" />
         <option value="$PROJECT_DIR$/src/mobile/api/historyAPI.js" />
@@ -237,6 +230,9 @@
         <option value="$PROJECT_DIR$/src/pc/component/login.js" />
         <option value="$PROJECT_DIR$/src/pc/component/lot.js" />
         <option value="$PROJECT_DIR$/src/pc/api/lot.js" />
+        <option value="$PROJECT_DIR$/src/pc/component/dashboard.css" />
+        <option value="$PROJECT_DIR$/src/pc/component/dashboard.js" />
+        <option value="$PROJECT_DIR$/src/pc/reduce/lot.js" />
       </list>
     </option>
   </component>
@@ -259,7 +255,7 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="375" />
     <option name="y" value="-13" />
     <option name="width" value="1918" />
@@ -297,7 +293,21 @@
               <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pc" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pc" type="462c0819:PsiDirectoryNode" />
               <item name="component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pc" type="462c0819:PsiDirectoryNode" />
+              <item name="reduce" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -316,15 +326,15 @@
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\HONGJE3\Desktop\OnePercent-parkingLotSystem-frontend\src\pc" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\HONGJE3\Desktop\OnePercent-parkingLotSystem-frontend\src\mobile\component" />
       <recent name="C:\Users\HONGJE3\Desktop\OnePercent-parkingLotSystem-frontend\src\mobile\api" />
       <recent name="C:\Users\HONGJE3\Desktop\OnePercent-parkingLotSystem-frontend\src\mobile\imgs" />
       <recent name="C:\Users\HONGJE3\Desktop\OnePercent-parkingLotSystem-frontend\src\pc\component" />
       <recent name="C:\Users\HONGJE3\Desktop\OnePercent-parkingLotSystem-frontend\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HONGJE3\Desktop\OnePercent-parkingLotSystem-frontend\src\pc" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -430,21 +440,29 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110644000" />
+    <option name="totallyTimeSpent" value="116685000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
       <window_info anchor="bottom" id="Messages" weight="0.3278867" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" weight="0.23638344" />
+      <window_info active="true" anchor="bottom" id="Version Control" visible="true" weight="0.43028322" />
       <window_info id="npm" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.25381264" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.30283225" />
-      <window_info anchor="bottom" id="TypeScript" weight="0.32890365" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21496312" />
+      <window_info anchor="bottom" id="Terminal" weight="0.30283225" />
+      <window_info anchor="bottom" id="TypeScript" weight="0.3278867" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21496312" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3278867" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -459,16 +477,16 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32890365" />
+      <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32890365" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32890365" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32890365" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32890365" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32890365" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
   </component>
@@ -517,17 +535,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/TW-OOCL-Projects/OnePercent-parkingLotSystem-frontend&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/mobile/App.js" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/mobile/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="63" lean-forward="true" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mobile/component/mobile.css" />
     <entry file="file://$PROJECT_DIR$/src/pc/component/employee/employee_add.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438">
@@ -566,13 +573,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mobile/component/pullRefresh.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mobile/component/takeout.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -609,13 +610,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mobile/container/orderListContainer.js" />
-    <entry file="file://$PROJECT_DIR$/src/pc/reduce/lot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pc/container/lot.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -637,9 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
           <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -671,9 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -684,15 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pc/component/dashboard.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pc/component/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pc/component/login.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pc/component/lot.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -700,9 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -784,16 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mobile/component/mobileMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="96" column="36" selection-start-line="96" selection-start-column="36" selection-end-line="96" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mobile/component/parkAndTake.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -807,7 +773,7 @@
     <entry file="file://$PROJECT_DIR$/src/mobile/api/parkAndTake.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#1#22#0" expanded="true" />
           </folding>
@@ -832,7 +798,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SECOND">
           <first_editor relative-caret-position="24">
-            <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+            <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
@@ -844,7 +810,7 @@
     <entry file="file://$PROJECT_DIR$/src/pc/component/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3360">
-          <caret line="155" column="35" selection-start-line="155" selection-start-column="28" selection-end-line="155" selection-end-column="35" />
+          <caret line="156" column="35" selection-start-line="156" selection-start-column="28" selection-end-line="156" selection-end-column="35" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -861,28 +827,67 @@
     <entry file="file://$PROJECT_DIR$/src/pc/component/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1272">
-          <caret line="58" column="42" lean-forward="true" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
+          <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pc/component/lot.js">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+        <state relative-caret-position="415">
+          <caret line="3016" column="40" selection-start-line="3016" selection-start-column="26" selection-end-line="3016" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pc/reduce/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pc/component/login.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mobile/component/mobileMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="23" />
           <folding>
-            <element signature="e#0#78#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pc/component/dashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pc/component/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pc/reduce/lot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pc/api/lot.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="101" column="17" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
+        <state relative-caret-position="504">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="17" />
           <folding>
             <element signature="e#390#460#0" />
-            <element signature="e#535#698#0" />
-            <element signature="e#596#683#0" />
             <element signature="e#733#798#0" />
             <element signature="e#842#1345#0" />
             <element signature="e#939#1218#0" />
@@ -899,6 +904,16 @@
             <element signature="e#2007#2077#0" />
             <element signature="e#2163#2203#0" />
             <element signature="e#2138#2189#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pc/component/lot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="118" column="74" selection-start-line="118" selection-start-column="64" selection-end-line="118" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#78#0" expanded="true" />
           </folding>
         </state>
       </provider>

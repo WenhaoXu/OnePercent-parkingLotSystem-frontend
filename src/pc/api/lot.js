@@ -112,7 +112,7 @@ export default {
         })
             .then(response => response.json())
             .then(json => {
-                console.log(json)
+                // console.log(json)
                 dispatch({
                     type: "INIT",
                     payload: json
