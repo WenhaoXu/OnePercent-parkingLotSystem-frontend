@@ -2,55 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f21e4d14-f701-40a2-9c61-8e4e5aa1781b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/api/paringLotListApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/api/userApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/component/PersonalInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/component/PersonalPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/reduce/PersonalPageReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/reduce/parkAndTakeRefresh.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/reduce/parkingLotList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pc/api/dashboardAPI.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pc/api/parkingBoyApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pc/component/parkingBoy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pc/component/parkingBoyItem/parkingBoyHead.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pc/component/parkingBoyItem/shuttleBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pc/less/dashboard.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pc/reduce/DashBoardReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pc/reduce/parkingBoy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/OnePercent-parkingLotSystem-frontend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/api/conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/api/conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/api/historyAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/api/historyAPI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/api/orderAPi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/api/orderAPi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/api/parkAndTake.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/api/parkAndTake.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/api/takeout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/api/takeout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/ChoseLots.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/ChoseLots.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/ParkingLotList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/ParkingLotList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/history.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/mobileMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/mobileMain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/parkAndTake.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/parkAndTake.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/reduce/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/reduce/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/reduce/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/reduce/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/api/conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/api/conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/api/lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/api/lot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/api/orderAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/api/orderAPI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/lot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/order/orderTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/order/orderTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/updateLot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/updateLot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/container/lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/container/lot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/reduce/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/reduce/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/reduce/lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/reduce/lot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pc/less/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pc/less/employee.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/action/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/action/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/api/employeeAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/api/employeeAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/component/employee/employee.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/employee/employee.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/component/employee/employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/employee/employee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/component/employee/employee_add.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/employee/employee_add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/component/employee/employee_addPopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/employee/employee_addPopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/component/employee/employee_table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/employee/employee_table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/component/employee/employee_update.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/employee/employee_update.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/component/employee/employee_updatePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/employee/employee_updatePopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/component/employee/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/employee/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/component/parkingBoyItem/parkingBoyHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/parkingBoyItem/parkingBoyHead.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/container/employee_tableContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/container/employee_tableContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/container/employee_updateContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/container/employee_updateContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/container/employee_updatePopupContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/container/employee_updatePopupContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/model/Employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/model/Employee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/reduce/employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/reduce/employee.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -64,13 +33,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="orderTableContainer.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="orderTableContainer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pc/container/order/orderTableContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
+            <state relative-caret-position="22">
               <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="employee_table.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pc/component/employee/employee_table.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1745">
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -156,17 +136,6 @@
             <state>
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboardAPI.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pc/api/dashboardAPI.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -259,6 +228,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pc" type="462c0819:PsiDirectoryNode" />
               <item name="component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pc" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+              <item name="employee" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OnePercent-parkingLotSystem-frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -413,18 +390,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533370055163</updated>
-      <workItem from="1533370057581" duration="1440000" />
+      <workItem from="1533370057581" duration="1719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1440000" />
+    <option name="totallyTimeSpent" value="1719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28118393" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28118393" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -432,7 +408,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info id="npm" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.3298611" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.5636574" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -570,10 +546,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pc/container/order/orderTableContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
+        <state relative-caret-position="22">
           <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pc/component/employee/employee_table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1745">
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

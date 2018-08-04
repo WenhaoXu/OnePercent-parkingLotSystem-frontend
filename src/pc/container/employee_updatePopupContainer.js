@@ -4,7 +4,7 @@ import {changeUpdateStatusMap} from '../action/index';
 import employeeAPI from '../api/employeeAPI'
 
 const mapStateToProps = (state, ownProps) =>({
-
+    chooseValue:state.employee.chooseValue,
     updatePopupVisible: state.employee.updatePopupVisible
   })
   
