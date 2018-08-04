@@ -3,7 +3,7 @@ import React, {Component} from "react";
 import {List, NavBar} from 'antd-mobile';
 import PersonalInfo from "./PersonalInfo";
 import userApi from '../api/userApi';
-import {Icon} from 'antd-mobile'
+import {Icon,Button,WhiteSpace} from 'antd-mobile'
 
 
 const Item = List.Item;
@@ -28,6 +28,11 @@ class PersonalPage extends Component {
         );
     }
 
+    quit=()=>{
+      localStorage.clear();
+      window.location.href="http://localhost:9000/mobile/login"
+    }
+
     render() {
         console.log(JSON.stringify(this.props))
         let component;
@@ -49,6 +54,7 @@ class PersonalPage extends Component {
                 onLeftClick={this.props.switchToMainPage}>{title}
                 </NavBar>
                 {component}
+                <Button type="primary" onClick={()=>this.quit()}   style={{marginTop:" 170px" }}>退出</Button><WhiteSpace />
             </div>
         );
     }

@@ -42,12 +42,15 @@ class shuttleBox extends Component {
         console.log('target:', e.target);
     }
 
+
+
+
     render() {
         const state = this.state;
         return (
             <Transfer
                 dataSource={mockData}
-                titles={['Source', 'Target']}
+                titles={['可选停车场', '管理的停车场']}
                 targetKeys={state.targetKeys}
                 selectedKeys={state.selectedKeys}
                 onChange={this.handleChange}
@@ -59,6 +62,7 @@ class shuttleBox extends Component {
     }
 }
 function mapStateToProps(state) {
+
     return {};
 }
 function  mapDispatchToProps(dispatch) {
