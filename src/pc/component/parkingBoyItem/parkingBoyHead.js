@@ -22,7 +22,6 @@ class parkingBoyHead extends Component{
             </div>
             </div>
         )
-
     }
 }
 
