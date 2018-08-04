@@ -1,9 +1,10 @@
 export default class Employee{
-
-    constructor(name,email,phone){
+    constructor(id,userName,name,email,phone,roles){
+        this.id = id;
+        this.userName = userName;
         this.phone = phone;
         this.name = name;
         this.email = email;
-        this.roles = [];
+        this.roles = roles;
     }
 }
