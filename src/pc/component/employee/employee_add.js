@@ -26,7 +26,7 @@ class employeeAdd extends React.Component {
           const employee = new Employee("",values.userName,values.name,values.email,values.phone);
           addEmployeefromMap(employee);
           changeAddStatusfromMap(false);
-            this.props.form.resetFields();
+          this.props.form.resetFields();
         }
       });
     }

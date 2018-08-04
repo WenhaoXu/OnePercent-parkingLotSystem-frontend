@@ -68,7 +68,7 @@ class Employee_table extends React.Component {
                 <Divider type="vertical" />
                 
                 <Popconfirm title="确定冻结此用户？" onConfirm={confirm} onCancel={cancel} okText="Yes" cancelText="No">
-                    <a onClick={()=>this.frozen(record.id)}>{record.loginFlag}</a>
+                    <a onClick={()=>this.frozen(record.id)}>{record.loginFlag==1?"冻结":"恢复"}</a>
                 </Popconfirm>
                 
                 <Divider type="vertical" />

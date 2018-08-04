@@ -2,54 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c81a3f17-7f19-4ced-baec-6234376a4760" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/api/paringLotListApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/api/userApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/component/PersonalInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/component/PersonalPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/reduce/PersonalPageReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/reduce/parkAndTakeRefresh.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mobile/reduce/parkingLotList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pc/component/parkingBoy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pc/component/parkingBoyItem/parkingBoyHead.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pc/component/parkingBoyItem/shuttleBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/api/conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/api/conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/api/historyAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/api/historyAPI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/api/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/api/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/api/orderAPi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/api/orderAPi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/api/parkAndTake.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/api/parkAndTake.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/api/takeout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/api/takeout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/ChoseLots.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/ChoseLots.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/ParkingLotList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/ParkingLotList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/history.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/mobileMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/mobileMain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/orderItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/order/orderItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/orderList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/order/orderList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/parkAndTake.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/parkAndTake.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/component/takeout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/takeout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/container/orderListContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/container/order/orderListContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/reduce/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/reduce/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/reduce/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/reduce/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mobile/reduce/takeout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/reduce/takeout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/api/conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/api/conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/api/lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/api/lot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/employee/employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/employee/employee.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/employee/employee_update.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/employee/employee_update.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/lot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/updateLot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/updateLot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/container/employee_tableContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/container/employee_tableContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/container/employee_updateContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/container/employee_updateContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/container/lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/container/lot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/reduce/employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/reduce/employee.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/reduce/lot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/reduce/lot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/component/employee/employee_add.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/employee/employee_add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/component/employee/employee_table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/employee/employee_table.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -63,86 +17,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="employee_update.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pc/component/employee/employee_update.js">
+      <file leaf-file-name="employee_add.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pc/component/employee/employee_add.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2200">
-              <caret line="100" column="23" lean-forward="true" selection-start-line="100" selection-start-column="23" selection-end-line="100" selection-end-column="23" />
+            <state relative-caret-position="290">
+              <caret line="115" column="14" lean-forward="true" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="14" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pc/component/employee/register.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="employee_table.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pc/component/employee/employee_table.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="employee_tableContainer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pc/container/employee_tableContainer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="employee.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pc/component/employee/employee.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="employee_updateContainer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pc/container/employee_updateContainer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="68" lean-forward="true" selection-start-line="1" selection-start-column="68" selection-end-line="1" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pc/action/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="65" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="employee.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pc/reduce/employee.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="28" column="28" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="28" />
+            <state relative-caret-position="334">
+              <caret line="31" column="54" lean-forward="true" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="employeeAPI.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pc/api/employeeAPI.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-700">
+              <caret line="75" column="22" lean-forward="true" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -238,9 +141,7 @@
         <option value="$PROJECT_DIR$/src/pc/component/employee/employee_updatePopup.js" />
         <option value="$PROJECT_DIR$/src/pc/component/employee/register.css" />
         <option value="$PROJECT_DIR$/src/pc/model/Employee.js" />
-        <option value="$PROJECT_DIR$/src/pc/component/employee/employee_add.js" />
         <option value="$PROJECT_DIR$/src/pc/api/employeeAPI.js" />
-        <option value="$PROJECT_DIR$/src/pc/component/employee/employee_table.js" />
         <option value="$PROJECT_DIR$/src/pc/action/index.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/pc/reduce/employee.js" />
@@ -248,6 +149,8 @@
         <option value="$PROJECT_DIR$/src/pc/component/employee/employee_update.js" />
         <option value="$PROJECT_DIR$/src/pc/container/employee_tableContainer.js" />
         <option value="$PROJECT_DIR$/src/pc/component/employee/employee.js" />
+        <option value="$PROJECT_DIR$/src/pc/component/employee/employee_table.js" />
+        <option value="$PROJECT_DIR$/src/pc/component/employee/employee_add.js" />
       </list>
     </option>
   </component>
@@ -490,7 +393,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116518000" />
+    <option name="totallyTimeSpent" value="117206000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -505,7 +408,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.3278867" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.36819172" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.36819172" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32890365" />
@@ -866,26 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pc/api/employeeAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1782">
-          <caret line="81" column="8" lean-forward="true" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pc/component/employee/employee_add.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pc/component/employee/employee_updatePopup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="607">
@@ -907,16 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="65" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pc/component/employee/employee_table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -947,20 +820,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pc/reduce/employee.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pc/component/employee/employee.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="3" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+        <state relative-caret-position="-66">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pc/component/employee/employee_table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="59" column="23" lean-forward="true" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pc/api/employeeAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-700">
+          <caret line="75" column="22" lean-forward="true" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pc/component/employee/employee_add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="115" column="14" lean-forward="true" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pc/reduce/employee.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="31" column="54" lean-forward="true" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
         </state>
       </provider>
     </entry>
