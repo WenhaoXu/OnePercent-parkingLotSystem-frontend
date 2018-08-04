@@ -29,7 +29,10 @@ export default (state={
         case 'getChooseValue':{
             const newState =JSON.parse(JSON.stringify(state));
             newState.chooseValue=action.chooseValue;
-            newState.checkValue=action.chooseValue.roles[0].name;
+            if(action.chooseValue.roles.size>0)
+                newState.checkValue=action.chooseValue.roles[0].name;
+            else
+                newState.checkValue="";
             newState.updatePopupVisible=true;
             return newState;
         }
