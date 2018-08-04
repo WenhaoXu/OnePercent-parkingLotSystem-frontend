@@ -15,12 +15,15 @@ class UpdateLot extends Component {
 
     handleOk = (id) => {
 
+        let updateCallBack = ()=>lotApi.initState(this.props.dispatch);
         let name = this.refs.name.input.value;
         let size = this.refs.totalSize.input.value;
-        lotApi.update(this.props.dispatch,id, name, size);
+        console.log(updateCallBack)
+        lotApi.update(this.props.dispatch,id, name, size,null,null,updateCallBack );
         this.setState({
             visible: false,
         });
+
     };
 
     handleCancel = (e) => {
