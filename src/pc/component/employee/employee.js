@@ -7,7 +7,7 @@ class Employee extends React.Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount() {
+  componentWillMount() {
     const showEmployeeListfromMap = this.props.showEmployeeListfromMap;
    
     fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {

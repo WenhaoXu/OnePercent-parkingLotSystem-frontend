@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import {Card, WingBlank, WhiteSpace, NavBar} from 'antd-mobile';
 import {Icon} from 'antd-mobile'
-
+import FontAwesomeIcon from 'react-fontawesome'
+import '../../../node_modules/font-awesome/css/font-awesome.css'
 
 class PersonalInfo extends Component{
     constructor(props){
@@ -17,7 +18,7 @@ class PersonalInfo extends Component{
                     <Card>
                         <Card.Header
                             title="姓名"
-                            thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
+                            thumb={<FontAwesomeIcon name={'user-circle'} style={{fontSize: '25px', marginRight: '5px'}}/>}
                         />
                         <Card.Body>
                             <div>{accountInfo.name}</div>
@@ -31,7 +32,7 @@ class PersonalInfo extends Component{
                     <Card>
                         <Card.Header
                             title="电子邮箱"
-                            thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
+                            thumb={<FontAwesomeIcon name={'envelope-square'} style={{fontSize: '25px', marginRight: '5px'}}/>}
                         />
                         <Card.Body>
                             <div>{accountInfo.email}</div>
@@ -45,7 +46,7 @@ class PersonalInfo extends Component{
                     <Card>
                         <Card.Header
                             title="手机号码"
-                            thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
+                            thumb={<FontAwesomeIcon name={'phone-square'} style={{fontSize: '25px', marginRight: '5px'}}/>}
                         />
                         <Card.Body>
                             <div>{accountInfo.phone}</div>

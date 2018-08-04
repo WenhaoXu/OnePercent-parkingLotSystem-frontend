@@ -6,6 +6,8 @@ import Login from "./component/login";
 import employee_add from './component/employee/employee_add';
 import EmployeeContainer from './container/employeeContainer';
 import OrderTable from "./container/order/orderTableContainer";
+import 'antd/dist/antd.css';
+
 // import OrderList from "./container/order/orderListContainer";
 class App extends Component {
 

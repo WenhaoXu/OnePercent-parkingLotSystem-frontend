@@ -35,6 +35,7 @@ export default {
                     newItem.userName = item.userName;
                     newItem.phone = item.phone;
                     newItem.email = item.email;
+                    newItem.loginFlag = item.loginFlag;
                     return newItem;
                 })
                 console.log(json)
@@ -71,7 +72,7 @@ export default {
                     return newItem;
                 })
                 console.log(unparkList)
-                let boyParkingLots = boyLots.filter(item =>item.coordinator!=null&& item.coordinator.id ===id).map(item => {
+                let boyParkingLots = boyLots.filter(item =>item.coordinator!=null&& item.coordinator.id ==id).map(item => {
                             let newItem = {};
                             newItem.key = tempkey;
                             tempkey++;

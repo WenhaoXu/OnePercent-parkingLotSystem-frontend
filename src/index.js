@@ -3,7 +3,6 @@ import {render} from 'react-dom';
 import App from './pc/App';
 import MobileApp from './mobile/App';
 import registerServiceWorker from './registerServiceWorker';
-import 'antd/dist/antd.css';
 import appReducer from "./pc/reduce/app";
 import mobileAppReducer from "./mobile/reduce/app";
 import {createStore} from "redux";

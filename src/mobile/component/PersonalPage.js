@@ -4,6 +4,8 @@ import {List, NavBar} from 'antd-mobile';
 import PersonalInfo from "./PersonalInfo";
 import userApi from '../api/userApi';
 import {Icon,Button,WhiteSpace} from 'antd-mobile'
+import FontAwesomeIcon from 'react-fontawesome'
+import '../../../node_modules/font-awesome/css/font-awesome.css'
 
 
 const Item = List.Item;
@@ -17,7 +19,7 @@ class PersonalPage extends Component {
 
     mainPage() {
         return (
-            <List renderHeader={() => '个人账户信息'} className='my-list'>
+            <List renderHeader={() => <span><FontAwesomeIcon name={'user'} />  个人账户信息</span>} className='my-list'>
                 <Item arrow="horizontal" multipleLine onClick={() => {
                     this.props.switchToInfoPage()
                 }}>
@@ -31,6 +33,12 @@ class PersonalPage extends Component {
     quit=()=>{
       localStorage.clear();
       window.location.href="http://localhost:9000/mobile/login"
+    }
+
+    handleStartWork=()=>{
+
+        console.log("handleStartWork")
+        userApi.startWork()
     }
 
     render() {
@@ -54,7 +62,10 @@ class PersonalPage extends Component {
                 onLeftClick={this.props.switchToMainPage}>{title}
                 </NavBar>
                 {component}
-                <Button type="primary" onClick={()=>this.quit()}   style={{marginTop:" 170px" }}>退出</Button><WhiteSpace />
+
+                <Button type="primary"  style={{margin:"120px 20px 0 20px" }} onClick={this.handleStartWork}>打卡</Button>
+                <Button type="warning" onClick={()=>this.quit()}   style={{margin:"15px 20px 0 20px" }}>退出</Button><WhiteSpace />
+
             </div>
         );
     }
