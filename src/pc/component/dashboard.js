@@ -34,7 +34,7 @@ class DashBoard extends Component {
                                     <p className={'detail'}>总车位：{parkingLot.totalSize}<br/>剩余车位：{parkingLot.spareSize}</p>
                                 </div>
                                 <div className={'boy'}>
-                                    <p>停车员：{parkingLot.coordinator.userName}</p>
+                                    <p>停车员：{parkingLot.coordinator===null?"无":parkingLot.coordinator.userName}</p>
                                 </div>
                             </div>
                         </Card>

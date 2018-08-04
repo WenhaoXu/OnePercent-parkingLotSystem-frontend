@@ -3,3 +3,4 @@ export const getEmployeeListMap=(employeeList)=>({type:'getEmployeeList',employe
 export const changeUpdateStatusMap=(updatePopupVisible)=>({type:'changeUpdateStatus',updatePopupVisible})
 export const getChooseValueMap=(chooseValue)=>({type:'getChooseValue',chooseValue})
 export const setCheckValueMap=(checkValue)=>({type:'setCheckValue',checkValue})
+export const getAllOrder=(orderList)=>({type:'getAllOrder',orderList})

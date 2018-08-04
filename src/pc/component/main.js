@@ -9,6 +9,7 @@ import  ParkingBoy from "./parkingBoy";
 
 import EmployeeContainer from "../container/employeeContainer"
 import conf from "../api/conf";
+import OrderTable from "../container/order/orderTableContainer";
 
 const {Header, Content, Footer, Sider} = Layout;
 const SubMenu = Menu.SubMenu;
@@ -81,7 +82,7 @@ class Main extends Component {
             breadcrumb = '停车场Dashboard';
 
         } else if (page === 'order') {
-            currentPage = <h2>order</h2>;
+            currentPage = <OrderTable/>;
             defaultSelectedKeys = 5;
             breadcrumb = '订单管理';
 
