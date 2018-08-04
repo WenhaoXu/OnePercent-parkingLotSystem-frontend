@@ -2,9 +2,7 @@ import axios from 'axios';
 import globalConf from '../../conf';
 
 const remoteHost = globalConf.domain;
-let item = localStorage.getItem("token");
-let parse = JSON.parse(item);
-
+let token = localStorage.getItem("token");
 
 export default {
 
@@ -12,7 +10,7 @@ export default {
         axios({
             url: remoteHost + '/' + 'users/currentAccountInfo',
             method: 'get',
-            headers: {'authorization': parse.token}
+            headers: {'authorization': token}
         }).then(response => {successCallback(response.data)});
     }
 }
