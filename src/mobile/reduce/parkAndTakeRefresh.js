@@ -1,12 +1,12 @@
-export default (state = {initData: null}, action) => {
+export default (state = {needUpdate:false}, action) => {
 
     let type = action.type;
     let payload = action.payload;
 
     switch (type) {
-        case 'GETLOT':
+        case 'NEED_UPDATE':
             return {
-                initData: payload
+                needUpdate: payload
             }
         default:
             return state;

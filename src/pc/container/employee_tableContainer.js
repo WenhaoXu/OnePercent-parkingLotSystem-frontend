@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) =>(
     {
         updatePopupVisible: state.employee.updatePopupVisible,
         employeeList:state.employee.employeeList,
-        chooseValue:state.employee.chooseValue
+        chooseValue:state.employee.chooseValue,
+        checkValue:state.employee.checkValue
   })
   
 

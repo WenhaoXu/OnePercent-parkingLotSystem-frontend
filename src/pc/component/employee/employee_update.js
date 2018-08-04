@@ -1,12 +1,11 @@
 import React from 'react';
-import { Form, Input,Select,Button,Checkbox } from 'antd';
+import { Form, Input,Select,Button,Radio } from 'antd';
 import Employee from '../../model/Employee'
 import '../../component/employee/register.css';
 const FormItem = Form.Item;
 const Option = Select.Option;
-const CheckboxGroup = Checkbox.Group;
 var checkValue = [];
-var roles = ['Admin','Manager','ParkingBoy'];
+const RadioGroup = Radio.Group;
 class employeeUpdate extends React.Component {
   constructor(props) {
     super(props);
@@ -36,19 +35,15 @@ class employeeUpdate extends React.Component {
     }
 
 
-    onChange=(checkedValues)=>{
-        console.log('checked = ', checkedValues);
-        checkValue=[];
-        for(let i=0;i<checkedValues.length;i++){
-            checkValue[i]=({id:checkedValues[i]});
-        }
+    onChange=(e)=>{
+        console.log('checked = ', e.target.value);
+        checkValue[0]=({id:e.target.value});
+        const setCheckValuefromMap = this.props.setCheckValuefromMap;
+        setCheckValuefromMap(e.target.value);
     }
   
     render() {
       const { getFieldDecorator } = this.props.form;
-
-      let  checkedRole = this.props.chooseValue.roles.map(x=>x.name);
-      console.log(checkedRole);
       const formItemLayout = {
         labelCol: {
           xs: { span: 24 },
@@ -141,7 +136,10 @@ class employeeUpdate extends React.Component {
             )}
           </FormItem>
             <FormItem>
-                <CheckboxGroup options={roles} defalutValue={checkedRole} onChange={this.onChange} />
+                <RadioGroup onChange={this.onChange} value={this.props.checkValue}>
+                    <Radio value={"Manager"}>Manager</Radio>
+                    <Radio value={"ParkingBoy"}>ParkingBoy</Radio>
+                </RadioGroup>
             </FormItem>
           <FormItem {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">Register</Button>

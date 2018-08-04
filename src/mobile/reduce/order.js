@@ -9,7 +9,7 @@ export default (state={orderList:[]}, action) => {
         case 'getOrderList':{
             const newState =JSON.parse(JSON.stringify(state));
             newState.orderList=action.orderList;
-            console.log(newState);
+            // console.log(newState);
             return newState;
         }
         default:

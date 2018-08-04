@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 
 function mapStateToProps(state) {
-    console.log(state.lot.dataSource)
+    // console.log(state.lot.dataSource)
     return {
         dataSource:state.lot.dataSource
     };

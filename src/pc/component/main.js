@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
-import {Layout, Menu, Breadcrumb, Icon, Avatar} from 'antd';
+import {Avatar, Breadcrumb, Icon, Layout, Menu} from 'antd';
 
 import './main.css'
 import {Link} from "react-router-dom";
 import Lot from "../container/lot";
 import Dashboard from "./dashboard";
+import  ParkingBoy from "./parkingBoy";
 
 import EmployeeContainer from "../container/employeeContainer"
+import conf from "../api/conf";
 
 const {Header, Content, Footer, Sider} = Layout;
 const SubMenu = Menu.SubMenu;
@@ -22,18 +24,53 @@ class Main extends Component {
         this.setState({collapsed});
     };
 
+    logout = () => {
+        localStorage.clear();
+    }
+
+    componentWillMount = () => {
+        // console.log(localStorage.getItem("token"))
+        if (localStorage.getItem("token") === null) {
+            window.location.href = `http://localhost:9000/login`
+        }
+        else {
+            fetch(`${conf.domain}/userInfo`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': localStorage.getItem("token")
+                },
+            })
+                .then(response => {
+                    response.text().then(value => {
+                        if (value === "istrue") {
+                            console.log("已登录");
+                        } else {
+                            window.location.href = `http://localhost:9000/login`
+                        }
+                    })
+
+
+                })
+                .catch(function (ex) {
+                    console.log('parsing failed', ex)
+                })
+
+        }
+
+    }
+
     render() {
         let page = this.props.match.params.page;
         let currentPage;
         let defaultSelectedKeys;
         let breadcrumb;
-        
+
         if (page === 'lot') {
             currentPage = <Lot/>;
             defaultSelectedKeys = 2;
             breadcrumb = '停车场管理';
         } else if (page === 'boy') {
-            currentPage = <h2>body</h2>;
+            currentPage = <ParkingBoy/>;
             defaultSelectedKeys = 3;
             breadcrumb = '停车员管理';
 
@@ -51,8 +88,8 @@ class Main extends Component {
         } else {
 
             currentPage = <EmployeeContainer/>;
-            defaultSelectedKeys=1;
-            breadcrumb='员工管理';
+            defaultSelectedKeys = 1;
+            breadcrumb = '员工管理';
 
         }
         return (
@@ -98,8 +135,10 @@ class Main extends Component {
                 </Sider>
                 <Layout>
                     <Header id='header-line'>
-                        <Link to={"/login"}>
-                            <span>admin</span>
+                        <Link to={"/login"} onClick={() => {
+                            this.logout()
+                        }}>
+                            <span>{localStorage.getItem("name")}</span>
                             <Avatar id='user-avatar' style={{color: '#f56a00', backgroundColor: '#fde3cf'}}>A</Avatar>
                         </Link>
                     </Header>
@@ -112,7 +151,7 @@ class Main extends Component {
                                 currentPage
                             }
                         </div>
-                       
+
                     </Content>
                     <Footer style={{textAlign: 'center'}}>
                         ONE PERCENT @2018

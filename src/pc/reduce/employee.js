@@ -2,7 +2,7 @@ export default (state={
     addPopupVisible:false,
     updatePopupVisible:false,
     employeeList:[],
-    checkValue:[],
+    checkValue:"",
 }, action) => {
 
     switch (action.type) {
@@ -29,6 +29,7 @@ export default (state={
         case 'getChooseValue':{
             const newState =JSON.parse(JSON.stringify(state));
             newState.chooseValue=action.chooseValue;
+            newState.checkValue=action.chooseValue.roles[0].name;
             newState.updatePopupVisible=true;
             return newState;
         }

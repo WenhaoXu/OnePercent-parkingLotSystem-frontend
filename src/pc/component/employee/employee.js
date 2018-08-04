@@ -9,7 +9,7 @@ class Employee extends React.Component {
   componentDidMount() {
     const showEmployeeListfromMap = this.props.showEmployeeListfromMap;
    
-    fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
+    fetch(`http://localhost:1234/users`, {
         method: 'GET',
         headers: 
           {'Authorization':localStorage.getItem("token")}
