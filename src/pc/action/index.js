@@ -3,3 +3,5 @@ export const getEmployeeListMap=(employeeList)=>({type:'getEmployeeList',employe
 export const changeUpdateStatusMap=(updatePopupVisible)=>({type:'changeUpdateStatus',updatePopupVisible})
 export const getChooseValueMap=(chooseValue)=>({type:'getChooseValue',chooseValue})
 export const setCheckValueMap=(checkValue)=>({type:'setCheckValue',checkValue})
+export const setPopPassWordMap=(popPassWordValue)=>({type:'popNameAndPassWord',popPassWordValue})
+export const changeAddPopStatusMap=(AddPopStatus)=>({type:'changeAddPopStatus',AddPopStatus})
