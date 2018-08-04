@@ -1,0 +1,19 @@
+.detail {
+  font-size: 17px;
+  color: #4a4a4a;
+}
+.card-wrap {
+  display: flex;
+}
+.card-wrap .boy {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.card-wrap .boy p {
+  font-size: 17px;
+  display: block;
+  height: 20px;
+}
