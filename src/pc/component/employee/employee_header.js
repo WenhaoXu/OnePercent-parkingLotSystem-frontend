@@ -4,7 +4,8 @@ import './employee.css';
 
 const InputGroup = Input.Group;
 const Option = Select.Option;
-
+var chooseMenu = "name";
+var inputSelectValue = "";
 class Employee_header extends Component {
 
   constructor(props){
@@ -14,9 +15,20 @@ class Employee_header extends Component {
     const changeAddStatusfromMap = this.props.changeAddStatusfromMap;
     changeAddStatusfromMap(true);
   }
-  start(){
+  submit=()=>{
       console.log("1111");
+      const searchListfromMap = this.props.searchListfromMap;
+      searchListfromMap(chooseMenu,inputSelectValue);
   }
+    setChooseMenu=(e)=>{
+        console.log(e);
+        chooseMenu = e;
+    }
+    setInputValue=(e)=>{
+        console.log(e.target.value);
+        inputSelectValue = e.target.value;
+    }
+
   render() {
     return ( 
         <div>
@@ -28,15 +40,15 @@ class Employee_header extends Component {
           </Button>
           
       </InputGroup>
-      <div className="input">
-        <Select defaultValue="name">
+      <div className="input" >
+        <Select  defaultValue="name" onChange={this.setChooseMenu}>
           <Option value="name">name</Option>
           <Option value="phone">phone</Option>
         </Select>
-        <Input style={{ width: '50%' }} defaultValue="" />
+        <Input style={{ width: '50%' }} defaultValue="" onChange={this.setInputValue}/>
         <Button
           type="primary"
-          onClick={this.start}>
+          onClick={this.submit}>
          搜索
           </Button>
         </div>
