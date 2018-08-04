@@ -38,14 +38,15 @@ class Lot extends React.Component {
     };
 
     handleDisableUser = (dispatch, id, available) => {
-        lotApi.update(dispatch, id, null, null, null, available)
+        let updateCallBack = ()=>lotApi.initState(this.props.dispatch);
+        lotApi.update(dispatch, id, null, null, null, available,updateCallBack )
     };
 
     handleSpecSearch = () => {
         // console.log(this.searchField)
         let dispatch = this.props.dispatch;
         let condition = this.refs.condition.input.value;
-        lotApi.searchBy(this.searchField, condition,dispatch)
+        lotApi.searchBy(this.searchField, condition, dispatch)
     }
 
     render() {
@@ -112,7 +113,7 @@ class Lot extends React.Component {
                             <Button type={'primary'} onClick={this.handleSpecSearch}>搜索</Button>
                         </Popover>
                         {/*<div id={'group-search'}>*/}
-                            {/*<Checkbox onChange={this.onChange}>组合搜索</Checkbox>*/}
+                        {/*<Checkbox onChange={this.onChange}>组合搜索</Checkbox>*/}
                         {/*</div>*/}
                     </div>
                 </div>
