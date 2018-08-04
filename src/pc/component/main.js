@@ -26,6 +26,7 @@ class Main extends Component {
 
     logout = () => {
         localStorage.clear();
+        window.location.href = `http://localhost:9000/login`;
     }
 
     componentWillMount = () => {
