@@ -23,6 +23,7 @@ class parkingBoy extends Component {
         let updateParkingBoyCallBack= ()=>parkingBoyApi.initBoyList(this.props.dispatch);
         employeeApi.forzenEmployee(id,this.props.dispatch,updateParkingBoyCallBack)
     }
+
     render() {
         const data = this.props.data;
         console.log(data)

@@ -4,7 +4,7 @@ import './employee.css';
 
 const InputGroup = Input.Group;
 const Option = Select.Option;
-var chooseMenu = "name";
+var chooseMenu = "id";
 var inputSelectValue = "";
 class Employee_header extends Component {
 
@@ -41,7 +41,7 @@ class Employee_header extends Component {
           
       </InputGroup>
       <div className="input" >
-        <Select  defaultValue="name" onChange={this.setChooseMenu}>
+        <Select  defaultValue="id" onChange={this.setChooseMenu} style={{ width: '100px' }}>
             <Option value="id">ID</Option>
             <Option value="name">用户名</Option>
             <Option value="phone">电话</Option>

@@ -20,7 +20,7 @@ const employeeAPI = {
       .then(json => {
         const employeeList = json;
             console.log(employeeList);
-            dispatch(getEmployeeListMap(employeeList.filter(employee=>employee.id!=1)));
+            dispatch(getEmployeeListMap(employeeList));
       })
       .catch(function (ex) {
           console.log('parsing failed', ex)
@@ -85,11 +85,12 @@ const employeeAPI = {
               .then(res => {
                   const employeeList = res;
                   console.log(employeeList);
-                  dispatch(getEmployeeListMap(employeeList));
-
+                  let result = getEmployeeListMap(employeeList);
+                  dispatch(result);
                   if (updateParkingBoyCallBack !== null || updateParkingBoyCallBack !== undefined) {
                       updateParkingBoyCallBack()
-                      message.success("冻结成功")
+                      let messageContent = employeeList.find(item => item.id === id).loginFlag == '1' ? '激活成功' : '冻结成功'
+                      message.success(messageContent)
                   }
               })
               .catch(function(error) {
@@ -138,7 +139,10 @@ const employeeAPI = {
       });
     },
     searchList(chooseMenu,inputSelectValue,dispatch) {
-        fetch(`${remoteHost}/users/${chooseMenu}/${inputSelectValue}`, {
+        let url =`${remoteHost}/users/${chooseMenu}/${inputSelectValue}`
+        if(inputSelectValue=="")
+            url =`${remoteHost}/users`
+        fetch(url, {
             method: 'GET',
             headers: {
                 'Authorization':localStorage.getItem("token")}
