@@ -21,6 +21,7 @@ class Login extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
+        //http://localhost:1234/      ${conf.domain}
         fetch(`${conf.domain}/auth/login`, {
           method: 'POST',
           headers: {
@@ -33,15 +34,22 @@ class Login extends React.Component {
         }).then(function(response) {
           response.text().then(v=>{
             let parse = JSON.parse(v);
-              let token = parse.token;
-              let role=parse.role;
-              let name=parse.name;
-              let id=parse.userId;
-            localStorage.setItem("token",token);
-            localStorage.setItem("role",role);
-            localStorage.setItem("name",name);
-            localStorage.setItem("id",id)
-              history.push("/main");
+            if(parse.role==1){
+              alert("用户已冻结")
+                window.location.href = `https://appparkinglot.herokuapp.com/login`
+
+            }else{
+                let token = parse.token;
+                let role=parse.role;
+                let name=parse.name;
+                let id=parse.userId;
+                localStorage.setItem("token",token);
+                localStorage.setItem("role",role);
+                localStorage.setItem("name",name);
+                localStorage.setItem("id",id)
+                history.push("/main");
+            }
+
           })
         })
       }

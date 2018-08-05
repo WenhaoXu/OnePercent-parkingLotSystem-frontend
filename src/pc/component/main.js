@@ -27,13 +27,13 @@ class Main extends Component {
 
     logout = () => {
         localStorage.clear();
-        window.location.href = `http://localhost:9000/login`;
+        window.location.href = `https://appparkinglot.herokuapp.com/login`;
     }
 
     componentWillMount = () => {
         // console.log(localStorage.getItem("token"))
         if (localStorage.getItem("token") === null) {
-            window.location.href = `http://localhost:9000/login`
+            window.location.href = `https://appparkinglot.herokuapp.com/login`
         }
         else {
             fetch(`${conf.domain}/userInfo`, {
@@ -47,7 +47,7 @@ class Main extends Component {
                         if (value === "istrue") {
                             console.log("已登录");
                         } else {
-                            window.location.href = `http://localhost:9000/login`
+                            window.location.href = `https://appparkinglot.herokuapp.com/login`
                         }
                     })
 
