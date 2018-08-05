@@ -38,8 +38,8 @@ class Lot extends React.Component {
     };
 
     handleDisableUser = (dispatch, id, available) => {
-        let updateCallBack = ()=>lotApi.initState(this.props.dispatch);
-        lotApi.update(dispatch, id, null, null, null, available,updateCallBack )
+        let updateCallBack = () => lotApi.initState(this.props.dispatch);
+        lotApi.update(dispatch, id, null, null, null, available, updateCallBack)
     };
 
     handleSpecSearch = () => {
@@ -67,17 +67,19 @@ class Lot extends React.Component {
             title: '操作',
             dataIndex: 'action',
             key: 'action',
-            render: (text, record) => (
+            render: (text, record) => {
+                let a = record;
+                return (
                 <span>
                   {/*<a href="javascript:;" onClick={this.handleUpdate}>修改</a>*/}
 
                     <span> <UpdateLot record={record}/></span>
                   <Divider type="vertical"/>
                   <a href="javascript:;"
-                     onClick={() => this.handleDisableUser(this.props.dispatch, record.id, !record.available)}>{record.available ? '开启' : '注销'}</a>
+                     onClick={() => this.handleDisableUser(this.props.dispatch, record.id, !record.available)}>{record.available ? '注销' : '开启'}</a>
                   <Divider type="vertical"/>
                 </span>
-            ),
+            )},
         }];
 
 

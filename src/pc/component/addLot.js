@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Button, Form, Input, Modal} from "antd";
 import 'whatwg-fetch'
 import lotApi from '../api/lot'
+import {message} from 'antd';
 
 
 class AdddLot extends Component {
@@ -17,7 +18,11 @@ class AdddLot extends Component {
     handleOk = (e) => {
         let name = this.refs.name.input.value;
         let size = this.refs.size.input.value;
-        lotApi.add(this.props.dispatch,name,size);
+        if (this.props.lot.dataSource.find(item => item.name == name) !== null) {
+            message.error('不允许有重名停车场！');
+        } else {
+            lotApi.add(this.props.dispatch, name, size);
+        }
         this.setState({
             visible: false,
         });
@@ -43,10 +48,10 @@ class AdddLot extends Component {
                     onCancel={this.handleCancel}
                 >
                     <FormItem label="名字">
-                        <Input ref={"name"} />
+                        <Input ref={"name"}/>
                     </FormItem>
                     <FormItem label="大小">
-                        <Input  ref={"size"}/>
+                        <Input ref={"size"}/>
                     </FormItem>
                 </Modal>
             </div>
@@ -55,10 +60,9 @@ class AdddLot extends Component {
 }
 
 function mapStateToProps(state) {
-    return {
-
-    };
+    return state;
 }
+
 function mapDispatchToProps(dispatch) {
 
     return {

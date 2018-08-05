@@ -3,7 +3,7 @@ export default (state={}, action) => {
     let type = action.type;
     switch (type) {
         case "INIT":
-            console.log(payload)
+            console.log(JSON.stringify(payload))
             return {
                 dataSource: payload
             };

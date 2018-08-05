@@ -1,6 +1,7 @@
 import 'whatwg-fetch'
 import conf from './conf'
 import {message} from 'antd';
+import axios from 'axios';
 
 export default {
 
@@ -46,6 +47,13 @@ export default {
             })
         }).then(value => {
             value.text().then(value1 => {
+
+                axios({
+                    url: `${conf.domain}/parkinglots`,
+                    method: 'get',
+                    headers: {authorization: token},
+                    params: {findAll: 'true'}
+                }).then(response => {console.log(JSON.stringify(response.data)); dispatch({type: 'INIT', payload: response.data})})
                 console.log(value1)
             })
         })
