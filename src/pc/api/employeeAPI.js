@@ -138,7 +138,7 @@ const employeeAPI = {
       });
     },
     searchList(chooseMenu,inputSelectValue,dispatch) {
-        fetch(`${remoteHost}/${chooseMenu}/${inputSelectValue}`, {
+        fetch(`${remoteHost}/users/${chooseMenu}/${inputSelectValue}`, {
             method: 'GET',
             headers: {
                 'Authorization':localStorage.getItem("token")}
