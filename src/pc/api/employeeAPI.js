@@ -4,7 +4,7 @@ import {setPopPassWordMap} from "../action";
 import axios from 'axios'
 import {message} from "antd";
 import conf from "../../conf";
-
+  const remoteHost =conf.domain;
 
 const employeeAPI = {
 
@@ -138,7 +138,7 @@ const employeeAPI = {
       });
     },
     searchList(chooseMenu,inputSelectValue,dispatch) {
-        fetch(`${remoteHost}/users/${chooseMenu}/${inputSelectValue}`, {
+        fetch(`${remoteHost}/${chooseMenu}/${inputSelectValue}`, {
             method: 'GET',
             headers: {
                 'Authorization':localStorage.getItem("token")}
