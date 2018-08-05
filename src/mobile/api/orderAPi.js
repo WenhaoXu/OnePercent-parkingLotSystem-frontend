@@ -8,8 +8,8 @@ export const scrambleOrder1=(orderId,dispatch)=>{
     let item = localStorage.getItem("token");
     let parse = JSON.parse(item);
     console.log("手机端");
-    console.log(parse.useId);
-    fetch(`${conf.domain}/orders/${orderId}?operation=robOrder&coordinatorId=1`, {
+    console.log(parse.userId);
+    fetch(`${conf.domain}/orders/${orderId}?operation=robOrder&coordinatorId=${parse.userId}`, {
             method: 'PATCH',
             headers:
                 {'Authorization': parse.token}
