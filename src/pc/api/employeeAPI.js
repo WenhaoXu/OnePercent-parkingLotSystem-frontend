@@ -11,7 +11,7 @@ const employeeAPI = {
     visible:true,loading:false,
     employeeList:[],
     getEmployeeList(dispatch) { 
-      fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
+      fetch(`${remoteHost}/users`, {
           method: 'GET',
           headers: 
             {'Authorization':localStorage.getItem("token")}
@@ -29,7 +29,7 @@ const employeeAPI = {
 
 
     addEmployee(employee,dispatch){
-      fetch('https://parkinglotappofsystem.herokuapp.com/users', {
+      fetch(`${remoteHost}/users`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

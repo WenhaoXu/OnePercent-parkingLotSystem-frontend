@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { List,NavBar,Icon } from 'antd-mobile';
+import {List, NavBar, Icon, Accordion} from 'antd-mobile';
 import conf from "../../conf";
 
 const Item = List.Item;
@@ -10,6 +10,7 @@ class history extends Component {
     constructor(props) {
         super(props);
     }
+
     componentWillMount() {
         const showHistoryListfromMap = this.props.showHistoryListfromMap;
         let token = localStorage.getItem("token");
@@ -17,7 +18,7 @@ class history extends Component {
         fetch(`${conf.domain}/orders/finished`, {
             method: 'GET',
             headers: {
-                "Authorization":parse.token,
+                "Authorization": parse.token,
             },
         })
             .then(response => response.json())
@@ -30,22 +31,20 @@ class history extends Component {
                 console.log('parsing failed', ex)
             });
     }
+
     render() {
-        return (
-            <div>
-                <NavBar mode="dark"
-                >历史订单查询</NavBar>
-                <List className="my-list">
-                    {this.props.historyList.map((i,index) => (
-                        <Item key={index} arrow="horizontal" multipleLine onClick={() => {}}>
-                        {i.carNo}<Brief>{i.createDate}</Brief>
-                        </Item>
-                    ))}
 
-                </List>
-
-            </div>
-        );
+        return (<div>
+            <NavBar mode="dark"
+            >历史订单查询</NavBar>
+            <List className="my-list">
+                {this.props.historyList.map((i, index) => (
+                    <Item key={index} arrow="horizontal" multipleLine onClick={() => {
+                    }}>
+                        {i.carNo}<Brief>{new Date(i.createDate).toLocaleString('chinese', {hour12: false})}</Brief>
+                    </Item>
+                ))}
+            </List></div>);
     }
 }
 
