@@ -37,7 +37,7 @@ class parkingBoy extends Component {
                 title: '操作', dataIndex: '', key: 'x', render: (text, record) => (
 
                     <span>
-                        <a href="javascript:;">修改</a>|
+                        {/*<a href="javascript:;">修改</a>|*/}
                   <a href="javascript:;" onClick={()=>this.handleFrozen(record.id)}>{record.loginFlag===0?"激活":"冻结"}</a>
 
                 </span>

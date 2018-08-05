@@ -92,12 +92,13 @@ export default {
                             payload: {
                                 mockData: mockdata,
                                 keys: boyParkingLots,
+                                record:id,
                             },
                         })
             })
 
     },
-   change:(dispatch,targetKeys,mockData,direction,moveKeys)=>{
+   change:(dispatch,targetKeys,mockData,direction,moveKeys,recordId)=>{
         let tempdata=[...mockData];
         let token = localStorage.getItem("token");
                 if(direction==="right") {
@@ -111,16 +112,18 @@ export default {
                             'Authorization': token
                         },
                         body: JSON.stringify({
-                            coordinator_id: localStorage.getItem("coordinator_id"),
+                            coordinator: {id:recordId,}
                         })
-                    }).then(
+                    }).then(response => response.text()).then(resp=>{
                         dispatch({
-                            type: "updateUnManageLotDATA",
-                            payload: {
-                                mockData: mockData,
-                                keys: targetKeys,
-                            },
-                        })
+                        type: "updateUnManageLotDATA",
+                        payload: {
+                            mockData: mockData,
+                            keys: targetKeys,
+                            record:recordId,
+                        },
+                    })}
+
                     ).catch(
 
                     )
@@ -132,14 +135,16 @@ export default {
                             headers: {
                                 'Authorization': token
                             },
-                        }).then(
+                        }).then(response => response.text()).then(resp=>{
                             dispatch({
-                                type: "updateUnManageLotDATA",
-                                payload: {
-                                    mockData: mockData,
-                                    keys: targetKeys,
-                                },
-                            })
+                            type: "updateUnManageLotDATA",
+                            payload: {
+                                mockData: mockData,
+                                keys: targetKeys,
+                                record:recordId,
+                            },
+                        })}
+
                         ).catch(
 
                         )
