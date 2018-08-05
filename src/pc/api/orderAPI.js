@@ -1,12 +1,13 @@
 import {getAllOrder} from "../action/index";
 import Order from "../model/Order";
-
+import conf from "./conf";
 export const getOrderList=(dispatch)=>{
     let token = localStorage.getItem("token");
-    fetch(`http://localhost:1234/orders`, {
+    fetch(`${conf.domain}/orders`, {
         method: 'GET',
-        headers:
-            {'Authorization':token}
+        headers: {
+            'Authorization':token
+        },
     })
         .then(response => response.json())
         .then(json => {

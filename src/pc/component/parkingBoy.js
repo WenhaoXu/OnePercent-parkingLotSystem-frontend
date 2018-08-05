@@ -54,7 +54,7 @@ class parkingBoy extends Component {
             <ParkingBoyHead searchParkingBoy={this.props.searchParkingBoy}/>
             <Table
                 columns={columns}
-                expandedRowRender={() => <ShuttleBox/>}
+                expandedRowRender={(record) => <ShuttleBox    id={record.id}/>}
                 dataSource={data}
                 bordered
                 footer={() => `总计：${data !== undefined ? data.length : ''}`}
@@ -62,26 +62,14 @@ class parkingBoy extends Component {
         </div>);
     }
 }
-
 function mapStateToProps(state) {
     return {
         data: state.parkingBoy.dataSource
     };
 }
-
-function mapDispatchToProps(dispatch) {
-    return {
-        dispatch: dispatch,
-        searchParkingBoy: (searchType, keyword) => {
-            parkingBoyApi.searchParkingBoyBy(searchType, keyword,
-                (parkingBoys) => {
-                console.log(JSON.stringify(parkingBoys))
-                dispatch({type: 'RELOAD_TABLE_DATA', value: parkingBoys});
-            })
-        }
-    };
+function  mapDispatchToProps(dispatch) {
+    return{dispatch};
 }
-
 export default connect(
-    mapStateToProps, mapDispatchToProps
+    mapStateToProps,mapDispatchToProps
 )(parkingBoy);
