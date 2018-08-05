@@ -1,17 +1,17 @@
 import {getEmployeeListMap,setPopPassWordfromMap} from '../action/index'
 import 'whatwg-fetch'
 import {setPopPassWordMap} from "../action";
+import axios from 'axios'
 import {message} from "antd";
-import globalConfig from "../../conf";
-
-const remoteHost = globalConfig.domain;
+import conf from "../../conf";
+  const remoteHost =conf.domain;
 
 const employeeAPI = {
 
     visible:true,loading:false,
     employeeList:[],
     getEmployeeList(dispatch) { 
-      fetch(`${remoteHost}/users`, {
+      fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
           method: 'GET',
           headers: 
             {'Authorization':localStorage.getItem("token")}
@@ -29,7 +29,7 @@ const employeeAPI = {
 
 
     addEmployee(employee,dispatch){
-      fetch(`${remoteHost}/users`, {
+      fetch('https://parkinglotappofsystem.herokuapp.com/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -138,7 +138,7 @@ const employeeAPI = {
       });
     },
     searchList(chooseMenu,inputSelectValue,dispatch) {
-        fetch(`http://localhost:1234/${chooseMenu}/${inputSelectValue}`, {
+        fetch(`${remoteHost}/users/${chooseMenu}/${inputSelectValue}`, {
             method: 'GET',
             headers: {
                 'Authorization':localStorage.getItem("token")}
