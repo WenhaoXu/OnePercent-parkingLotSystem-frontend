@@ -20,7 +20,7 @@ export default (state={
         }
         case 'getEmployeeList':{
             const newState =JSON.parse(JSON.stringify(state));
-            newState.employeeList=action.employeeList;
+            newState.employeeList=action.employeeList.filter(employee=>employee.id!=1);
             return newState;
         }
         case 'getChooseValue':{

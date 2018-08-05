@@ -4,16 +4,9 @@ import './employee.css';
 import Employee_addPopupContainer from '../../container/employee_addPopupContainer'
 import Employee_updatePopupContainer from '../../container/employee_updatePopupContainer'
 const { Column} = Table;
-function confirm(e) {
-    console.log(e);
-    message.success('Click on Yes');
-}
 
-function cancel(e) {
-    console.log(e);
-    message.error('Click on No');
-}
-
+const chooseItemId ="";
+const chooseItemStatus="";
 class Employee_table extends React.Component {
     constructor(props){
         super(props);
@@ -24,9 +17,20 @@ class Employee_table extends React.Component {
         const getChooseValuefromMap = this.props.getChooseValuefromMap;
         getChooseValuefromMap(values);
     }
-    frozen=(id)=>{
+    frozen=(id,status)=>{
+        this.chooseItemId = id;
+        this.chooseItemStatus = status;
+    }
+    confirm=(e)=>{
+        let type = this.chooseItemStatus=="1"?'冻结':'恢复'
+        message.success('成功'+type+'员工');
         const forzenEmployeefromMap = this.props.forzenEmployeefromMap;
-        forzenEmployeefromMap(id);
+        forzenEmployeefromMap(this.chooseItemId);
+    }
+
+    cancel=(e)=> {
+        console.log(e);
+        message.warning('取消冻结员工');
     }
 
     render() {
@@ -68,9 +72,9 @@ class Employee_table extends React.Component {
                 <a onClick={()=>this.showUpdateModal(record)}>修改</a>
                 <Divider type="vertical" />
 
-                                {/*<Popconfirm title="确定冻结此用户？" onConfirm={confirm} onCancel={cancel} okText="Yes" cancelText="No">*/}
-                                <a onClick={()=>this.frozen(record.id)}>{record.loginFlag==1?"冻结":"恢复"}</a>
-                                {/*</Popconfirm>*/}
+                                <Popconfirm title="确定冻结此用户？" onConfirm={this.confirm} onCancel={this.cancel} okText="Yes" cancelText="No">
+                                <a onClick={()=>this.frozen(record.id,record.loginFlag)}>{record.loginFlag==1?"冻结":"恢复"}</a>
+                                </Popconfirm>
 
                                 <Divider type="vertical" />
                 </span>

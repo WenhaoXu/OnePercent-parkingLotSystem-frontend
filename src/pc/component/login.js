@@ -1,7 +1,6 @@
 import React from 'react';
 import './login.css';
 import { Form, Icon, Input, Button, Checkbox,message} from 'antd';
-import axios from 'axios'
 import 'animate.css'
 import 'whatwg-fetch'
 import conf from "../api/conf";
