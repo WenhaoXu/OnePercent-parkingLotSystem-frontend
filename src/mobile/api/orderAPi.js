@@ -1,12 +1,13 @@
 import React from 'react';
 import {scrambleOrderTurnToAccess,getOrderList1} from "../action";
+import conf from "conf";
 
 
 export const scrambleOrder1=(orderId,dispatch)=>{
 
     let item = localStorage.getItem("token");
     let parse = JSON.parse(item);
-    fetch(`http://localhost:1234/orders/${orderId}?operation=robOrder&coordinatorId=1`, {
+    fetch(`${conf.domain}/orders/${orderId}?operation=robOrder&coordinatorId=1`, {
             method: 'PATCH',
             headers:
                 {'Authorization': parse.token}
@@ -17,7 +18,7 @@ export const scrambleOrder1=(orderId,dispatch)=>{
                 }
                 const order = response.json();
                 console.log(order);
-                fetch(`http://localhost:1234/orders/pending`, {
+                fetch(`${conf.domain}/orders/pending`, {
                     method: 'GET',
                     headers:
                         {'Authorization':parse.token}
@@ -43,7 +44,7 @@ export const scrambleOrder1=(orderId,dispatch)=>{
 export const getOrderList=(dispatch)=>{
     let item = localStorage.getItem("token");
     let parse = JSON.parse(item);
-    fetch(`http://localhost:1234/orders/pending`, {
+    fetch(`${conf.domain}/orders/pending`, {
         method: 'GET',
         headers:
             {'Authorization':parse.token}

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { List,NavBar,Icon } from 'antd-mobile';
+import conf from "../../conf";
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -13,7 +14,7 @@ class history extends Component {
         const showHistoryListfromMap = this.props.showHistoryListfromMap;
         let token = localStorage.getItem("token");
         let parse = JSON.parse(token);
-        fetch(`http://localhost:1234/orders/finished`, {
+        fetch(`${conf.domain}/orders/finished`, {
             method: 'GET',
             headers: {
                 "Authorization":parse.token,

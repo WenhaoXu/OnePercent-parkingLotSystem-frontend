@@ -4,7 +4,6 @@ import 'whatwg-fetch'
 import {message} from "antd/lib/index";
 
 const remoteHost = globalConf.domain;
-let token = localStorage.getItem("token");
 
 export default {
 
@@ -21,7 +20,7 @@ export default {
     },
 
     startWork: () => {
-
+        let token = localStorage.getItem("token");
         let parse = JSON.parse(token);
         // console.log(remoteHost)
         // console.log(parse)
