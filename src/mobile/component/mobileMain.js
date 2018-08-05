@@ -7,6 +7,8 @@ import {connect} from 'react-redux';
 import OrderList from "../container/order/orderListContainer";
 import PersonalInfo from "./PersonalInfo";
 import PersonalPage from "./PersonalPage";
+import FontAwesomeIcon from 'react-fontawesome'
+import '../../../node_modules/font-awesome/css/font-awesome.css'
 
 class mobileMain extends React.Component {
 
