@@ -1,14 +1,19 @@
 import React from 'react';
 import {scrambleOrderTurnToAccess,getOrderList1} from "../action";
 import conf from "./conf";
+import {Toast} from "antd-mobile";
 
+function success() {
+    Toast.success('抢单成功', 1);
+}
 
+function fail() {
+    Toast.fail('抢单失败', 1);
+}
 export const scrambleOrder1=(orderId,dispatch)=>{
 
     let item = localStorage.getItem("token");
     let parse = JSON.parse(item);
-    console.log("手机端");
-    console.log(parse.userId);
     fetch(`${conf.domain}/orders/${orderId}?operation=robOrder&coordinatorId=${parse.userId}`, {
             method: 'PATCH',
             headers:
@@ -16,27 +21,26 @@ export const scrambleOrder1=(orderId,dispatch)=>{
         })
             .then(response=> {
                 if (response.status==403){
-                    alert("抢单失败");
-                }
-                const order = response.json();
-                console.log(order);
-                fetch(`${conf.domain}/orders/pending`, {
-                    method: 'GET',
-                    headers:
-                        {'Authorization':parse.token}
-                })
-                    .then(response => response.json())
-                    .then(json => {
-                        const orderList = json;
-                        console.log("调用API获取Order列表");
-                        console.log(orderList);
-                        dispatch(scrambleOrderTurnToAccess(orderList));
-                        // history.push("/parkAndTake")
-                        // // window.location.href="/parkAndTake";
+                    fail();
+                }else{
+                    const order = response.json();
+                    fetch(`${conf.domain}/orders/pending`, {
+                        method: 'GET',
+                        headers:
+                            {'Authorization':parse.token}
                     })
-                    .catch(function (ex) {
-                        console.log('parsing failed', ex)
-                    });
+                        .then(response => response.json())
+                        .then(json => {
+                            const orderList = json;
+                            success();
+                            dispatch(scrambleOrderTurnToAccess(orderList));
+                            // history.push("/parkAndTake")
+                            // // window.location.href="/parkAndTake";
+                        })
+                        .catch(function (ex) {
+                            console.log('parsing failed', ex)
+                        });
+                }
             })
             .catch(function (ex) {
                 console.log('parsing failed', ex)
