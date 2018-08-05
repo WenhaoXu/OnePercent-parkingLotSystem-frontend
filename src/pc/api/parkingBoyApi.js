@@ -12,7 +12,12 @@ export default {
             },
         }).then(response => response.json())
             .then(json => {
-                json = json.filter(item => item.roles[0].name === "ParkingBoy");
+                json = json.filter(item => {if(item.roles.length!=0){
+                    return  item.roles[0].name === "ParkingBoy"}
+                    return false
+                }
+
+                    );
                 var today=new Date(),
                 json = json.map(item => {
                     let newItem = {};
