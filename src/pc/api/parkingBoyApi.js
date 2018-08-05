@@ -44,6 +44,8 @@ export const getUseableParkingBoy=(dispatch)=>{
     })
         .then(response => response.json())
         .then(json => {
+            console.log(json)
+            json= json.filter(item=>item.roles[0].name==="ParkingBoy"&&item.loginFlag=="1");
             //获取parkingBoy
             console.log(json);
             // json= json.filter(item=>item.roles[0].name==="ParkingBoy");

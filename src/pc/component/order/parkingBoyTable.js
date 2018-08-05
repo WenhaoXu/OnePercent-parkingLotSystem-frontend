@@ -11,11 +11,21 @@ export default  class ParkingBoyTable extends Component{
         this.props.onComponentDidMount()
     }
 
+    getChooseRecord=(record)=>{
+        this.props.getParkingBoyRecord(record);
+    }
+
+
     render(){
         const data = this.props.parkingBoyList;
         return(
             <div>
-                <Table  dataSource={data} rowKey="id">
+                <Table  dataSource={data} rowKey="id"   onRow={(record) => {
+                    return {
+                        onClick: () => {
+                            this.getChooseRecord(record)},       // 点击行
+                    };
+                }}>
                     <Column
                         title="id"
                         dataIndex="id"

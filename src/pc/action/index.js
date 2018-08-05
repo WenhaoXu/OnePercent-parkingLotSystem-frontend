@@ -6,4 +6,7 @@ export const getChooseValueMap=(chooseValue)=>({type:'getChooseValue',chooseValu
 export const setCheckValueMap=(checkValue)=>({type:'setCheckValue',checkValue})
 export const getAllOrder=(orderList)=>({type:'getAllOrder',orderList})
 export const getAllUseableParkingBoy=(parkingBoyList)=>({type:'getAllUseableParkingBoy',parkingBoyList})
+export const getChooseOrderRecord=(orderRecord)=>({type:'getChooseOrderRecord',orderRecord})
+export const getParkingBoyRecord=(parkingBoyRecord)=>({type:'getParkingBoyRecord',parkingBoyRecord})
 export const changePopupVisibleValue=(visibleValue)=>({type:'changePopupVisibleValue',visibleValue})
+export const assignOrder1=(orderList)=>({type:'assignOrder',orderList})

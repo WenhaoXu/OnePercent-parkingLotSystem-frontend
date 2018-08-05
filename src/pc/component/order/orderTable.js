@@ -1,6 +1,6 @@
 import React from 'react';
 import  {Table} from 'antd';
-import {Modal} from 'antd'
+import {Modal,Button } from 'antd'
 import OrderHeader from "../../container/order/orderHeaderContainer";
 import ParkingBoyTableContainer from "../../container/order/parkingBoyTableContainer"
 import ParkingBoyTable from "./parkingBoyTable";
@@ -15,10 +15,14 @@ export default  class OrderTable extends React.Component{
         this.props.onComponentDidMount()
     }
 
-    assignOrderAndShowPopup=(record)=>{
-        //修改弹出框的显示属性
-        this.props.OnchangePopupVisibleValue(true);
+   showPopupAndsetRecord=(record)=>{
+        //修改弹出框的显示属性设置被选择到的记录
+        this.props.getChooseOrderRecord(record);
 
+    }
+
+    assignOrder=()=>{
+        this.props.OnassignOrder(this.props.orderRecord,this.props.parkingBoyRecord);
     }
 
     handleOk=()=>{
@@ -62,7 +66,7 @@ export default  class OrderTable extends React.Component{
                         render={(text, record) => {
                             return(
                             <span>
-                                <a onClick={()=>this.assignOrderAndShowPopup(record)}>{record.action!=""?"指派":""} </a>
+                                <a onClick={()=>this.showPopupAndsetRecord(record)}>{record.action!=""?"指派":""} </a>
                             </span>
 
                         )
@@ -72,10 +76,15 @@ export default  class OrderTable extends React.Component{
 
                 <Modal
                     visible={this.props.assignPopupVisible}
-                    title="空闲停车员"
+                    title="选择空闲停车员"
                     onOk={this.handleOk}
                     onCancel={this.handleCancel}
-                    footer={null}
+                    footer={[
+                        <Button key="back" onClick={this.handleCancel}>返回</Button>,
+                        <Button key="submit" type="primary" onClick={()=>this.assignOrder()}>
+                            指派
+                        </Button>,
+                    ]}
                 >
                     <ParkingBoyTableContainer />
                 </Modal>
