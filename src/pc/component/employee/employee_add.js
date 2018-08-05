@@ -107,8 +107,8 @@ class employeeAdd extends React.Component {
                     {...formItemLayout}
                     label="用户名："
                 >
-                    {getFieldDecorator('userName', {
-                        rules: [ {required: true, message: 'Please input your userName!',},
+                    {getFieldDecorator('name', {
+                        rules: [ {required: true, message: 'Please input your name!',},
                             { validator: this.checkNameConfirm }],
                     })(
                         <Input />
@@ -137,8 +137,8 @@ class employeeAdd extends React.Component {
               </span>
                     )}
                 >
-                    {getFieldDecorator('name', {
-                        rules: [{ required: true, message: 'Please input your name!', whitespace: true }],
+                    {getFieldDecorator('userName', {
+                        rules: [{ required: true, message: 'Please input your userName!', whitespace: true }],
                     })(
                         <Input />
                     )}
