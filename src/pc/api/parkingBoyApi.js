@@ -2,6 +2,7 @@ import conf from "./conf";
 import {getAllUseableParkingBoy} from "../action";
 import axios from "axios/index";
 import globalConfig from "../../conf";
+
 const remoteHost = globalConfig.domain;
 
 export default {
@@ -167,11 +168,12 @@ export default {
         user[searchType] = keyword;
         console.log(JSON.stringify(user));
         axios({
-            url: remoteHost + 'users/parkingBoys',
+            url: remoteHost + '/users/parkingBoys',
             method: 'get',
             headers: {Authorization: token},
             params: user
         }).then(response => {
+            console.log("got it")
             successCallback(response.data);
         });
     }

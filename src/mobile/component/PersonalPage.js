@@ -32,7 +32,7 @@ class PersonalPage extends Component {
 
     quit=()=>{
       localStorage.clear();
-      window.location.href="http://localhost:9000/mobile/login"
+      window.location.href="https://appparkinglot.herokuapp.com/mobile/login"
     }
 
     handleStartWork=()=>{

@@ -38,7 +38,7 @@ class parkingBoy extends Component {
 
                     <span>
                         {/*<a href="javascript:;">修改</a>|*/}
-                  <a href="javascript:;" onClick={()=>this.handleFrozen(record.id)}>{record.loginFlag===0?"激活":"冻结"}</a>
+                  <a href="javascript:;" onClick={()=>this.handleFrozen(record.id)}>{record.loginFlag == 0?"激活":"冻结"}</a>
 
                 </span>
                 ),
