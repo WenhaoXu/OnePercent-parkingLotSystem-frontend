@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Button,Select,Input} from 'antd'
 const Option = Select.Option;
-let chooseMenu="";
+let chooseMenu="id";
 let inputSelectValue="";
 
 export default  class OrderHeader extends Component {
@@ -15,11 +15,9 @@ export default  class OrderHeader extends Component {
     //     changeAddStatusfromMap(true);
     // }
 
-    search(){
+    search=(type,content)=>{
         console.log("666666666");
-        let type="";
-        let content="";
-        // this.props.OnSearch(type,content);
+        this.props.OnSearch(type,content);
     }
 
     setChooseMenu=(e)=>{
@@ -34,8 +32,8 @@ export default  class OrderHeader extends Component {
     render() {
         return (
             <div align="right" >
-                <div className="input">
-                    <Select defaultValue="选项" onChange={this.setChooseMenu}>
+                <div>
+                    <Select defaultValue="id" onChange={this.setChooseMenu} style={{ width: '10%' }} >
                         <Option value="id">id</Option>
                         <Option value="carNo">车牌号</Option>
                         <Option value="type">类型</Option>

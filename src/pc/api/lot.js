@@ -8,7 +8,7 @@ export default {
 
         let token = localStorage.getItem("token");
         let page = 1;
-        let size = 10;
+        let size = 100;
 
 
         const myHeaders = new Headers();
@@ -72,12 +72,14 @@ export default {
                 value.text().then(value1 => {
                     if (value1.indexOf('停车场不是') > 0) {
                         message.error(value1);
+                    }else if (value1.indexOf("移除停车员")>0) {
+                        message.error(value1);
+                    }else {
+
                     }
                 })
                 if (updateCallBack != null || updateCallBack !== undefined) {
-                    console.log("callback")
                     updateCallBack()
-                    console.log(12)
                 }
             })
             .catch(reason => {
@@ -112,7 +114,7 @@ export default {
         })
             .then(response => response.json())
             .then(json => {
-                console.log(json)
+                // console.log(json)
                 dispatch({
                     type: "INIT",
                     payload: json

@@ -22,8 +22,7 @@ export default class OrderItem extends Component {
             <div>
                 <List className="my-list">
                     <Item
-                        extra={<Button type="primary" size="big" onClick={()=>this.scrambleOrder(order.id)}>抢单</Button>}
-                        arrow="horizontal"
+                        extra={<Button type="primary" size="small" size="big" onClick={()=>this.scrambleOrder(order.id)}>抢单</Button>}
                         thumb="http://img0.imgtn.bdimg.com/it/u=924132525,1629032619&fm=27&gp=0.jpg"
                         multipleLine
                         onClick={() => {}}

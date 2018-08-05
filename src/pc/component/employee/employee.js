@@ -2,14 +2,15 @@ import React from 'react';
 import Employee_tableContainer from '../../container/employee_tableContainer';
 import Employee_headerContainer from '../../container/employee_headerContainer';
 import Employee_addPopupContainer from '../../container/employee_addPopupContainer';
+import PopPassWordContainer from "../../container/employeePopPasswordContainer";
 class Employee extends React.Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount() {
+  componentWillMount() {
     const showEmployeeListfromMap = this.props.showEmployeeListfromMap;
    
-    fetch(`http://localhost:1234/users`, {
+    fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
         method: 'GET',
         headers: 
           {'Authorization':localStorage.getItem("token")}
@@ -28,10 +29,11 @@ class Employee extends React.Component {
   render() {
     return (
         <div>
-        <Employee_headerContainer/>
-        <Employee_tableContainer/>
-        <Employee_addPopupContainer/>
-  </div>
+            <Employee_headerContainer/>
+            <Employee_tableContainer/>
+            <Employee_addPopupContainer/>
+            <PopPassWordContainer/>
+        </div>
     );
   }
 }

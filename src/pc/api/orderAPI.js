@@ -70,7 +70,7 @@ export const getOrderList=(dispatch)=>{
 
 export const searchOrder=(type,content,dispatch)=>{
     let token = localStorage.getItem("token");
-    fetch(`http://localhost:1234/orders`, {
+    fetch(`http://localhost:1234/orders?${type}=${content}`, {
         method: 'GET',
         headers:
             {'Authorization':token}

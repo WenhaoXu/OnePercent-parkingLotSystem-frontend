@@ -1,7 +1,13 @@
-import {getEmployeeListMap} from '../action/index'
+import {getEmployeeListMap,setPopPassWordfromMap} from '../action/index'
 import 'whatwg-fetch'
+import {setPopPassWordMap} from "../action";
+import axios from 'axios'
+import {message} from "antd";
+import conf from "../../conf";
+
 
 const employeeAPI = {
+
     visible:true,loading:false,
     employeeList:[],
     getEmployeeList(dispatch) { 
@@ -20,6 +26,7 @@ const employeeAPI = {
           console.log('parsing failed', ex)
       });
     },
+
 
     addEmployee(employee,dispatch){
       fetch('https://parkinglotappofsystem.herokuapp.com/users', {
@@ -47,7 +54,9 @@ const employeeAPI = {
         .then(res => {
           const employeeList = res;
           console.log(employeeList);
+          dispatch(setPopPassWordMap(json));
           dispatch(getEmployeeListMap(employeeList));
+
         })
         .catch(function(error) {
           console.log(error);
@@ -57,7 +66,7 @@ const employeeAPI = {
         console.log(error);
       });
     },
-    forzenEmployee(id,dispatch) {
+    forzenEmployee(id,dispatch,updateParkingBoyCallBack) {
       fetch('https://parkinglotappofsystem.herokuapp.com/users/'+id, {
         method: 'PATCH',
         headers: {
@@ -65,20 +74,27 @@ const employeeAPI = {
           'Authorization':localStorage.getItem("token")
         }
       })
-      .then(response => response.json())
       .then(res => {
-        fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
-          method: 'GET',
-          headers: 
-            {'Authorization':localStorage.getItem("token")}
-        })
-        .then(response => response.json())
-        .then(res => {
-          const employeeList = res;
-          console.log(employeeList);
-          dispatch(getEmployeeListMap(employeeList));
+          fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
+              method: 'GET',
+              headers:{
+                  'Authorization':localStorage.getItem("token")
+              }
+          })
+              .then(response => response.json())
+              .then(res => {
+                  const employeeList = res;
+                  console.log(employeeList);
+                  dispatch(getEmployeeListMap(employeeList));
 
-        })
+                  if (updateParkingBoyCallBack !== null || updateParkingBoyCallBack !== undefined) {
+                      updateParkingBoyCallBack()
+                      message.success("冻结成功")
+                  }
+              })
+              .catch(function(error) {
+                  console.log(error);
+              });
       })
       .catch(function(error) {
         console.log(error);
@@ -86,7 +102,7 @@ const employeeAPI = {
     },
 
     updateEmployee(employee,dispatch){
-      fetch(`http://localhost:1234/users/${employee.id}`, {
+      fetch(`https://parkinglotappofsystem.herokuapp.com/users/${employee.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -102,7 +118,7 @@ const employeeAPI = {
         })
       })
       .then(res => {
-        fetch(`http://localhost:1234/users`, {
+        fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
           method: 'GET',
           headers: 
             {'Authorization':localStorage.getItem("token")}
@@ -121,6 +137,29 @@ const employeeAPI = {
         console.log(error);
       });
     },
-    
+    searchList(chooseMenu,inputSelectValue,dispatch) {
+        // axios({
+        //     url: 'http://localhost:1234/users/phone/1',
+        //     method: 'GET',
+        //     headers: {Authentication: localStorage.getItem("token")},
+        // }).then(response => console.log(response.status))
+
+
+        fetch(`${conf.domain}/users/phone/1`, {
+            method: 'GET',
+            headers: {
+                'Authorization':localStorage.getItem("token")}
+        })
+            .then(response => response.json())
+            .then(json => {
+                const employeeList = json;
+                console.log(employeeList);
+                dispatch(getEmployeeListMap(employeeList));
+            })
+            .catch(function (ex) {
+                console.log('parsing failed', ex)
+            });
+    }
+
 };
 export default employeeAPI;

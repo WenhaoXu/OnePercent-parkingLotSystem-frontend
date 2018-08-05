@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
+    "@fortawesome/react-fontawesome": "0.1.0-11",
     "animate.css": "^3.7.0",
     "antd": "^3.7.3",
     "antd-mobile": "^2.2.2",
     "axios": "^0.18.0",
+    "font-awesome": "^4.7.0",
     "history": "^4.7.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-fontawesome": "^1.6.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
@@ -25,7 +30,11 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.8.0",
+    "css-loader": "^1.0.0",
+    "less": "^3.8.0",
+    "less-loader": "^4.1.0",
     "react-app-rewired": "^1.5.2",
-    "redux-devtools": "^3.4.1"
+    "redux-devtools": "^3.4.1",
+    "style-loader": "^0.21.0"
   }
 }
