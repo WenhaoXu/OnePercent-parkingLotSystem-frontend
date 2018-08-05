@@ -11,6 +11,11 @@ export default (state={}, action) => {
             let newState = {};
             newState.dataSource = action.value;
             return newState;
+        case "getAllUseableParkingBoy":{
+            const newState =JSON.parse(JSON.stringify(state));
+            newState.parkingBoyList=action.parkingBoyList;
+            return newState;
+        }
         default:
             return state;
     }
