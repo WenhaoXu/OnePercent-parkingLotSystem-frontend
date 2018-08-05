@@ -68,7 +68,16 @@ function mapStateToProps(state) {
     };
 }
 function  mapDispatchToProps(dispatch) {
-    return{dispatch};
+    return {
+        dispatch: dispatch,
+        searchParkingBoy: (searchType, keyword) => {
+            parkingBoyApi.searchParkingBoyBy(searchType, keyword,
+                (parkingBoys) => {
+                    console.log(JSON.stringify(parkingBoys))
+                    dispatch({type: 'RELOAD_TABLE_DATA', value: parkingBoys});
+                })
+        }
+    };
 }
 export default connect(
     mapStateToProps,mapDispatchToProps

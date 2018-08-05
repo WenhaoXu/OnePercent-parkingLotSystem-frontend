@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f21e4d14-f701-40a2-9c61-8e4e5aa1781b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pc/component/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/login.js" afterDir="false" />
+    <list default="true" id="b6041cb3-e281-4fac-b41b-690e83eba816" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mobile/api/orderAPi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/api/orderAPi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mobile/component/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mobile/component/parkAndTake.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mobile/component/parkAndTake.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/api/employeeAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/api/employeeAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/api/orderAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/api/orderAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/api/parkingBoyApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/api/parkingBoyApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/component/employee/employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/employee/employee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/component/order/orderHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/order/orderHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pc/component/parkingBoy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pc/component/parkingBoy.js" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +49,8 @@
       <file leaf-file-name="parkingBoyApi.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pc/api/parkingBoyApi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+            <state relative-caret-position="340">
+              <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -54,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pc/component/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="64" />
+            <state relative-caret-position="1459">
+              <caret line="97" column="49" selection-start-line="97" selection-start-column="49" selection-end-line="97" selection-end-column="49" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -66,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pc/component/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="38" column="82" lean-forward="true" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="82" />
+            <state relative-caret-position="595">
+              <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="81" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -134,29 +138,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/pc/component/main.js" />
-        <option value="$PROJECT_DIR$/src/pc/model/Order.js" />
-        <option value="$PROJECT_DIR$/src/pc/component/order/orderParkingBoy.js" />
-        <option value="$PROJECT_DIR$/src/pc/component/order/orderAssignBoyList.js" />
-        <option value="$PROJECT_DIR$/src/pc/reduce/parkingBoy.js" />
-        <option value="$PROJECT_DIR$/src/pc/component/order/orderAssignBoyTable.js" />
-        <option value="$PROJECT_DIR$/src/pc/container/order/orderHeaderContainer.js" />
-        <option value="$PROJECT_DIR$/src/pc/component/order/orderAssignBoyTablePopup.js" />
-        <option value="$PROJECT_DIR$/src/pc/container/order/orderAssignBoyTableContainer.js" />
-        <option value="$PROJECT_DIR$/src/pc/container/order/parkingBoyTablePopupContainer.js" />
-        <option value="$PROJECT_DIR$/src/pc/component/order/parkingBoyTablePopup.js" />
-        <option value="$PROJECT_DIR$/src/pc/container/order/parkingBoyTableContainer.js" />
-        <option value="$PROJECT_DIR$/src/pc/container/order/orderTableContainer.js" />
-        <option value="$PROJECT_DIR$/src/pc/reduce/order.js" />
-        <option value="$PROJECT_DIR$/src/pc/component/order/parkingBoyTable.js" />
-        <option value="$PROJECT_DIR$/src/pc/action/index.js" />
-        <option value="$PROJECT_DIR$/src/pc/App.js" />
-        <option value="$PROJECT_DIR$/src/pc/component/order/orderTable.js" />
-        <option value="$PROJECT_DIR$/src/pc/component/order/orderHeader.js" />
-        <option value="$PROJECT_DIR$/src/pc/api/parkingBoyApi.js" />
-        <option value="$PROJECT_DIR$/src/pc/api/orderAPI.js" />
-        <option value="$PROJECT_DIR$/src/pc/api/employeeAPI.js" />
-        <option value="$PROJECT_DIR$/src/conf.js" />
-        <option value="$PROJECT_DIR$/src/pc/component/login.js" />
       </list>
     </option>
   </component>
@@ -168,19 +149,16 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="125" />
-    <option name="y" value="25" />
-    <option name="width" value="1619" />
-    <option name="height" value="1017" />
+    <option name="x" value="5" />
+    <option name="y" value="3" />
+    <option name="width" value="1918" />
+    <option name="height" value="1100" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -261,6 +239,11 @@
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="OnePercent-parkingLotSystem-frontend" type="cbb8eebc:String" user="OnePercent-parkingLotSystem-frontend" />
+              <item name="public" type="cbb8eebc:String" user="public" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="OnePercent-parkingLotSystem-frontend" type="cbb8eebc:String" user="OnePercent-parkingLotSystem-frontend" />
               <item name="src" type="cbb8eebc:String" user="src" />
             </path>
             <path>
@@ -288,13 +271,6 @@
         </subPane>
       </pane>
     </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.zeroturnaround.javarebel.idea.plugin.settings.AboutConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -411,22 +387,21 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40049000" />
+    <option name="totallyTimeSpent" value="202000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="5" y="3" width="1918" height="1100" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.9217033" visible="true" weight="0.22550052" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.9222798" visible="true" weight="0.22765957" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32890365" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32900432" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.15800866" />
-      <window_info id="npm" order="2" sideWeight="0.078296706" side_tool="true" visible="true" weight="0.22550052" />
+      <window_info id="npm" order="2" sideWeight="0.07772021" side_tool="true" visible="true" weight="0.22765957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.21212122" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.20247933" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3298611" />
@@ -454,44 +429,8 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/pc/api/parkingBoyApi.js</url>
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="1" />
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/pc/component/employee/employee_table.js">
@@ -787,8 +726,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pc/api/parkingBoyApi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        <state relative-caret-position="340">
+          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -801,16 +740,6 @@
           <caret line="24" column="90" selection-start-line="24" selection-start-column="90" selection-end-line="24" selection-end-column="90" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pc/component/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -831,29 +760,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pc/component/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="38" column="82" lean-forward="true" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="82" />
+        <state relative-caret-position="595">
+          <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="81" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/src/pc/component/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1459">
+          <caret line="97" column="49" selection-start-line="97" selection-start-column="49" selection-end-line="97" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
