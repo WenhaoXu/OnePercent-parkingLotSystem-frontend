@@ -23,7 +23,7 @@ class history extends Component {
         })
             .then(response => response.json())
             .then(json => {
-                const historyList = json;
+                const historyList = json.filter(item=>item.coordinatorId==parse.userId);
                 // console.log(historyList);
                 showHistoryListfromMap(historyList);
             })
