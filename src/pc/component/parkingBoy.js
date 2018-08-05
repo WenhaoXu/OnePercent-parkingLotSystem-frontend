@@ -5,6 +5,8 @@ import {connect} from "react-redux";
 import ParkingBoyHead from "./parkingBoyItem/parkingBoyHead";
 import ShuttleBox from "./parkingBoyItem/shuttleBox";
 import parkingBoyApi from "../api/parkingBoyApi";
+import employeeApi from "../api/employeeAPI";
+
 
 class parkingBoy extends Component {
     constructor(props) {
@@ -15,6 +17,12 @@ class parkingBoy extends Component {
         parkingBoyApi.initBoyList(this.props.dispatch);
     }
 
+    handleFrozen=(id)=>{
+        // console.log("handleFrozen")
+        // console.log(id)
+        let updateParkingBoyCallBack= ()=>parkingBoyApi.initBoyList(this.props.dispatch);
+        employeeApi.forzenEmployee(id,this.props.dispatch,updateParkingBoyCallBack)
+    }
     render() {
         const data = this.props.data;
         console.log(data)
@@ -27,9 +35,10 @@ class parkingBoy extends Component {
             {title: '状态', dataIndex: 'status', key: 'status'},
             {
                 title: '操作', dataIndex: '', key: 'x', render: (text, record) => (
+
                     <span>
                         <a href="javascript:;">修改</a>|
-                  <a href="javascript:;">冻结</a>
+                  <a href="javascript:;" onClick={()=>this.handleFrozen(record.id)}>{record.loginFlag===0?"激活":"冻结"}</a>
 
                 </span>
                 ),
@@ -45,7 +54,7 @@ class parkingBoy extends Component {
             <ParkingBoyHead searchParkingBoy={this.props.searchParkingBoy}/>
             <Table
                 columns={columns}
-                expandedRowRender={() => <ShuttleBox/>}
+                expandedRowRender={(record) => <ShuttleBox    id={record.id}/>}
                 dataSource={data}
                 bordered
                 footer={() => `总计：${data !== undefined ? data.length : ''}`}
@@ -53,26 +62,14 @@ class parkingBoy extends Component {
         </div>);
     }
 }
-
 function mapStateToProps(state) {
     return {
         data: state.parkingBoy.dataSource
     };
 }
-
-function mapDispatchToProps(dispatch) {
-    return {
-        dispatch: dispatch,
-        searchParkingBoy: (searchType, keyword) => {
-            parkingBoyApi.searchParkingBoyBy(searchType, keyword,
-                (parkingBoys) => {
-                console.log(JSON.stringify(parkingBoys))
-                dispatch({type: 'RELOAD_TABLE_DATA', value: parkingBoys});
-            })
-        }
-    };
+function  mapDispatchToProps(dispatch) {
+    return{dispatch};
 }
-
 export default connect(
-    mapStateToProps, mapDispatchToProps
+    mapStateToProps,mapDispatchToProps
 )(parkingBoy);
