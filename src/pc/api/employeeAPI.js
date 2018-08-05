@@ -145,7 +145,7 @@ const employeeAPI = {
         // }).then(response => console.log(response.status))
 
 
-        fetch(`${conf.domain}/users/phone/1`, {
+        fetch(`${conf.domain}/users/phone/110`, {
             method: 'GET',
             headers: {
                 'Authorization':localStorage.getItem("token")}
