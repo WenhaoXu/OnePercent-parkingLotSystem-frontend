@@ -12,7 +12,7 @@ class Login extends React.Component {
 
 
     componentWillMount() {
-        // localStorage.removeItem("token")
+        localStorage.clear()
     }
 
 
@@ -27,8 +27,8 @@ class Login extends React.Component {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            username: 'admin',
-            password: 'admin',
+            username: values.userName,
+            password: values.password,
           })
         }).then(function(response) {
           response.text().then(v=>{
@@ -36,7 +36,7 @@ class Login extends React.Component {
               let token = parse.token;
               let role=parse.role;
               let name=parse.name;
-              let id=parse.id;
+              let id=parse.userId;
             localStorage.setItem("token",token);
             localStorage.setItem("role",role);
             localStorage.setItem("name",name);
