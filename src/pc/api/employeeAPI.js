@@ -3,6 +3,8 @@ import 'whatwg-fetch'
 import {setPopPassWordMap} from "../action";
 import axios from 'axios'
 import {message} from "antd";
+import conf from "../../conf";
+
 
 const employeeAPI = {
 
@@ -143,7 +145,7 @@ const employeeAPI = {
         // }).then(response => console.log(response.status))
 
 
-        fetch(`http://localhost:1234/users/phone/1`, {
+        fetch(`${conf.domain}/users/phone/1`, {
             method: 'GET',
             headers: {
                 'Authorization':localStorage.getItem("token")}

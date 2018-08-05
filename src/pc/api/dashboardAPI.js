@@ -2,11 +2,11 @@ import axios from 'axios';
 import globalConfig from '../../conf';
 
 const remoteHost = globalConfig.domain + '/';
-const token = localStorage.getItem("token");
 
 export default {
 
     loadParkingLots: successCallback =>{
+        const token = localStorage.getItem("token");
         axios({
             url: remoteHost + 'parkinglots',
             method: 'get',
