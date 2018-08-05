@@ -30,7 +30,7 @@ class DashBoard extends Component {
                             <div className={'card-wrap'}>
                                 <div>
                                     <Progress type="circle" percent={parkingLot.spareSize / parkingLot.totalSize * 100}
-                                              format={percent => percent.toFixed(2) + '%'}/>
+                                              format={percent => parseInt(percent) + '%'}/>
                                     <p className={'detail'}>总车位：{parkingLot.totalSize}<br/>剩余车位：{parkingLot.spareSize}</p>
                                 </div>
                                 <div className={'boy'}>
