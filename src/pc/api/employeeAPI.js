@@ -1,17 +1,17 @@
 import {getEmployeeListMap,setPopPassWordfromMap} from '../action/index'
 import 'whatwg-fetch'
 import {setPopPassWordMap} from "../action";
-import axios from 'axios'
 import {message} from "antd";
-import conf from "../../conf";
+import globalConfig from "../../conf";
 
+const remoteHost = globalConfig.domain;
 
 const employeeAPI = {
 
     visible:true,loading:false,
     employeeList:[],
     getEmployeeList(dispatch) { 
-      fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
+      fetch(`${remoteHost}/users`, {
           method: 'GET',
           headers: 
             {'Authorization':localStorage.getItem("token")}
@@ -29,7 +29,7 @@ const employeeAPI = {
 
 
     addEmployee(employee,dispatch){
-      fetch('https://parkinglotappofsystem.herokuapp.com/users', {
+      fetch(`${remoteHost}/users`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const employeeAPI = {
       })
       .then(response => response.json())
       .then(json => {
-        fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
+        fetch(`${remoteHost}/users`, {
           method: 'GET',
           headers:{
             'Authorization':localStorage.getItem("token")
@@ -67,7 +67,7 @@ const employeeAPI = {
       });
     },
     forzenEmployee(id,dispatch,updateParkingBoyCallBack) {
-      fetch('https://parkinglotappofsystem.herokuapp.com/users/'+id, {
+      fetch(`${remoteHost}/users/`+id, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const employeeAPI = {
         }
       })
       .then(res => {
-          fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
+          fetch(`${remoteHost}/users`, {
               method: 'GET',
               headers:{
                   'Authorization':localStorage.getItem("token")
@@ -102,7 +102,7 @@ const employeeAPI = {
     },
 
     updateEmployee(employee,dispatch){
-      fetch(`https://parkinglotappofsystem.herokuapp.com/users/${employee.id}`, {
+      fetch(`${remoteHost}/users/${employee.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -118,7 +118,7 @@ const employeeAPI = {
         })
       })
       .then(res => {
-        fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
+        fetch(`${remoteHost}/users`, {
           method: 'GET',
           headers: 
             {'Authorization':localStorage.getItem("token")}
@@ -138,14 +138,7 @@ const employeeAPI = {
       });
     },
     searchList(chooseMenu,inputSelectValue,dispatch) {
-        // axios({
-        //     url: 'http://localhost:1234/users/phone/1',
-        //     method: 'GET',
-        //     headers: {Authentication: localStorage.getItem("token")},
-        // }).then(response => console.log(response.status))
-
-
-        fetch(`${conf.domain}/users/phone/1`, {
+        fetch(`http://localhost:1234/${chooseMenu}/${inputSelectValue}`, {
             method: 'GET',
             headers: {
                 'Authorization':localStorage.getItem("token")}

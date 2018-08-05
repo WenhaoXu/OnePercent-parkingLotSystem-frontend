@@ -70,6 +70,7 @@ export const getOrderList=(dispatch)=>{
 
 export const searchOrder=(type,content,dispatch)=>{
     let token = localStorage.getItem("token");
+    //查询id和carNo
     fetch(`http://localhost:1234/orders?${type}=${content}`, {
         method: 'GET',
         headers:
@@ -109,15 +110,11 @@ export const assignOrder=(order,parkingBoy,dispatch) =>{
                             const orderList = json;
                             success();
                             dispatch(assignOrder1(formatOrderList(orderList)));
-                            // history.push("/parkAndTake")
-                            // // window.location.href="/parkAndTake";
                         })
                         .catch(function (ex) {
                             console.log('parsing failed', ex)
                         });
-
             }
-
 
         })
         .catch(function (ex) {

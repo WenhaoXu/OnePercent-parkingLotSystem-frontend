@@ -39,15 +39,16 @@ class Employee_table extends React.Component {
                         dataIndex="id"
                         key="id"
                     />
+
                     <Column
                         title="用户名"
-                        dataIndex="userName"
-                        key="userName"
+                        dataIndex="name"
+                        key="name"
                     />
                     <Column
                         title="姓名"
-                        dataIndex="name"
-                        key="name"
+                        dataIndex="userName"
+                        key="userName"
                     />
                     <Column
                         title="email"
@@ -72,12 +73,13 @@ class Employee_table extends React.Component {
                                 {/*</Popconfirm>*/}
 
                                 <Divider type="vertical" />
-              </span>
+                </span>
                         )}
                     />
 
 
                 </Table>
+                <p>总共:{this.props.employeeList.length}个员工</p>
                 <Employee_addPopupContainer/>
                 <Employee_updatePopupContainer/>
             </div>

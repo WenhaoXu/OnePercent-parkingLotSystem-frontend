@@ -121,9 +121,9 @@ class employeeUpdate extends React.Component {
               </span>
                 )}
             >
-                {getFieldDecorator('userName', {
+                {getFieldDecorator('name', {
                     rules: [{ required: true, message: 'Please input your userName!', whitespace: true }, { validator: this.checkNameConfirm }],
-                    initialValue: this.props.chooseValue.userName},
+                    initialValue: this.props.chooseValue.name},
                    )(
                     <Input />
                 )}
@@ -152,9 +152,9 @@ class employeeUpdate extends React.Component {
               </span>
             )}
           >
-            {getFieldDecorator('name', {
+            {getFieldDecorator('userName', {
               rules: [{ required: true, message: 'Please input your name!', whitespace: true }],
-                initialValue: this.props.chooseValue.name
+                initialValue: this.props.chooseValue.userName
             })(
               <Input />
             )}
