@@ -1,8 +1,7 @@
 import conf from "./conf";
 import {getAllUseableParkingBoy} from "../action";
-import axios from 'axios';
-import globalConfig from '../../conf'
-
+import axios from "axios/index";
+import globalConfig from "../../conf";
 const remoteHost = globalConfig.domain;
 
 export default {
@@ -183,18 +182,14 @@ export default {
 
 export const getUseableParkingBoy = (dispatch) => {
     let token = localStorage.getItem("token");
-    fetch(`http://localhost:1234/users`, {
+    fetch(`${remoteHost}/users`, {
         method: 'GET',
         headers:
             {'Authorization': token}
     })
         .then(response => response.json())
         .then(json => {
-            console.log(json)
             json = json.filter(item => item.roles[0].name === "ParkingBoy" && item.loginFlag == "1");
-            //获取parkingBoy
-            console.log(json);
-            // json= json.filter(item=>item.roles[0].name==="ParkingBoy");
             let parkingBoyList = json;
             dispatch(getAllUseableParkingBoy(parkingBoyList));
         })

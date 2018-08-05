@@ -38,7 +38,7 @@ class history extends Component {
                 <List className="my-list">
                     {this.props.historyList.map((i,index) => (
                         <Item key={index} arrow="horizontal" multipleLine onClick={() => {}}>
-                        {i.carNo}<Brief>{i.createDate}</Brief>
+                        {i.carNo}<Brief>{new Date(i.createDate).toLocaleString('chinese',{hour12:false})}</Brief>
                         </Item>
                     ))}
 

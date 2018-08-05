@@ -14,14 +14,14 @@
 .env.local
 .env.development.local
 .env.test.local
-.env.production.local
+.env.p.idearoduction.local
 .idea/workspace.xml
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.idea
+
 .idea/
 /.idea
 yarn.lock

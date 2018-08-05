@@ -68,7 +68,7 @@ class ParkAndTake extends Component {
                         thumb={value.status === "accepted" ? parkLogo : takeLogo}
                         platform="android"
                     >
-                        {value.carNo}<Brief>停车时间：{value.createDate}</Brief>
+                        {value.carNo}<Brief>停车时间：{new Date(value.createDate).toLocaleString('chinese',{hour12:false})}</Brief>
                     </Item>
                 })}
 
