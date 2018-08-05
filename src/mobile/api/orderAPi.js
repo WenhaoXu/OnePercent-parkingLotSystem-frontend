@@ -1,6 +1,6 @@
 import React from 'react';
 import {scrambleOrderTurnToAccess,getOrderList1} from "../action";
-import conf from "conf";
+import conf from "./conf";
 
 
 export const scrambleOrder1=(orderId,dispatch)=>{
