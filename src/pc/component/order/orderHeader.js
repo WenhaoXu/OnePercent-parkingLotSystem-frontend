@@ -10,22 +10,15 @@ export default  class OrderHeader extends Component {
         super(props);
 
     }
-    // showModal=()=>{
-    //     const changeAddStatusfromMap = this.props.changeAddStatusfromMap;
-    //     changeAddStatusfromMap(true);
-    // }
 
     search=(type,content)=>{
-        console.log("666666666");
         this.props.OnSearch(type,content);
     }
 
     setChooseMenu=(e)=>{
-        console.log(e);
         chooseMenu = e;
     }
     setInputValue=(e)=>{
-        console.log(e.target.value);
         inputSelectValue = e.target.value;
     }
 

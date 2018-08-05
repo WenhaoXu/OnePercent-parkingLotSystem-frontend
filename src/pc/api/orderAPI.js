@@ -1,7 +1,8 @@
 import {getAllOrder,assignOrder1} from "../action/index";
 import Order from "../model/Order";
 import {Modal,Button } from 'antd'
-import {scrambleOrderTurnToAccess} from "../../mobile/action";
+import globalConfig from "../../conf";
+const remoteHost = globalConfig.domain;
 function formatOrderList(orderList) {
     let formatOrderList=[];
     for(let order of  orderList)
@@ -51,8 +52,7 @@ function warning() {
 
 export const getOrderList=(dispatch)=>{
     let token = localStorage.getItem("token");
-    console.log(666);
-    fetch(`http://localhost:1234/orders`, {
+    fetch(`${remoteHost}/orders`, {
         method: 'GET',
         headers:
             {'Authorization':token}
@@ -71,7 +71,7 @@ export const getOrderList=(dispatch)=>{
 export const searchOrder=(type,content,dispatch)=>{
     let token = localStorage.getItem("token");
     //查询id和carNo
-    fetch(`http://localhost:1234/orders?${type}=${content}`, {
+    fetch(`${remoteHost}/orders?${type}=${content}`, {
         method: 'GET',
         headers:
             {'Authorization':token}
@@ -88,7 +88,7 @@ export const searchOrder=(type,content,dispatch)=>{
 
 export const assignOrder=(order,parkingBoy,dispatch) =>{
     let token = localStorage.getItem("token");
-    fetch(`http://localhost:1234/orders/${order.id}?operation=robOrder&coordinatorId=${parkingBoy.id}`, {
+    fetch(`${remoteHost}/orders/${order.id}?operation=robOrder&coordinatorId=${parkingBoy.id}`, {
         method: 'PATCH',
         headers:
             {'Authorization':token}
@@ -100,7 +100,7 @@ export const assignOrder=(order,parkingBoy,dispatch) =>{
             else if (response.status==403){
                 fail();
             }else {
-                    fetch(`http://localhost:1234/orders`, {
+                    fetch(`${remoteHost}/orders`, {
                         method: 'GET',
                         headers:
                             {'Authorization':token}
