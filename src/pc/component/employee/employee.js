@@ -3,6 +3,8 @@ import Employee_tableContainer from '../../container/employee_tableContainer';
 import Employee_headerContainer from '../../container/employee_headerContainer';
 import Employee_addPopupContainer from '../../container/employee_addPopupContainer';
 import PopPassWordContainer from "../../container/employeePopPasswordContainer";
+import globalConfig from "../../../conf.js";
+const remoteHost = globalConfig.domain;
 class Employee extends React.Component {
   constructor(props) {
     super(props);
@@ -10,7 +12,7 @@ class Employee extends React.Component {
   componentWillMount() {
     const showEmployeeListfromMap = this.props.showEmployeeListfromMap;
    
-    fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
+    fetch(`${remoteHost}/users`, {
         method: 'GET',
         headers: 
           {'Authorization':localStorage.getItem("token")}

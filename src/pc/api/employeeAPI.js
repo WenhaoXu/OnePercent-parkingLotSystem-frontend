@@ -20,7 +20,7 @@ const employeeAPI = {
       .then(json => {
         const employeeList = json;
             console.log(employeeList);
-            dispatch(getEmployeeListMap(employeeList.filter(employee=>employee.id!=1)));
+            dispatch(getEmployeeListMap(employeeList));
       })
       .catch(function (ex) {
           console.log('parsing failed', ex)
@@ -138,7 +138,10 @@ const employeeAPI = {
       });
     },
     searchList(chooseMenu,inputSelectValue,dispatch) {
-        fetch(`${remoteHost}/users/${chooseMenu}/${inputSelectValue}`, {
+        let url =`${remoteHost}/users/${chooseMenu}/${inputSelectValue}`
+        if(inputSelectValue=="")
+            url =`${remoteHost}/users`
+        fetch(url, {
             method: 'GET',
             headers: {
                 'Authorization':localStorage.getItem("token")}
