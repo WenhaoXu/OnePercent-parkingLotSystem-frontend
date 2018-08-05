@@ -42,8 +42,11 @@ class Employee_header extends Component {
       </InputGroup>
       <div className="input" >
         <Select  defaultValue="name" onChange={this.setChooseMenu}>
-          <Option value="name">name</Option>
-          <Option value="phone">phone</Option>
+            <Option value="id">ID</Option>
+            <Option value="name">用户名</Option>
+            <Option value="phone">电话</Option>
+            <Option value="email">邮箱</Option>
+            <Option value="userName">姓名</Option>
         </Select>
         <Input style={{ width: '50%' }} defaultValue="" onChange={this.setInputValue}/>
         <Button
