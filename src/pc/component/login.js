@@ -33,11 +33,15 @@ class Login extends React.Component {
         }).then(function(response) {
           response.text().then(v=>{
             let parse = JSON.parse(v);
-            if(parse.role==1){
+            if(parse.role==1 ){
               alert("用户已冻结")
                 window.location.href = `https://appparkinglot.herokuapp.com/login`
 
-            }else{
+            }else if(parse.role=="ParkingBoy"||parse.role=="Employee"){
+                alert("用户权限不够哦")
+                window.location.href = `https://appparkinglot.herokuapp.com/login`
+            }
+            else{
                 let token = parse.token;
                 let role=parse.role;
                 let name=parse.name;
