@@ -20,7 +20,7 @@ const employeeAPI = {
       .then(json => {
         const employeeList = json;
             console.log(employeeList);
-            dispatch(getEmployeeListMap(employeeList));
+            dispatch(getEmployeeListMap(employeeList.filter(employee=>employee.id!=1)));
       })
       .catch(function (ex) {
           console.log('parsing failed', ex)

@@ -19,7 +19,7 @@ class Employee extends React.Component {
     .then(json => {
       const employeeList = json;
       console.log(employeeList);
-      showEmployeeListfromMap(employeeList);
+      showEmployeeListfromMap(employeeList.filter(employee=>employee.id!=1));
     })
     .catch(function (ex) {
         console.log('parsing failed', ex)
