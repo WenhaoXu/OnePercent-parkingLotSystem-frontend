@@ -6,7 +6,8 @@ import { changeUpdateStatusMap,setCheckValueMap} from '../action/index';
 const mapStateToProps = (state, ownProps) =>({ 
     updatePopupVisible: state.employee.updatePopupVisible,
     chooseValue:state.employee.chooseValue,
-    checkValue:state.employee.checkValue
+    checkValue:state.employee.checkValue,
+    employeeList:state.employee.employeeList
   })
   
 

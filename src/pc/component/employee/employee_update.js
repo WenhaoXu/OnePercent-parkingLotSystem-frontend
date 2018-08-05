@@ -33,6 +33,41 @@ class employeeUpdate extends React.Component {
       });
         this.props.form.resetFields();
     }
+    checkPhoneConfirm=(rule, value, callback)=>{
+        var regPos = /^[0-9]+.?[0-9]*/; // 非负整数
+
+        if(value.length!=0){
+            if(value.length==11&&regPos.test(value)){
+                callback();
+            }
+            else{
+                callback("请至少输入正确的电话号码");
+            }
+        }
+        else{
+            callback();
+        }
+
+    }
+    checkNameConfirm=(rule, value, callback)=>{
+        if(value.length!=0){
+            console.log(value);
+            console.log(this.props.employeeList);
+            let list = this.props.employeeList.filter(x=>x.name===value&&x.id!==this.props.chooseValue.id);
+            console.log(list);
+            if(list.length>0){
+                callback("用户名已存在");
+
+            }
+            else{
+                callback();
+            }
+        }
+        else{
+            callback();
+        }
+
+    }
 
 
     onChange=(e)=>{
@@ -87,9 +122,9 @@ class employeeUpdate extends React.Component {
                 )}
             >
                 {getFieldDecorator('userName', {
-                    rules: [{ required: true, message: 'Please input your userName!', whitespace: true }],
-                    initialValue: this.props.chooseValue.userName
-                })(
+                    rules: [{ required: true, message: 'Please input your userName!', whitespace: true }, { validator: this.checkNameConfirm }],
+                    initialValue: this.props.chooseValue.userName},
+                   )(
                     <Input />
                 )}
             </FormItem>
@@ -129,7 +164,7 @@ class employeeUpdate extends React.Component {
             label="电话："
           >
             {getFieldDecorator('phone', {
-              rules: [{ required: true, message: 'Please input your phone number!' }],
+              rules: [{ required: true, message: 'Please input your phone number!' }, { validator: this.checkPhoneConfirm }],
                 initialValue: this.props.chooseValue.phone
             })(
               <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
