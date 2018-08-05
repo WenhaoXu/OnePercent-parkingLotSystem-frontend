@@ -18,7 +18,7 @@ class parkingBoyHead extends Component {
     render() {
         return (
             <div>
-                <div className="searchBar">
+                <div className="searchBar" style={{float: 'right'}}>
                     <Select defaultValue={this.searchType} onChange={(value) => this.searchType = value}>
                         <Option value="id">id</Option>
                         <Option value="name">姓名</Option>
