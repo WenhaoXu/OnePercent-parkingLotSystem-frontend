@@ -17,12 +17,14 @@ export default  class ParkingBoyTable extends Component{
 
 
     render(){
+
         const data = this.props.parkingBoyList;
         return(
             <div>
-                <Table  dataSource={data} rowKey="id"   onRow={(record) => {
+                <Table  dataSource={data} rowKey="id"   rowSelection={{type:"radio"}} onRow={(record) => {
                     return {
                         onClick: () => {
+
                             this.getChooseRecord(record)},       // 点击行
                     };
                 }}>

@@ -29,8 +29,8 @@ export default  class OrderHeader extends Component {
                     <Select defaultValue="id" onChange={this.setChooseMenu} style={{ width: '10%' }} >
                         <Option value="id">id</Option>
                         <Option value="carNo">车牌号</Option>
-                        <Option value="type">类型</Option>
-                        <Option value="status">状态</Option>
+                        {/*<Option value="type">类型</Option>*/}
+                        {/*<Option value="status">状态</Option>*/}
                     </Select>
                     <Input style={{ width: '15%' }} onChange={this.setInputValue} defaultValue="" />
                     <Button
