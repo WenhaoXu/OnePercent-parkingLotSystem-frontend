@@ -18,11 +18,7 @@ class AdddLot extends Component {
     handleOk = (e) => {
         let name = this.refs.name.input.value;
         let size = this.refs.size.input.value;
-        if (this.props.lot.dataSource.find(item => item.name == name) !== null) {
-            message.error('不允许有重名停车场！');
-        } else {
-            lotApi.add(this.props.dispatch, name, size);
-        }
+        lotApi.add(this.props.dispatch, name, size);
         this.setState({
             visible: false,
         });
