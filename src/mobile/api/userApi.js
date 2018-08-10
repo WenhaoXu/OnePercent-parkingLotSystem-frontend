@@ -34,7 +34,36 @@ export default {
                     message.success('打卡成功');
                 }
             })
+    },
+
+    sendLeavingRequest: (param, successCallback) => {
+        let token = localStorage.getItem("token");
+        axios({
+            url: `${remoteHost}/leavings`,
+            method: 'post',
+            headers: {Authorization: token},
+            data: param
+        }).then(response => successCallback(response.data));
+    },
+
+    loadAllLeavingData: (employeeId, successCallback) => {
+        let token = localStorage.getItem("token");
+        axios({
+            url: `${remoteHost}/leavings?employee.Id=${employeeId}`,
+            method: 'get',
+            headers: {Authorization: token}
+        }).then(response => successCallback(response.data))
+    },
+
+    getLeavingDetails: (leavingId, successCallback) => {
+        let token = localStorage.getItem("token");
+        axios({
+            url: `${remoteHost}/leavings/${leavingId}`,
+            method: 'get',
+            headers: {Authorization: token}
+        }).then(response => successCallback(response.data))
     }
+
 }
 
 

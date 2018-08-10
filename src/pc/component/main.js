@@ -10,6 +10,7 @@ import  ParkingBoy from "./parkingBoy";
 import EmployeeContainer from "../container/employeeContainer"
 import conf from "../api/conf";
 import OrderTable from "../container/order/orderTableContainer";
+import LeavingContainer from "./LeavingContainer";
 
 const {Header, Content, Footer, Sider} = Layout;
 const SubMenu = Menu.SubMenu;
@@ -86,13 +87,16 @@ class Main extends Component {
             defaultSelectedKeys = 5;
             breadcrumb = '订单管理';
 
-
-        } else {
-
+        }
+        else if(page === 'leavingRequest'){
+            currentPage = <LeavingContainer/>
+            defaultSelectedKeys = 6
+            breadcrumb = '请假管理'
+        }
+        else {
             currentPage = <EmployeeContainer/>;
             defaultSelectedKeys = 1;
             breadcrumb = '员工管理';
-
         }
         return (
             <Layout style={{minHeight: '100vh'}}>
@@ -131,6 +135,12 @@ class Main extends Component {
                             <Link to={"/main/order"}>
                                 <Icon type="credit-card"/>
                                 <span>订单管理</span>
+                            </Link>
+                        </Menu.Item>
+                        <Menu.Item key="6">
+                            <Link to={"/main/leavingRequest"}>
+                                <Icon type="credit-card"/>
+                                <span>请假管理</span>
                             </Link>
                         </Menu.Item>
                     </Menu>
