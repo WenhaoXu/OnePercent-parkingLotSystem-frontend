@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import {Avatar, Breadcrumb, Icon, Layout, Menu} from 'antd';
-
 import './main.css'
 import {Link} from "react-router-dom";
 import Lot from "../container/lot";
 import Dashboard from "./dashboard";
 import  ParkingBoy from "./parkingBoy";
-
 import EmployeeContainer from "../container/employeeContainer"
 import conf from "../api/conf";
 import OrderTable from "../container/order/orderTableContainer";
@@ -139,7 +137,7 @@ class Main extends Component {
                         </Menu.Item>
                         <Menu.Item key="6">
                             <Link to={"/main/leavingRequest"}>
-                                <Icon type="credit-card"/>
+                                <Icon type="profile"/>
                                 <span>请假管理</span>
                             </Link>
                         </Menu.Item>
