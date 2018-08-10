@@ -9,6 +9,7 @@ import PersonalInfo from "./PersonalInfo";
 import PersonalPage from "./PersonalPage";
 import FontAwesomeIcon from 'react-fontawesome'
 import '../../../node_modules/font-awesome/css/font-awesome.css'
+import {Icon} from 'antd'
 
 class mobileMain extends React.Component {
 
@@ -39,20 +40,8 @@ class mobileMain extends React.Component {
                         <TabBar.Item
                             title="抢单"
                             key="Robb"
-                            icon={<div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat'
-                            }}
-                            />
-                            }
-                            selectedIcon={<div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat'
-                            }}
-                            />
-                            }
+                            icon = {<Icon type="car" />}
+                            selectedIcon={<Icon type="car" />}
                             selected={this.state.selectedTab === '抢单'}
                             onPress={() => {
                                 this.setState({
@@ -65,22 +54,8 @@ class mobileMain extends React.Component {
 
                         </TabBar.Item>
                         <TabBar.Item
-                            icon={
-                                <div style={{
-                                    width: '22px',
-                                    height: '22px',
-                                    background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat'
-                                }}
-                                />
-                            }
-                            selectedIcon={
-                                <div style={{
-                                    width: '22px',
-                                    height: '22px',
-                                    background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat'
-                                }}
-                                />
-                            }
+                            icon={<Icon type="appstore-o" />}
+                            selectedIcon={<Icon type="appstore-o" />}
                             title="停取"
                             key="ParkAndTake"
                             selected={this.state.selectedTab === '停取工作列表'}
@@ -102,22 +77,8 @@ class mobileMain extends React.Component {
 
                         </TabBar.Item>
                         <TabBar.Item
-                            icon={
-                                <div style={{
-                                    width: '22px',
-                                    height: '22px',
-                                    background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat'
-                                }}
-                                />
-                            }
-                            selectedIcon={
-                                <div style={{
-                                    width: '22px',
-                                    height: '22px',
-                                    background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat'
-                                }}
-                                />
-                            }
+                            icon={<Icon type="bars" />}
+                            selectedIcon={<Icon type="bars" />}
                             title="历史"
                             key="history"
 
@@ -131,8 +92,8 @@ class mobileMain extends React.Component {
                             <HistoryContainer/>
                         </TabBar.Item>
                         <TabBar.Item
-                            icon={{uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg'}}
-                            selectedIcon={{uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg'}}
+                            icon={<Icon type="user" />}
+                            selectedIcon={<Icon type="user" />}
                             title="个人"
                             key="my"
                             selected={this.state.selectedTab === '个人'}
