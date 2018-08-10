@@ -39,7 +39,7 @@ export default {
             },
             // body:JSON.stringify({
             //     "operation":'updateStatus',
-            //     "status":'finished'
+            //     "statusCode":'finished'
             // })
         }).then(value => {
             value.json().then(value1 => {

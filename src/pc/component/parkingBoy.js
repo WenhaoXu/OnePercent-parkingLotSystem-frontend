@@ -47,9 +47,9 @@ class parkingBoy extends Component {
         ];
 
         // const data = [
-        //     { key: 1, Id: 'John Brown', name: 32, phoneNumber: 'New York No. 1 Lake Park',mail:"12144@qq",status:"上班" },
-        //     { key: 2, Id: 'Jim Green', name: 42, phoneNumber: 'London No. 1 Lake Park',mail:"12144@qq",status:"上班"},
-        //     { key: 3, Id: 'Joe Black', name: 32, phoneNumber: 'Sidney No. 1 Lake Park',mail:"12144@qq",status:"上班"},
+        //     { key: 1, Id: 'John Brown', name: 32, phoneNumber: 'New York No. 1 Lake Park',mail:"12144@qq",statusCode:"上班" },
+        //     { key: 2, Id: 'Jim Green', name: 42, phoneNumber: 'London No. 1 Lake Park',mail:"12144@qq",statusCode:"上班"},
+        //     { key: 3, Id: 'Joe Black', name: 32, phoneNumber: 'Sidney No. 1 Lake Park',mail:"12144@qq",statusCode:"上班"},
         // ];
         return (<div>
             <ParkingBoyHead searchParkingBoy={this.props.searchParkingBoy}/>

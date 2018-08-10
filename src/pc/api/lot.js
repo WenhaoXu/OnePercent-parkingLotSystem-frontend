@@ -78,6 +78,7 @@ export default {
         })
             .then(value => {
                 value.text().then(value1 => {
+                    message.success("操作成功！")
                     if (value1.indexOf('停车场不是') > 0) {
                         message.error(value1);
                     }else if (value1.indexOf("移除停车员")>0) {

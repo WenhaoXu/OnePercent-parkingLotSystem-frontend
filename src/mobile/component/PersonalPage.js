@@ -3,9 +3,11 @@ import React, {Component} from "react";
 import {List, NavBar} from 'antd-mobile';
 import PersonalInfo from "./PersonalInfo";
 import userApi from '../api/userApi';
-import {Icon,Button,WhiteSpace} from 'antd-mobile'
+import {Icon, Button, WhiteSpace} from 'antd-mobile'
 import FontAwesomeIcon from 'react-fontawesome'
 import '../../../node_modules/font-awesome/css/font-awesome.css'
+import PersonalLeavePage from "./PersonalLeavePage";
+import PersonalLeavingDetails from "./PersonalLeavingDetails";
 
 
 const Item = List.Item;
@@ -19,23 +21,39 @@ class PersonalPage extends Component {
 
     mainPage() {
         return (
-            <List renderHeader={() => <span><FontAwesomeIcon name={'user'} />  个人账户信息</span>} className='my-list'>
-                <Item arrow="horizontal" multipleLine onClick={() => {
-                    this.props.switchToInfoPage()
-                }}>
-                    查看账户信息
-                    <Brief>查看账户信息详情</Brief>
-                </Item>
-            </List>
+            <div>
+                <List renderHeader={() => <span><FontAwesomeIcon name={'user'}/>  个人账户信息</span>} className='my-list'>
+                    <Item arrow="horizontal" multipleLine onClick={() => {
+                        this.props.switchToInfoPage()
+                    }}>
+                        查看账户信息
+                        <Brief>查看账户信息详情</Brief>
+                    </Item>
+                </List>
+
+                {/*请假申请*/}
+                <List renderHeader={() => <span><FontAwesomeIcon name={'tasks'}/>  请假申请</span>}>
+                    <Item arrow="horizontal" multipleLine
+                          onClick={() => {
+                              this.props.switchToLeaveRequestPage()
+                          }}>
+                        办理请假
+                        <Brief>点击开始请假</Brief>
+                    </Item>
+                </List>
+                <Button type="primary" style={{margin: "120px 20px 0 20px"}} onClick={this.handleStartWork}>打卡</Button>
+                <Button type="warning" onClick={() => this.quit()}
+                        style={{margin: "15px 20px 0 20px"}}>退出</Button><WhiteSpace/>
+            </div>
         );
     }
 
-    quit=()=>{
-      localStorage.clear();
-      window.location.href="https://appparkinglot.herokuapp.com/mobile/login"
+    quit = () => {
+        localStorage.clear();
+        window.location.href = "https://appparkinglot.herokuapp.com/mobile/login"
     }
 
-    handleStartWork=()=>{
+    handleStartWork = () => {
 
         console.log("handleStartWork")
         userApi.startWork()
@@ -50,6 +68,12 @@ class PersonalPage extends Component {
                 component = <PersonalInfo accountInfo={this.props.accountInfo}/>;
                 title = '账户详细信息'
                 break;
+            case 2:
+                component = <PersonalLeavePage/>;
+                break;
+            case 3:
+                component = <PersonalLeavingDetails leavingDetails={this.props.leavingDetails}/>
+                break;
             default:
                 component = this.mainPage();
                 title = '我的账户'
@@ -59,12 +83,9 @@ class PersonalPage extends Component {
             <div>
                 <NavBar mode="dark"
                         icon={title !== '我的账户' ? <Icon type={'left'}></Icon> : null}
-                onLeftClick={this.props.switchToMainPage}>{title}
+                        onLeftClick={this.props.switchToMainPage}>{title}
                 </NavBar>
                 {component}
-
-                <Button type="primary"  style={{margin:"120px 20px 0 20px" }} onClick={this.handleStartWork}>打卡</Button>
-                <Button type="warning" onClick={()=>this.quit()}   style={{margin:"15px 20px 0 20px" }}>退出</Button><WhiteSpace />
 
             </div>
         );
@@ -77,14 +98,17 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        switchToMainPage: () => {
+            dispatch({type: 0});
+        },
         switchToInfoPage: () => {
             let callback = (accountInfo) => {
                 dispatch({type: 1, value: {accountInfo}})
             }
             userApi.getCurrentAccountInfo(callback);
         },
-        switchToMainPage: () => {
-            dispatch({type: 0});
+        switchToLeaveRequestPage: () => {
+            dispatch({type: 2})
         }
     }
 };

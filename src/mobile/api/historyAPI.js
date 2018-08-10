@@ -1,10 +1,13 @@
 import {getHistoryListMap} from '../action/index'
 import 'whatwg-fetch'
+import globalConfig from '../../conf';
+
+const remoteHost = globalConfig.domain;
 
 const historyAPI = {
     employeeList:[],
     getHistoryList(dispatch) {
-        fetch(`https://parkinglotappofsystem.herokuapp.com/users`, {
+        fetch(`${remoteHost}/users`, {
             method: 'GET',
             headers:
                 {'Authorization':localStorage.getItem("token")}
